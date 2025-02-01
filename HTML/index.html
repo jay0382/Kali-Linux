@@ -1,0 +1,324 @@
+s<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Guia Completo de HTML</title>
+</head>
+<body>
+    <div class="container">
+    <!-- Cabeçalho principal da página -->
+    <header>
+        <h1>Guia Completo de HTML</h1>
+        <p>Aprenda tudo o que você precisa para criar páginas web!</p>
+    </header>
+
+    <!-- Introdução ao HTML -->
+    <section>
+        <h2>Introdução ao HTML</h2>
+        <p>HTML (HyperText Markup Language) é a base da construção de páginas web. Aqui você encontrará exemplos detalhados e explicações para cada elemento.</p>
+    </section>
+
+    <!-- Seção: Tags de Estrutura -->
+    <section>
+        <h2>Tags de Estrutura</h2>
+        <ul>
+            <li><strong>&lt;html&gt;:</strong> Elemento raiz de qualquer documento HTML.</li>
+            <li><strong>&lt;head&gt;:</strong> Contém informações sobre o documento.</li>
+            <li><strong>&lt;body&gt;:</strong> Contém o conteúdo visível da página.</li>
+            <li><strong>&lt;main&gt;:</strong> Representa o conteúdo principal da página.</li>
+            <li><strong>&lt;section&gt;:</strong> Divide o conteúdo em seções temáticas.</li>
+        </ul>
+        <p>Exemplo básico de estrutura HTML:</p>
+    
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Minha Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;main&gt;
+        &lt;section&gt;
+            &lt;h1&gt;Bem-vindo!&lt;/h1&gt;
+            &lt;p&gt;Este é o conteúdo principal.&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>       
+
+      
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minha Página</title>
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Bem-vindo!</h1>
+
+            <p>Este é o conteúdo principal.</p>
+        </section>
+    </main>
+</body>
+</html>
+</pre> 
+      
+</section>
+    <!-- Seção: Listas -->
+    <section>
+        <h2>Listas</h2>
+        <p>HTML suporta dois tipos principais de listas:</p>
+        <ul>
+            <li><strong>&lt;ul&gt;:</strong> Lista não ordenada (bullets).</li>
+            <li><strong>&lt;ol&gt;:</strong> Lista ordenada (numerada).</li>
+            <li><strong>&lt;li&gt;:</strong> Item de lista.</li>
+        </ul>
+        <p>Exemplo:</p>
+        <pre>
+ &lt;ul&gt;
+    &lt;li&gt;Item 1&lt;/li&gt;
+    &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;Primeiro&lt;/li&gt;
+    &lt;li&gt;Segundo&lt;/li&gt;
+&lt;/ol&gt;
+        </pre>
+
+        <pre>
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+</ul>
+
+<ol>
+    <li>Primeiro</li>
+    <li>Segundo</li>
+</ol>
+        </pre>
+    </section>
+
+    <!-- Seção: Links e Navegação -->
+    <section>
+        <h2>Links e Navegação</h2>
+        <p>Use a tag <code>&lt;a&gt;</code> para criar links:</p>
+        <pre>
+&lt;&lt;a href="https://www.google.com" target="_blank"&gt;Visite o Google&lt;/a&gt;&gt;
+        </pre>
+        <pre>
+<a href="https://www.google.com" target="_blank">Visite o Google</a>
+        </pre>
+        <p>Atributos importantes:</p>
+        <ul>
+            <li><strong>href:</strong> Define o destino do link.</li>
+            <li><strong>target:</strong> Controle de abertura (<code>_self</code>, <code>_blank</code>).</li>
+        </ul>
+    </section>
+
+    <!-- Seção: Div e ID -->
+    <section>
+        <h2>Divs e IDs</h2>
+        <p>Use <code>&lt;div&gt;</code> para agrupar elementos e estilizar com classes ou IDs:</p>
+        <pre>
+&lt;div class="container"&gt;
+    &lt;p&gt;Este é um container com uma classe.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="unique-id"&gt;
+    &lt;p&gt;Este container tem um ID único.&lt;/p&gt;
+&lt;/div&gt;
+        </pre>
+        <pre>
+<div class="container">
+    <p>Este é um container com uma classe.</p>
+</div>
+
+<div id="unique-id">
+    <p>Este container tem um ID único.</p>
+</div>
+        </pre>
+    </section>
+
+    <!-- Seção: Textos -->
+    <section>
+        <h2>Textos e Títulos</h2>
+        <ul>
+            <li><strong>&lt;p&gt;:</strong> Parágrafos.</li>
+            <li><strong>&lt;h1&gt; a &lt;h6&gt;:</strong> Títulos hierárquicos.</li>
+        </ul>
+        <p>Exemplo:</p>
+          <pre>
+&lt;h1&gt;Título Principal&lt;/h1&gt;
+&lt;h2&gt;Subtítulo&lt;/h2&gt;
+&lt;p&gt;Este é um parágrafo.&lt;/p&gt;
+          </pre>     
+  
+          <pre>
+<h1>Título Principal</h1>
+<h2>Subtítulo</h2>
+<p>Este é um parágrafo.</p>
+        </pre>
+    </section>
+
+    <!-- Seção: Links Externos -->
+    <section>
+        <h2>Links Externos</h2>
+        <p>Para incluir CSS ou JavaScript, use:</p>
+        
+<!-- Links CSS e JavaScript -->
+        <pre>
+&lt;!-- Link CSS --&gt;
+&lt;link rel="stylesheet" href="style.css"&gt;
+
+&lt;!-- Link JavaScript --&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;
+        </pre>
+
+    </section>
+
+    <!-- Seção: Código e Formatação -->
+    <section>
+        <h2>Código e Formatação</h2>
+        <p>Use <code>&lt;pre&gt;</code> para blocos de texto pré-formatados e <code>&lt;code&gt;</code> para trechos de código:</p>
+<pre>
+Texto pré-formatado:
+    Linha 1
+    Linha 2
+</pre>
+
+<pre><code>console.log('Olá, mundo!');</code></pre>
+    </section>
+
+ <section>
+        <h2>Guia Completo: Formulários, Mídia e Modais</h2>
+
+        <!-- Formulários -->
+        <h3>Formulários</h3>
+        <p>Os formulários permitem a entrada de dados do usuário e suportam diversos tipos de campos.</p>
+
+        <h4>1. Formulário com Texto e Senha</h4>
+        <pre>
+&lt;!-- Este é um formulário básico com campos de texto e senha --&gt;
+&lt;form&gt;
+    &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+    &lt;input type="text" id="nome" name="nome"&gt;
+    &lt;br&gt;
+    &lt;label for="senha"&gt;Senha:&lt;/label&gt;
+    &lt;input type="password" id="senha" name="senha"&gt;
+&lt;/form&gt;
+        </pre>
+
+        <h4>2. Formulário com Seleção e Botões</h4>
+        <pre>
+&lt;!-- Este é um formulário com uma lista de opções e botões de ação --&gt;
+&lt;form&gt;
+    &lt;label for="opcoes"&gt;Escolha uma opção:&lt;/label&gt;
+    &lt;select id="opcoes" name="opcoes"&gt;
+        &lt;option value="1"&gt;Opção 1&lt;/option&gt;
+        &lt;option value="2"&gt;Opção 2&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;br&gt;
+    &lt;input type="submit" value="Enviar"&gt;
+    &lt;input type="reset" value="Limpar"&gt;
+&lt;/form&gt;
+        </pre>
+
+        <!-- Reprodutores de Mídia -->
+        <h3>Reprodutores de Mídia</h3>
+        <p>HTML permite a inclusão de áudio e vídeo diretamente nas páginas.</p>
+
+        <h4>1. Reprodutor de Áudio</h4>
+        <pre>
+&lt;!-- Reproduz arquivos de áudio com controles básicos --&gt;
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mp3"&gt;
+    Seu navegador não suporta áudio.
+&lt;/audio&gt;
+        </pre>
+
+        <h4>2. Reprodutor de Vídeo</h4>
+        <pre>
+&lt;!-- Reproduz arquivos de vídeo com controles e largura ajustável --&gt;
+&lt;video controls width="400"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    Seu navegador não suporta vídeo.
+&lt;/video&gt;
+        </pre>
+
+        <!-- Modais -->
+        <h3>Modais</h3>
+        <p>Os modais são janelas pop-up usadas para exibir informações ou solicitar ações do usuário.</p>
+
+        <h4>1. Estrutura Básica de Modal</h4>
+        <pre>
+&lt;!-- Estrutura de um modal com sobreposição e botão de fechar --&gt;
+&lt;div class="modal-overlay" id="modal-overlay"&gt;&lt;/div&gt;
+&lt;div class="modal" id="modal"&gt;
+    &lt;p&gt;Este é um modal!&lt;/p&gt;
+    &lt;button onclick="fecharModal()"&gt;Fechar&lt;/button&gt;
+&lt;/div&gt;
+&lt;button onclick="abrirModal()"&gt;Abrir Modal&lt;/button&gt;
+
+&lt;script&gt;
+    function abrirModal() {
+        document.getElementById('modal').style.display = 'block';
+        document.getElementById('modal-overlay').style.display = 'block';
+    }
+    function fecharModal() {
+        document.getElementById('modal').style.display = 'none';
+        document.getElementById('modal-overlay').style.display = 'none';
+    }
+&lt;/script&gt;
+        </pre>
+    </section>
+
+    <section>
+    <h2>Uso de &lt; e &gt; no HTML</h2>
+    <p>No HTML, os símbolos &lt; (menor que) e &gt; (maior que) são usados para delimitar as tags HTML. Essas tags são essenciais para estruturar documentos HTML, como:</p>
+
+    <pre>
+&lt;p&gt;Este é um parágrafo.&lt;/p&gt;
+    </pre>
+
+    <p>No entanto, quando você precisa exibir esses símbolos diretamente na página (em vez de serem interpretados como tags), deve usar suas entidades HTML correspondentes:</p>
+
+    <ul>
+        <li>&amp;lt;: Representa o símbolo de "menor que" (&lt;).</li>
+        <li>&amp;gt;: Representa o símbolo de "maior que" (&gt;).</li>
+    </ul>
+
+    <h3>Exemplo de uso</h3>
+    <p>Se você quiser exibir o código HTML &lt;p&gt;Texto&lt;/p&gt; como texto na página, pode usar:</p>
+
+    <pre>
+&lt;p&gt;Texto&lt;/p&gt;
+    </pre>
+
+    <p>Ao renderizar no navegador, aparecerá assim:</p>
+
+    <pre>
+&lt;p&gt;Texto&lt;/p&gt;
+    </pre>
+
+    <h3>Quando usar &lt; e &gt;</h3>
+    <ul>
+        <li><strong>Exibindo código HTML no navegador:</strong> Para mostrar exemplos de código sem que o navegador os interprete como tags.</li>
+        <li><strong>Inserção segura de conteúdo:</strong> Em alguns casos, para evitar problemas de segurança, como ataques XSS, é necessário usar as entidades para que tags HTML sejam tratadas como texto.</li>
+    </ul>
+
+    <p>Essas entidades são muito úteis ao criar tutoriais, documentação técnica ou qualquer página que precise exibir código-fonte HTML.</p>
+</section>
+
+</div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 - Guia Completo de HTML. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

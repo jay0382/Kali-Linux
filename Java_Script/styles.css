@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    background: linear-gradient(90deg, #1a1a1a, #333);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #00ffff;
+    text-shadow: 0 2px 5px rgba(0, 255, 204, 0.7);
+}
+
+.container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+category1 {
+    background-color: #111; /* Fundo escuro */
+    border: 1px solid #00ffff; /* Borda em ciano */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    margin: 20px 0; /* Espaçamento externo */
+    color: #fff; /* Texto branco */
+    text-align: left;
+}
+
+.category1 * {
+    text-align: left; /* Garante que todos os elementos internos fiquem alinhados à esquerda */
+}
+ 
+.category1 h2 {
+    font-size: 24px; /* Tamanho maior para o título */
+    color: #00ffff; /* Cor ciano */
+    border-bottom: 2px solid #00ffff; /* Linha abaixo do título */
+    padding-bottom: 5px; /* Espaçamento abaixo do título */
+    margin-bottom: 15px; /* Espaçamento geral do título */
+    text-align: left;
+}
+ 
+.category1 h3 {
+    font-size: 20px; /* Tamanho menor que o h2 */
+    color: #00ffff; /* Cor ciano */
+    margin-bottom: 10px; /* Espaçamento abaixo do subtítulo */
+}
+ 
+.category1 p {
+     font-size: 15px; /* Tamanho menor que o h2 */
+     color: #fff; /* Cor branca */
+     margin: auto;
+}
+.category1 ol {
+    padding-left: 20px; /* Recuo das listas */
+    list-style-type: decimal; /* Numeração decimal */
+.category1 li {
+    margin-bottom: 10px; /* Espaçamento entre os itens */
+    color: #fff;
+}
+.category1 li a {
+    color: #FFFFF;
+}
+
+.category1 li strong {
+    color: #00ffff; /* Destaque ciano para texto importante */
+}
+
+.category1 pre {
+    background-color: #222; /* Fundo escuro para código */
+    color: #00ff00; /* Cor verde para o texto */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    overflow-x: auto; /* Rolagem horizontal para evitar quebra */
+    margin-top: 5px; /* Espaçamento acima do pre */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    background: #1a1a1a;
+    color: #00ffcc;
+}

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"href="styles.css">
+    <title>Estilizando com CSS</title>
+</head>
+<body>
+<div class="container">
+ 
+<div class="category1">
+    <h2>Estilizando Elementos com CSS</h2>
+    <p>No CSS, você pode estilizar elementos usando <strong>classes</strong> ou <strong>IDs</strong>:</p>
+
+    <h3>Classes (<code>class</code>):</h3>
+    <ul>
+        <li>São referenciadas no CSS com um ponto (<code>.</code>).</li>
+        <li>Usadas para aplicar estilos a múltiplos elementos com a mesma classe.</li>
+    </ul>
+    <pre><code>.category {
+    background-color: lightgray;
+}</code></pre>
+
+    <h3>IDs (<code>id</code>):</h3>
+    <ul>
+        <li>São referenciados no CSS com uma cerquilha (<code>#</code>).</li>
+        <li>Usados para aplicar estilos a elementos únicos.</li>
+    </ul>
+    <pre><code>#caminhos-diretorios {
+    font-weight: bold;
+}</code></pre>
+</div>
+
+<div class="banco-cores">
+    <h2>Banco de Cores no CSS</h2>
+    <div class="categoria">
+        <h3>Tons Básicos</h3>
+        <ul>
+            <li style="color: #FF0000;">#FF0000 (Vermelho)</li>
+            <li style="color: #00FF00;">#00FF00 (Verde)</li>
+            <li style="color: #0000FF;">#0000FF (Azul)</li>
+            <li style="color: #FFFF00;">#FFFF00 (Amarelo)</li>
+            <li style="color: #FFA500;">#FFA500 (Laranja)</li>
+            <li style="color: #800080;">#800080 (Roxo)</li>
+        </ul>
+    </div>
+
+    <div class="categoria">
+        <h3>Tons Pastéis</h3>
+        <ul>
+            <li style="color: #FFB6C1;">#FFB6C1 (Rosa Claro)</li>
+            <li style="color: #FFDAB9;">#FFDAB9 (Pêssego)</li>
+            <li style="color: #E6E6FA;">#E6E6FA (Lavanda)</li>
+            <li style="color: #FFFACD;">#FFFACD (Amarelo Pastel)</li>
+            <li style="color: #D3FFCE;">#D3FFCE (Verde Claro)</li>
+        </ul>
+    </div>
+
+    <div class="categoria">
+        <h3>Tons Escuros</h3>
+        <ul>
+            <li style="color: #2F4F4F;">#2F4F4F (Cinza Escuro)</li>
+            <li style="color: #4B0082;">#4B0082 (Índigo)</li>
+            <li style="color: #191970;">#191970 (Azul Marinho)</li>
+            <li style="color: #8B0000;">#8B0000 (Vermelho Escuro)</li>
+            <li style="color: #2E8B57;">#2E8B57 (Verde Floresta)</li>
+        </ul>
+    </div>
+
+    <div class="categoria">
+        <h3>Tons Vibrantes</h3>
+        <ul>
+            <li style="color: #FF5733;">#FF5733 (Laranja Vibrante)</li>
+            <li style="color: #33FF57;">#33FF57 (Verde Limão)</li>
+            <li style="color: #3357FF;">#3357FF (Azul Elétrico)</li>
+            <li style="color: #FF33A6;">#FF33A6 (Rosa Choque)</li>
+            <li style="color: #FFD700;">#FFD700 (Ouro)</li>
+            <li style="color: #00FFFF;">#00FFFF (Ciano)</li>
+            <li style="color: #FF00FF;">#FF00FF (Magenta)</li>
+            <li style="color: #00FF7F;">#00FF7F (Verde Primavera)</li>
+        </ul>
+    </div>
+
+    <div class="categoria">
+        <h3>Tons Neutros</h3>
+        <ul>
+            <li style="color: #000000; background-color: #808080; padding: 5px; max-width: 150px;">#000000 (Preto)</li>
+            <li style="color: #FFFFFF; background-color: #000000; padding: 5px;">#FFFFFF (Branco)</li>
+            <li style="color: #808080;">#808080 (Cinza)</li>
+            <li style="color: #C0C0C0;">#C0C0C0 (Prata)</li>
+            <li style="color: #F5F5F5;">#F5F5F5 (Branco Gelo)</li>
+        </ul>
+    </div>
+
+    <div class="categoria">
+        <h3>Gradientes</h3>
+        <ul>
+            <li style="background: linear-gradient(to right, #FF5733, #33FF57); padding: 5px; color: #fff;">De Laranja para Verde (#FF5733 → #33FF57)</li>
+            <li style="background: linear-gradient(to right, #3357FF, #FF33A6); padding: 5px; color: #fff;">De Azul para Rosa (#3357FF → #FF33A6)</li>
+            <li style="background: linear-gradient(to right, #FFD700, #FF4500); padding: 5px; color: #fff;">De Ouro para Vermelho (#FFD700 → #FF4500)</li>
+            <li style="background: linear-gradient(to right, #800080, #FFC0CB); padding: 5px; color: #fff;">De Roxo para Rosa Claro (#800080 → #FFC0CB)</li>
+            <li style="background: linear-gradient(to right, #00FFFF, #00008B); padding: 5px; color: #fff;">De Ciano para Azul Escuro (#00FFFF → #00008B)</li>
+            <li style="background: linear-gradient(to right, #FFA500, #FF6347); padding: 5px; color: #fff;">De Laranja para Tomate (#FFA500 → #FF6347)</li>
+            <li style="background: linear-gradient(to right, #FF1493, #8A2BE2); padding: 5px; color: #fff;">De Rosa Forte para Azul Violeta (#FF1493 → #8A2BE2)</li>
+            <li style="background: linear-gradient(to right, #32CD32, #FFD700); padding: 5px; color: #fff;">De Verde Lima para Ouro (#32CD32 → #FFD700)</li>
+            <li style="background: linear-gradient(to right, #000000, #696969); padding: 5px; color: #fff;">De Preto para Cinza Escuro (#000000 → #696969)</li>
+            <li style="background: linear-gradient(to right, #7FFFD4, #48D1CC); padding: 5px; color: #fff;">De Água-marinha para Turquesa (#7FFFD4 → #48D1CC)</li> 
+            <li style="background: linear-gradient(to right, #FF69B4, #BA55D3); padding: 5px; color: #fff;">De Rosa Choque para Roxo Claro (#FF69B4 → #BA55D3)</li>
+        </ul>
+    </div>
+</div>
+
+    <div class="category2">
+    <h2>Como criar gradientes personalizados</h2>
+    <h3><strong>Sintaxe básica do gradiente linear:</strong></h3>
+    <pre>background: linear-gradient(direction, color1, color2, ...);</pre>
+    <ul>
+        <li><strong>direction:</strong> Define a direção do gradiente (ex.: <code>to right</code>, <code>to bottom</code>, <code>45deg</code>, etc.).</li>
+        <li><strong>color1, color2, ...:</strong> As cores do gradiente, que podem ser hexadecimais, nomes ou <code>rgba</code>.</li>
+    </ul>
+
+    <h2>Exemplo de direções:</h2>
+    <ul>
+        <li><code>background: linear-gradient(to right, #FF5733, #33FF57);</code> <em>/* Da esquerda para a direita */</em></li>
+        <li><code>background: linear-gradient(to bottom, #FFD700, #FF4500);</code> <em>/* De cima para baixo */</em></li>
+        <li><code>background: linear-gradient(45deg, #3357FF, #FF33A6);</code> <em>/* Ângulo de 45 graus */</em></li>
+    </ul>
+
+    <h2>Adicionar mais cores:</h2>
+    <p>Você pode usar mais de duas cores para criar efeitos únicos:</p>
+    <pre>background: linear-gradient(to right, #FF5733, #FFFF00, #33FF57);</pre>
+
+    <h2>Ferramentas úteis para criar gradientes:</h2>
+    <ul>
+        <li><strong>CSS Gradient:</strong> Ferramenta interativa para criar gradientes e copiar o código.</li>
+        <li><strong>Coolors Gradient Maker:</strong> Explore gradientes e crie os seus.</li>
+    </ul>
+
+    <h2>Inspiração para criar:</h2>
+    <ul>
+        <li><strong>Cenários naturais:</strong> Pense no pôr-do-sol, na floresta ou no oceano.</li>
+        <li><strong>Temas emocionais:</strong> Use cores vibrantes para energia ou tons suaves para calma.</li>
+        <li><strong>Projetos existentes:</strong> Combine cores baseadas no estilo do seu site ou app.</li>
+    </ul>
+</div>
+
+<div class="category2">
+    <h2>Estilos Explicados</h2>
+    <p><strong>1. font-family:</strong> Define a fonte usada no texto.</p>
+    <pre>font-family: Arial, sans-serif;</pre>
+    
+    <p><strong>2. line-height:</strong> Controla o espaçamento entre linhas.</p>
+    <pre>line-height: 1.6;</pre>
+    
+    <p><strong>3. margin:</strong> Adiciona espaço ao redor do elemento.</p>
+    <pre>margin: 20px auto; /* 20px em cima/baixo, centralizado horizontalmente */</pre>
+    
+    <p><strong>4. padding:</strong> Adiciona espaço dentro do elemento.</p>
+    <pre>padding: 20px;</pre>
+    
+    <p><strong>5. background-color:</strong> Define a cor de fundo.</p>
+    <pre>background-color: #000000; /* Preto */</pre>
+    
+    <p><strong>6. color:</strong> Define a cor do texto.</p>
+    <pre>color: #fff; /* Branco */</pre>
+    
+    <p><strong>7. border:</strong> Adiciona uma borda ao elemento.</p>
+    <pre>border: 1px solid #00ffff; /* 1px, sólido, ciano */</pre>
+    
+    <p><strong>8. border-radius:</strong> Arredonda os cantos do elemento.</p>
+    <pre>border-radius: 8px;</pre>
+    
+    <p><strong>9. max-width:</strong> Define a largura máxima do elemento.</p>
+    <pre>max-width: 800px;</pre>
+    
+    <p><strong>10. box-shadow:</strong> Adiciona uma sombra ao redor do elemento.</p>
+    <pre>box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);</pre>
+    
+    <h2>Outros estilos úteis:</h2>
+    <ul>
+        <li><strong>text-align:</strong> Centraliza o texto: <code>text-align: center;</code></li>
+        <li><strong>font-size:</strong> Tamanho da fonte: <code>font-size: 16px;</code></li>
+        <li><strong>opacity:</strong> Transparência: <code>opacity: 0.8;</code></li>
+        <li><strong>border-style:</strong> Estilo da borda: <code>border-style: dashed;</code></li>
+        <li><strong>background:</strong> Gradiente: <code>background: linear-gradient(to right, #FF5733, #33FF57);</code></li>
+    </ul>
+</div>
+</div>
+</body>
+</html>
