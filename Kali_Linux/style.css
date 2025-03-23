@@ -85,3 +85,19 @@ footer {
     padding: 15px;
     margin-top: 40px;
 }
+
+@media (max-width: 768px) {
+    .container, section {
+        width: 95%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+
+    h2, h3 {
+        font-size: 1.2em;
+    }
+
+    pre {
+        font-size: 0.9em;
+    }
+}

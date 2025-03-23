@@ -90,3 +90,20 @@ footer {
     padding: 15px;
     margin-top: 40px;
 }
+
+@media (max-width: 768px) {
+    .grid-layout {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .lateral, .central {
+        width: 100%;
+        text-align: center;
+    }
+
+    .central p {
+        font-size: 1em;
+    }
+}
