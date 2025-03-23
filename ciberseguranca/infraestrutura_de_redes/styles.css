@@ -1,0 +1,138 @@
+/* Reset Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da Página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    color: #FFFFFF;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Container principal */
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid cyan;
+    border-radius: 8px;
+    background-color: #000000;
+    box-shadow: 0px 4px 8px rgba(0, 255, 255, 0.2);
+}
+
+/* Cabeçalho */
+header {
+    background-color: #001f3f    
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: cyan;
+    margin: 0;
+}
+
+/* Navegação */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav ul li {
+     margin: 5px 15px;
+}
+
+nav ul li a {
+     color: cyan;
+     text-decoration: none;
+     font-weight: bold;
+}
+nav ul li a:hover {
+     text-decoration: underline;
+}
+
+/* Seções */
+section {
+    max-width: 950px;
+    background: #000000;
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 8px rgba(0, 255, 255, 0.2);
+}
+
+.image-style {
+    margin: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 5px, 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Títulos */
+h1 { 
+    color: #00FFFF;
+    margin: 0;
+    
+}
+
+h2, h3, h4 {
+    color: #00FFFF;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Listas */
+ul, ol {
+    list-style: square;
+    margin-left: 20px;
+    text-align: left;
+}
+
+li {
+    color: #FFFFFF;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+/* Parágrafos */
+p {
+    color: #FFFFFF;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+/* Blocos de Código */
+pre {
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #00ffff;
+    color: #33FF57;
+    text-align: left;
+    overflow-x: auto;
+    font-family: "Courier New", monospace;
+}
+
+/* Rodapé */
+footer {
+    background: #000000;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    border-top: 2px solid #00ffff;
+}
+
+footer p {
+    color: #00FFFF;
+    text-align: center;
+}

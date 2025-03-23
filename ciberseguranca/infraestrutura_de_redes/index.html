@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Completo de Infraestrutura de Redes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <header>
+        <h1>Infraestrutura de Redes</h1>
+        <p>Um guia completo para aprender sobre redes e sua infraestrutura.</p>
+ </header>
+
+    <main>
+        <section id="modelo-osi-tcpip">
+            <h2>Modelo OSI e TCP/IP</h2>
+            <h3>Modelo OSI</h3>
+            <p>O Modelo OSI (Open Systems Interconnection) é composto por 7 camadas, cada uma com uma função específica para descrever a comunicação em redes:</p>
+            <ol>
+                <li><b>Física:</b> Transmissão de bits através de cabos, conectores e sinais elétricos.</li>
+                <li><b>Enlace:</b> Garante uma comunicação livre de erros entre dois dispositivos diretamente conectados. Ex.: Ethernet.</li>
+                <li><b>Rede:</b> Roteamento de pacotes entre redes diferentes usando endereços lógicos (IP).</li>
+                <li><b>Transporte:</b> Garante a entrega confiável de dados. Ex.: TCP (confiável) e UDP (não confiável).</li>
+                <li><b>Sessão:</b> Gerencia conexões entre dispositivos. Ex.: APIs.</li>
+                <li><b>Apresentação:</b> Tradução de dados para formatos compreensíveis, incluindo criptografia. Ex.: SSL/TLS.</li>
+                <li><b>Aplicação:</b> Interação com o usuário final por meio de aplicativos. Ex.: HTTP, FTP.</li>
+            </ol>
+
+            <img src="images/OSI1.jpg" alt="modelo-OSI" width="600" height="400" class="image-style">             
+
+            <h3>Modelo TCP/IP</h3>
+            <p>O Modelo TCP/IP é mais prático e amplamente usado na Internet, com apenas 4 camadas:</p>
+            <ul>
+                <li><b>Link:</b> Combina as funções das camadas Física e Enlace do OSI.</li>
+                <li><b>Internet:</b> Responsável pelo roteamento dos pacotes. Ex.: IPv4, IPv6.</li>
+                <li><b>Transporte:</b> Gerencia a entrega ponta a ponta. Ex.: TCP, UDP.</li>
+                <li><b>Aplicação:</b> Integra as funções das camadas superiores do OSI. Ex.: HTTP, DNS.</li>
+            </ul>
+         
+             <img src="images/TCP.webp" alt="modelo-TCP" width="400" height="200" class="image-style">
+            
+        </section>
+
+        <section id="enderecamento-ip">
+            <h2>Endereçamento IP</h2>
+            <h3>IPv4</h3>
+            <p>Usa 32 bits e suporta cerca de 4,3 bilhões de endereços. Formato: 192.168.0.1.</p>
+            <ul>
+                <li><b>Classes:</b> A (10.0.0.0), B (172.16.0.0), C (192.168.0.0).</li>
+                <li><b>CIDR:</b> Representa sub-redes modernas. Ex.: 192.168.0.0/24.</li>
+        
+             <img src="images/ipv4.webp" alt="modelo-TCP" width="700" height="400" class="image-style">
+ 
+            </ul>
+            <h3>IPv6</h3>
+            <p>Usa 128 bits e oferece um espaço enorme de endereços. Formato: 2001:0db8::7334.</p>
+        </section>
+
+        <section id="arp">
+            <h2>ARP (Address Resolution Protocol)</h2>
+            <p>Resolve endereços IP em endereços MAC para comunicação em redes locais.</p>
+            <p>Vulnerável a ataques como ARP spoofing, que permitem interceptação de tráfego.</p>
+        </section>
+
+        <section id="dns-dhcp">
+            <h2>DNS e DHCP</h2>
+            <h3>DNS</h3>
+            <p>Converte nomes de domínio para endereços IP. Ex.: google.com → 172.217.28.206.</p>
+            <ul>
+                <li><b>A:</b> Associa nomes a endereços IPv4.</li>
+                <li><b>AAAA:</b> Associa nomes a endereços IPv6.</li>
+                <li><b>CNAME:</b> Redireciona para outro domínio.</li>
+            </ul>
+            <h3>DHCP</h3>
+            <p>Atribui automaticamente endereços IP e configurações de rede aos dispositivos.</p>
+        </section>
+
+        <section id="equipamentos-de-rede">
+            <h2>Equipamentos de Rede</h2>
+            <h3>Switches e Hubs</h3>
+            <p>Switches direcionam dados para destinos específicos, enquanto hubs enviam dados para todos os dispositivos.</p>
+            <h3>Roteadores</h3>
+            <p>Conectam redes diferentes e utilizam protocolos como RIP, OSPF e BGP para definir rotas.</p>
+            <h3>Access Points (APs)</h3>
+            <p>Permitem conexões sem fio e podem ser independentes ou controlados por um controlador central.</p>
+            <h3>Firewalls</h3>
+            <p>Controlam o tráfego de entrada e saída com base em regras predefinidas, protegendo redes contra acessos não autorizados.</p>
+        </section>
+
+        <section id="tecnologias-de-rede">
+            <h2>Tecnologias de Rede</h2>
+            <h3>Ethernet</h3>
+            <p>Conexão por cabos. Padrões: 10BASE-T, 100BASE-TX, 1000BASE-T.</p>
+            <h3>VLANs</h3>
+            <p>Segmentam redes físicas em redes lógicas, melhorando segurança e desempenho.</p>
+            <h3>VPN</h3>
+            <p>Cria conexões seguras usando IPsec, OpenVPN ou WireGuard.</p>
+            <h3>Wireless Networking</h3>
+            <p>Padrões como 802.11a/b/g/n/ac/ax garantem conectividade sem fio eficiente.</p>
+        </section>
+
+        <section id="protocolos-servicos">
+            <h2>Protocolos e Serviços</h2>
+            <ul>
+                <b>HTTP/HTTPS:</b>
+                <li><b>HTTP:</b> Comunicação web sem segurança.</li>
+                <Li><b>HTTPS:</b> HTTP com criptografia (TLS/SSL).</li> 
+                <b>FTP/SFTP:</b>
+                <li><b>FTP:</b> Transfere arquivos entre cliente e servidor.</li>
+                <li><b>SFTP:</b> Versão segura usando SSH.</li>
+                <b>SMTP, IMAP, POP3:</b>
+                <li><b>SMTP:</b> Envio de e-mails.</li>
+                <li><b>IMAP:</b> Leitura de e-mails no servidor.</li>
+                <li><b>POP3:</b> Transferência de e-mails para o cliente.</li>
+                <b>ICMP:</b>
+                <li> Diagnóstico de redes. Ex.: Ping, traceroute.</li>
+                <b>SNMP:</b>
+                <li> Monitoramento de dispositivos de rede.</li>
+            </ul>
+        </section>
+
+        <section id="ferramentas-praticas">
+            <h2>Ferramentas Práticas</h2>
+            <ul>
+               <b>Wireshark:</b>
+               <li><b>Função:</b> Análise de tráfego em redes.</li>
+               <li><b>Usos:</b> Solução de problemas , Detecção de ataques.</li>
+
+               <b>Nmap:</b>
+               <li><b>Função:</b> Mapeamento , escaneamento de portas e redes.</li>
+               <li><b>Modos:</b> Escaneamento rápido (ping) , detecção de sistemas operacionais.</li>
+
+               <b>Netcat:</b>
+               <li><b>Função:</b> Depuração e teste de conexões TCP/UDP.</li>
+               <li><b>Exemplo:</b> Estabelecer uma conexão de bate-papo simples.</li> 
+            </ul>
+        </section>
+
+        <section id="topologias-de-rede">
+            <h2>Topologias de Rede</h2>
+            <p>As principais são:</p>
+            <ul>
+                <li><b>Estrela:</b> Dispositivos conectados a um ponto central (switch/roteador).</li>
+                <li><b>Barramento:</b> Dispositivos compartilhando um único cabo.</li>
+                <li><b>Anel:</b> Dados trafegam em um círculo , passando por cada dispositivo.</li>
+            </ul>
+        </section>
+
+        <section id="ciberseguranca">
+            <h2>Cibersegurança em Redes</h2>
+            <li><b>Hardening:</b> Reforço da segurança (atualizações, desativação de serviços desnecessários).</li>
+            <li><b>IDS/IPS:</b> Sistemas de detecção e prevenção de intrusão.</li>
+            <li><b>Firewalls:</b>  </li>
+            <li><b>Ataques Comuns:</b>
+                <p>MITM (man-in-the-middle).</p>
+                <p>ARP Spoofing</p>
+            </li>
+
+              <h3>Implementação de IDS/IPS no Kali Linux</h3>
+
+    <p>Os <b>Sistemas de Detecção e Prevenção de Intrusão (IDS/IPS)</b> ajudam a monitorar e proteger redes contra ataques. 
+    O Snort é um dos IDS/IPS mais populares e amplamente utilizado na cibersegurança.</p>
+
+    <h4>1️⃣ Instalando o Snort no Kali Linux</h4>
+    <p>Para instalar o Snort no Kali Linux, abra o terminal e execute:</p>
+    <pre>
+    <code>sudo apt update && sudo apt install snort -y</code>
+    </pre>
+
+    <p>Durante a instalação, pode ser solicitado para inserir o endereço de rede da sua máquina. Se não souber qual é, use o seguinte comando para descobrir:</p>
+    <pre>
+    <code>ip a</code>
+    </pre>
+
+    <p>Isso listará as interfaces de rede disponíveis, como <code>eth0</code>, <code>wlan0</code>, etc. Anote a interface conectada à sua rede.</p>
+
+    <h4>2️⃣ Configurando o Snort para Monitorar a Rede</h4>
+    <p>Edite o arquivo de configuração do Snort para definir a faixa de IPs da rede que será monitorada:</p>
+    <pre>
+    <code>sudo nano /etc/snort/snort.conf</code>
+    </pre>
+
+    <p>Dentro do arquivo, procure a linha:</p>
+    <pre>
+    <code>var HOME_NET any</code>
+    </pre>
+    <p>E altere para a faixa de IPs da sua rede. Por exemplo, se sua rede usa o intervalo de <code>192.168.1.0/24</code>, modifique para:</p>
+    <pre>
+    <code>var HOME_NET 192.168.1.0/24</code>
+    </pre>
+
+    <p>Salve e saia pressionando <code>CTRL + X</code>, depois <code>Y</code> e <code>ENTER</code>.</p>
+
+    <h4>3️⃣ Testando Snort como IDS (Detecção de Ataques)</h4>
+    <p>Agora vamos testar o Snort operando como IDS, apenas detectando ataques sem bloqueá-los. Execute o seguinte comando:</p>
+    <pre>
+    <code>sudo snort -A console -i wlan0 -c /etc/snort/snort.conf -l /var/log/snort</code>
+    </pre>
+
+    <p>⚠️ **Substitua <code>wlan0</code> pela interface de rede correta!**</p>
+    <p>Se um ataque for detectado, o Snort exibirá alertas no terminal.</p>
+
+    <h4>4️⃣ Convertendo Snort em um IPS (Prevenção de Ataques)</h4>
+    <p>Se quiser que o Snort bloqueie pacotes maliciosos em vez de apenas alertar, primeiro instale o <b>iptables-persistent</b> para salvar regras de firewall:</p>
+    <pre>
+    <code>sudo apt install iptables-persistent -y</code>
+    </pre>
+
+    <p>Agora, execute o Snort no modo IPS:</p>
+    <pre>
+    <code>sudo snort -Q --daq afpacket -i wlan0:eth0 -c /etc/snort/snort.conf</code>
+    </pre>
+
+    <p><b>Explicação:</b></p>
+    <ul>
+        <li><code>-Q</code> ativa o modo IPS.</li>
+        <li><code>--daq afpacket</code> permite que o Snort analise pacotes diretamente.</li>
+        <li><code>-i wlan0:eth0</code> define a interface de entrada e saída.</li>
+    </ul>
+
+    <p>Agora, o Snort bloqueará automaticamente pacotes maliciosos!</p>
+
+    <h4>5️⃣ Analisando Alertas</h4>
+    <p>Os logs do Snort são armazenados em:</p>
+    <pre>
+    <code>/var/log/snort/alert</code>
+    </pre>
+    <p>Para visualizar os alertas gerados, use:</p>
+    <pre>
+    <code>cat /var/log/snort/alert</code>
+    </pre>
+
+    <h4>📌 Extra: Criando Regras Personalizadas</h4>
+    <p>Você pode criar suas próprias regras para detectar ataques específicos. Por exemplo, para detectar pings maliciosos (ICMP):</p>
+
+    <p>Edite o arquivo de regras do Snort:</p>
+    <pre>
+    <code>sudo nano /etc/snort/rules/local.rules</code>
+    </pre>
+
+    <p>Adicione a seguinte regra:</p>
+    <pre>
+    <code>alert icmp any any -> $HOME_NET any (msg:"Ping Detectado"; sid:1000001;)</code>
+    </pre>
+
+    <p>Agora, edite o arquivo de configuração do Snort para garantir que ele carregue essas regras:</p>
+    <pre>
+    <code>include $RULE_PATH/local.rules</code>
+    </pre>
+
+    <p>Salve e reinicie o Snort:</p>
+    <pre>
+    <code>sudo systemctl restart snort</code>
+    </pre>
+
+    <p>Agora, qualquer **ping recebido na sua rede** será detectado!</p>
+
+    <h4>✅ Conclusão</h4>
+    <p>Agora você tem o Snort operando como um IDS para detectar ataques e pode convertê-lo em um IPS para bloquear ameaças automaticamente.</p>
+   
+    <p>✅ **IDS:** Apenas detecta ataques e gera alertas.<br>
+       ✅ **IPS:** Bloqueia tráfego malicioso em tempo real.<br>
+    </p>
+
+    <p>Se quiser explorar **Suricata** ou **Zeek**, que são alternativas modernas ao Snort, posso te guiar na instalação e configuração dessas ferramentas! 🚀</p>
+</section>
+ 
+
+        <section id="virtualizacao">
+            <h2>Virtualização e Redes</h2>
+            <p>Ferramentas como GNS3 e Packet Tracer ajudam na criação de redes simuladas para aprendizado e testes.</p>
+        </section>
+
+        <section id="certificacoes">
+            <h2>Certificações e Prática</h2>
+            <p>Certificações como CompTIA Network+ e CCNA validam conhecimentos técnicos em redes e segurança.</p>
+        </section>
+
+        <section id="wan_lan">
+    <h2>WAN & LAN</h2>
+    
+    <p><strong>WAN (Wide Area Network)</strong>: Rede de longa distância que conecta diferentes locais geográficos.</p>
+    <p>Exemplo: a internet.</p>
+
+    <p><strong>LAN (Local Area Network)</strong>: Rede local que conecta dispositivos dentro de um espaço pequeno, como uma casa, escritório ou escola.</p>
+
+    <h3>Como funcionam?</h3>
+
+    <h4>LAN (Local Area Network) - Rede Local</h4>
+    <p>A <strong>LAN</strong> é uma rede privada que conecta dispositivos dentro de um espaço pequeno, como uma casa, empresa ou escola. Ela pode ser <strong>cabeada (Ethernet)</strong> ou <strong>sem fio (Wi-Fi)</strong>.</p>
+
+    <p><strong>Funcionamento:</strong></p>
+    <ul>
+        <li>Um <strong>roteador</strong> ou <strong>switch</strong> conecta todos os dispositivos na rede.</li>
+        <li>Se for cabeada, os dispositivos usam <strong>cabos Ethernet</strong>.</li>
+        <li>Se for sem fio, os dispositivos se conectam via <strong>Wi-Fi</strong> através do roteador.</li>
+        <li>Dispositivos dentro da LAN podem se comunicar diretamente (compartilhamento de arquivos, impressão, etc.).</li>
+    </ul>
+
+    <p><strong>Exemplos de LAN:</strong></p>
+    <ul>
+        <li>Rede Wi-Fi de uma casa ou empresa.</li>
+        <li>Laboratórios de informática em escolas e universidades.</li>
+        <li>Escritórios com PCs conectados a um switch.</li>
+    </ul>
+
+    <h4>WAN (Wide Area Network) - Rede de Longa Distância</h4>
+    <p>A <strong>WAN</strong> conecta várias LANs ao redor do mundo. A internet é um exemplo de WAN, pois conecta milhões de redes locais.</p>
+
+    <p><strong>Funcionamento:</strong></p>
+    <ul>
+        <li>Usa infraestrutura de telecomunicações como <strong>fibra ótica, satélites, redes móveis (3G, 4G, 5G)</strong>.</li>
+        <li>As LANs dentro de uma empresa podem ser interconectadas por uma WAN.</li>
+        <li>Os dados trafegam por <strong>roteadores e provedores de internet (ISPs)</strong>.</li>
+        <li>As WANs são <strong>mais lentas e caras</strong> que as LANs.</li>
+    </ul>
+
+    <p><strong>Exemplos de WAN:</strong></p>
+    <ul>
+        <li>A internet, que conecta LANs de todo o mundo.</li>
+        <li>Redes corporativas que conectam filiais em diferentes cidades ou países.</li>
+        <li>Redes de universidades que interligam vários campi.</li>
+    </ul>
+
+    <h3>Resumo das Diferenças</h3>
+
+    <table border="1">
+        <tr>
+            <th>Característica</th>
+            <th>LAN (Rede Local)</th>
+            <th>WAN (Rede de Longa Distância)</th>
+        </tr>
+        <tr>
+            <td><strong>Alcance</strong></td>
+            <td>Pequeno (casa, empresa)</td>
+            <td>Grande (mundo todo)</td>
+        </tr>
+        <tr>
+            <td><strong>Velocidade</strong></td>
+            <td>Alta (até 10 Gbps)</td>
+            <td>Variável (depende do provedor)</td>
+        </tr>
+        <tr>
+            <td><strong>Custo</strong></td>
+            <td>Baixo (infraestrutura local)</td>
+            <td>Alto (provedores de internet)</td>
+        </tr>
+        <tr>
+            <td><strong>Segurança</strong></td>
+            <td>Mais fácil de proteger</td>
+            <td>Maior risco, pois envolve terceiros</td>
+        </tr>
+    </table>
+</section>   
+          
+    </main>
+    <footer>
+        <p>&copy; 2025 - Guia de Infraestrutura de Redes</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,90 @@
+body {
+  background-color: black;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #001f3f; /* azul escuro */
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  color: cyan;
+  margin: 0;
+}
+
+.container {
+  border: 2px solid cyan;
+  border-radius: 10px;
+  width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+section {
+  border: 1px solid cyan;
+  border-radius: 10px;
+  width: 900px;
+  margin: 20px auto;
+  padding: 15px;
+}
+
+h2, h3 {
+  color: cyan;
+}
+
+p {
+  color: white;
+}
+
+pre {
+  background-color: #333;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+code {
+  color: limegreen;
+  font-weight: bold;
+}
+
+.componente {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.imagem-hardware {
+  width: 300px;
+  height: auto;
+  border: 1px solid cyan;
+  border-radius: 8px;
+}
+
+.componente p {
+  flex: 1;
+  color: white;
+  margin: 0;
+}
+
+a {
+  color: limegreen;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #001f3f;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+}

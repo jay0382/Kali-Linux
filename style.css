@@ -1,0 +1,92 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #001f3f; /* Azul escuro */
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: cyan;
+    margin: 0;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: limegreen;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.grid-layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    flex-wrap: nowrap; /* Evita quebra de linha */
+}
+
+/* Lado esquerdo e direito */
+.lateral {
+    width: 25%;
+    padding: 10px;
+}
+
+.lateral h2 a {
+    color: limegreen;
+    text-decoration: none;
+}
+
+.lateral h2 a:hover {
+    text-decoration: underline;
+}
+
+.central {
+    width: 50%; /* ocupa mais espaço central */
+    text-align: center;
+    padding: 10px;
+}
+
+.central p {
+    font-size: 1.2em;
+}
+
+/* Imagens (abaixo da introdução) */
+.imagens {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.imagens h2 a {
+    color: limegreen;
+    text-decoration: none;
+}
+
+.imagens h2 a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #001f3f;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação: Introdução ao Banco de Dados</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Documentação: Introdução ao Banco de Dados</h1>
+    <p>Esta documentação descreve as etapas para criar e configurar um banco de dados intermediário, com suporte a login, utilizando MySQL, PHP e HTML.</p>
+
+     <div class="section">
+
+       <h2>Estruturas do Banco de Dados</h2>
+        <img src="images/1.png" alt="status-mysql" width="1000" height="500" class="image-style">
+     </div>
+
+      <div class="section">
+
+       <h2>Criar um script PHP para registrar o usuário no banco de dados.</h2>
+        <img src="images/2.png" alt="status-mysql" width="1000" height="500" class="image-style">
+     </div>
+
+     <div class="section">
+
+       <h2>Adicione a funcionalidade para verificar as credenciais e carregar o progresso do usuário.</h2>
+        <img src="images/3.png" alt="status-mysql" width="1000" height="500" class="image-style">
+     </div>
+
+      <div class="section">
+
+       <h2>Criar Arquivo dashboard.php que tratará do carregamento dos progressos dos tópicos.</h2>
+        <img src="images/4.png" alt="status-mysql" width="1000" height="500" class="image-style">
+     </div>
+     
+      <div class="section">
+
+       <h2>Criar o código conexão.php , que conectará o banco de dados com os formulários do site.</h2>
+        <img src="images/5.png" alt="status-mysql" width="1000" height="500" class="image-style">
+     </div>
+ 
+       <div class="section_java">
+
+       <h2>Criar o código java.script para o formulaŕio de login e criar cota se conectar com o backend.</h2>
+        <img src="images/6.png" alt="status-mysql" width="1000" height="500" class="image-style">
+     </div>
+
+     <div class="section_java1">
+        <img src="images/7.png" alt="status-mysql" width="1000" height="500" class="image-style">
+     </div>
+
+     <div class="section_java2">
+        <img src="images/8.png" alt="status-mysql" width="1000" height="500" class="image-style">
+     </div>
+
+     <div class="section_java3">
+        <img src="images/9.png" alt="status-mysql" width="1000" height="500" class="image-style">
+     </div>
+</body>
+</html>

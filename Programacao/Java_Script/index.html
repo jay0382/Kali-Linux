@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Introdução ao JavaScript</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Guia Completo de JavaScript</h1>
+        <p>JavaScript é uma linguagem de programação poderosa usada para criar interatividade em páginas web.</p>
+        <p>Para mais informações sobre JavaScript, acesse a página do w3schools</p>
+        <a href="https://www.w3schools.com/js/js_intro.asp" target="_blank">Viste W3shools</a> 
+
+        <!-- Introdução -->
+        <section class="category">
+            <h2>1. Introdução ao JavaScript</h2>
+            <p>JavaScript é uma linguagem interpretada usada principalmente no desenvolvimento web para tornar as páginas interativas.</p>
+            <pre><code>// Exemplo básico de JavaScript
+console.log("Olá, JavaScript!");</code></pre>
+        </section>
+
+        <!-- Variáveis -->
+        <section class="category">
+            <h2>2. Variáveis: var, let e const</h2>
+            <p>JavaScript tem três formas principais de declarar variáveis.</p>
+            <ul>
+                <li><strong>var</strong>: Escopo global ou de função.</li>
+                <li><strong>let</strong>: Escopo de bloco (recomendado).</li>
+                <li><strong>const</strong>: Variável imutável.</li>
+            </ul>
+            <pre><code>var nome = "João";  // Pode ser redeclarado
+let idade = 25;  // Pode ser modificado, mas não redeclarado no mesmo escopo
+const cidade = "São Paulo";  // Não pode ser alterado</code></pre>
+        </section>
+
+        <!-- Estruturas de Controle -->
+        <section class="category">
+            <h2>3. Estruturas de Controle: if, else, while</h2>
+            <p>Podemos controlar o fluxo do código com `if`, `else` e loops.</p>
+            <pre><code>let numero = 10;
+if (numero > 5) {
+    console.log("O número é maior que 5");
+} else {
+    console.log("O número é menor ou igual a 5");
+}
+
+let contador = 0;
+while (contador < 5) {
+    console.log("Contagem: " + contador);
+    contador++;
+}</code></pre>
+        </section>
+
+        <!-- Funções -->
+        <section class="category">
+            <h2>4. Funções e Retorno de Valores</h2>
+            <p>Funções permitem a reutilização de código.</p>
+            <pre><code>function somar(a, b) {
+    return a + b;
+}
+console.log(somar(5, 3));</code></pre>
+        </section>
+
+        <!-- Manipulação do DOM -->
+        <section class="category">
+            <h2>5. Manipulação do DOM</h2>
+            <p>Podemos modificar o HTML com JavaScript.</p>
+            <pre><code>document.getElementById("meuElemento").innerText = "Novo texto";</code></pre>
+        </section>
+
+        <!-- Eventos -->
+        <section class="category">
+            <h2>6. Eventos e Interatividade</h2>
+            <p>Eventos permitem interações do usuário.</p>
+            <pre><code>document.getElementById("botao").addEventListener("click", function() {
+    alert("Botão clicado!");
+});</code></pre>
+        </section>
+
+        <!-- Promises e Async/Await -->
+        <section class="category">
+            <h2>7. Promises e Async/Await</h2>
+            <p>Promises são usadas para operações assíncronas.</p>
+            <pre><code>async function buscarDados() {
+    let resposta = await fetch("https://api.exemplo.com/dados");
+    let dados = await resposta.json();
+    console.log(dados);
+}</code></pre>
+        </section>
+    </div>
+</body>
+</html>

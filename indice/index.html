@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comandos Kali Linux</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Comandos Kali Linux</h1>
+</header>
+
+<div class="container">
+
+<div class="category" id="indice">
+    <h2>Índice</h2>
+    <ul class="commands">
+        <li><a href="#caminhos-diretorios">Caminhos Para Diretórios Importantes no Kali Linux</a></li>
+        <li><a href="#manipulacao-diretorios">Manipulação de Diretórios e Arquivos</a></li>
+        <li><a href="#copiar-mover">Passos para Copiar ou Mover Arquivos ou Diretórios para Mídias Externas</a></li>
+        <li><a href="#permissoes-arquivos">Permissões para Arquivos</a></li>
+        <li><a href="#comandos-rede">Comandos de Rede</a></li>
+        <li><a href="#outros">Outros</a></li>
+        <li><a href="#logs_system">Journalctl</a></li>
+        <li><a href="Firewall_Kali_Linux">Firewall Kali Linux</a></li>
+        <li><a href="Servicos_Kali_Linux">Serviços e Portas no Kali Linux</a></li>
+        <li><a href="#apache2">Apache2</a></li>
+        <li><a href="#noip-cgnat">Soluções para No-IP e CGNAT</a></li>
+        <li><a href="#nova_particao_com_criptografi">Como Criar uma Nova Partição com Criptografia no Linux</a></li>
+        <li><a href="#nova_particao">Como Criar uma Nova Partição no Linux (Máquina ou Mídia Removível)</a></li>
+        <li><a href="#formatacao_midia">Formatar um pendrive ou qualquer mídia removível no Linux</a></li>
+        <li><a href="#clamav">Escaneamento de Mídias Removíveis com Clamav</a></li>
+        <li><a href="#esteganografia">Esteganografia: O que é e como funciona?</a></li>
+        <li><a href="#explicacao-codigo">Explicação do Código</a></li>
+        <li><a href="#steghide">Steghide</a></li>
+        <li><a href="Programacao">Programação</a></li>
+        <li><a href="MySQL/index.html">MySQL</a></li>
+        <li><a href="formularios_login_prontos">Formulários de Login Prontos</a></li>
+        <li><a href="ciberseguranca">Cibersegurança</a></li> 
+   </ul>
+</div>
+
+    <!-- Categoria: Caminhos Para Diretórios Importantes no Kali Linux -->
+    <div class="category" id="caminhos-diretorios">         
+            <h2>Caminhos Para Diretórios Importantes no Kali Linux</h2>
+        <ul class="commands">
+            <li><a href="#" onclick="showCommandsInfo('cd /usr/share/backgrounds/')"><code> cd /usr/share/backgrounds</code></a> - Diretório de armazenamento das imagens do fundo de tela. Obs: Entrar com usuário root; <strong>sudo su</strong>.</li>
+            <li><a href="#" onclick="showCommandsInfo('cd /var/lib/mysql/')"><code> cd /var/lib/mysql/</code></a> - Diretório do banco de dados mysql local.</li>
+            <li><a href="#" onclick="showCommandsInfo('cd /etc/')"><code>cd /etc</code></a> - Diretório de arquivos de configuração do sistema.</li>
+            <li><a href="#" onclick="showCommandsInfo('cd /var/log/')"><code>cd /var/log</code></a> - Diretório dos logs do sistema (auditoria e eventos).</li>
+            <li><a href="#" onclick="showCommandsInfo('cd /usr/share/wordlists/')"><code>cd /usr/share/wordlists</code></a> - Listas de senhas (wordlists) como rockyou.txt.</li>
+            <li><a href="#" onclick="showCommandsInfo('cd /usr/bin/')"><code>cd /usr/bin</code></a> - Executáveis dos comandos instalados no sistema.</li>
+            <li><a href="#" onclick="showCommandsInfo('cd /home/usuário/')"><code>cd /home/usuário</code></a> - Diretório pessoal do usuário comum.</li>
+            <li><a href="#" onclick="showCommandsInfo('cd /root/')"><code>cd /root</code></a> - Diretório pessoal do usuário root (superusuário).</li>
+            <li><a href="#" onclick="showCommandsInfo('cd /tmp/')"><code>cd /tmp</code></a> - Diretório temporário. Arquivos são apagados ao reiniciar.</li>
+            <li><a href="#" onclick="showCommandsInfo('cd /opt/')"><code>cd /opt</code></a> - Diretório para softwares instalados manualmente.</li>
+            <li><a href="#" onclick="showCommandsInfo('cd /mnt/')"><code>cd /mnt</code></a> - Montagem manual de discos e pendrives.</li>
+            <li><a href="#" onclick="showCommandsInfo('cd /media/')"><code>cd /media</code></a> - Montagem automática de mídias removíveis.</li>
+            <li><a href="#" onclick="showCommandsInfo('cd /boot/')"><code>cd /boot</code></a> - Arquivos de inicialização do sistema (GRUB, kernel).</li>
+            <li><a href="#" onclick="showCommandsInfo('cd /lib/modules/$(uname -r)/')"><code>cd /lib/modules/$(uname -r)/</code></a> - Módulos do kernel atual.</li>
+            <li><a href="#" onclick="showCommandsInfo('cd /var/www/html/')"><code>cd /var/www/html</code></a> - Diretório padrão para páginas web (Apache).</li>
+            <li><a href="#" onclick="showCommandsInfo('cd /etc/network/')"><code>cd /etc/network</code></a> - Configurações de rede e interfaces.</li>
+            <li><a href="#" onclick="showCommandsInfo('cd /etc/apt/')"><code>cd /etc/apt</code></a> - Configuração do gerenciador de pacotes apt.</li>
+            <li><a href="#" onclick="showCommandsInfo('cd /usr/share/icons/')"><code>cd /usr/share/icons</code></a> - Ícones do sistema e temas de ícones.</li>
+        </ul>
+    </div>
+    <!-- Categoria: Manipulação de Arquivos -->
+    <div class="category" id="manipulacao-diretorios">
+        <h2>Manipulação de Diretórios e Arquivos</h2>
+        <ul class="commands">
+            <li><a href="#" onclick="showCommandInfo('ls')"><code>ls</code></a> - Lista os arquivos e diretórios</li>
+            <li><a href="#" onclick="showCommandInfo('ls -l')"><code>ls -l</code></a> - Lista os arquivos e diretórios com detalhes como: permissões, proprietário, grupos, etc</li>     
+            <li><a href="#" onclick="showCommandInfo('cd [diretório]')"><code>cd [diretório]</code></a> - Muda para o diretório especificado</li>
+            <li><a href="#" onclick="showCommandInfo('mkdir [nome]')"><code>mkdir [nome]</code></a> - Cria um novo diretório</li>
+            <li><a href="#" onclick="showCommandInfo('rm [arquivo]')"><code>rm [arquivo]</code></a> - Remove um arquivo</li>
+            <li><a href="#" onclick="showCommandInfo('rmdir [diretório]')"><code>rmdir [diretório]</code></a> - Remove um diretório vazio</li>
+            <li><a href="#" onclick="showCommandInfo('rm -r [diretório e seus conteúdos]')"><code>rm -r [diretório e seus conteúdos]</code></a> - Remove um diretório, subdiretórios e arquivos</li> 
+            <li><a href="#" onclick="showCommandInfo('mv [nome arquivo ou diretório][novo nome arquivo ou diretório]')"><code>mv [nome arquivo ou diretório][novo nome arquivo ou diretório]</code></a> - Renomeia um Diretório ou Arquivo</li>
+            <li><a href="#" onclick="showCommandInfo('mv [nome arquivo ou diretório][novo diretório]/')"><code>mv [nome arquivo ou diretório][subdiretório/]</code></a> - Move um arquivo ou diretório para um subdiretório dentro do diretório atual</li>
+            <li><a href="#" onclick="showCommandInfo('mv [nome arquivo ou diretório /caminho/do/destino/]')"><code>mv [nome arquivo ou diretório /caminho/do/destino/]</code></a> - Move um arquivo ou diretório do diretório atual, para outro diretório</li>      
+            <li><a href="#" onclick="showCommandInfo('mv [caminho/de/origem/arquivo ou diretório /caminho/do/destino/]')"><code>mv [caminho/de/origem/arquivo ou diretório /caminho/do/destino]</code></a> - Move um arquivo ou diretório, para um diretório específico fora do diretório atual</li>
+            <li><a href="#" onclick="showCommandInfo('mv *[arquivo /caminho/do/destino]')"><code>mv *[arquivo /caminho/do/destino]</code></a> - Move todos os arquivos do diretório atual com a mesma extensão, como mp3, mp4, pdf, txt, etc, para outro diretório </li>
+            <li><a href="#" onclick="showCommandInfo('mv * [/caminho/do/destino]')"><code>mv * [/caminho/do/destino]</code></a> - Move todos os arquivos do diretório atual, para outro diretório</li>
+            <li><a href="#" onclick="showCommandInfo('mv [/caminho/de/origem/* /caminho/de/destino]')"><code>mv /caminho/de/origem/* /caminho/de/destino]</code></a> -  Move todos arquivos e subdiretórios de um diretório específico fora do atual</li>
+            <li><a href="#" onclick="showCommandInfo('cat [nome_arquivo]')"><code>cat [nome_arquivo]</code></a> - Exibe conteúdo de um arquivo</li>
+            <li><a href="#" onclick="showCommandInfo('echo mensagem > [arquivo.txt]')"><code>echo "mensagem" > [arquivo.txt]</code></a> - Cria um arquivo txt.</li>
+            <li><a href="#" onclick="showCommandInfo('echo Esta é uma mensagem secreta | sudo tee arquivo_secreto.txt > /dev/null && sudo chmod 666 arquivo_secreto.txt')"><code>echo "mensagem" | sudo tee arquivo_secreto.txt > /dev/null && sudo chmod 666 arquivo_secreto.txt</code></a> - Cria um arquivo txt com conteúdo e ajusta as permissões automaticamente.</li>
+            <li><a href="#" onclick="showCommandInfo('echo Esta é uma mensagem secreta | sudo tee -a arquivo_secreto.txt > /dev/null && sudo chmod 666 arquivo_secreto.txt')"><code>echo "mensagem" | sudo tee -a arquivo_secreto.txt > /dev/null && sudo chmod 666 arquivo_secreto.txt</code></a> - adiciona outra linha ao arquivo txt e ajusta as permissões automaticamente.</li>
+            <li><a href="#" onclick="showCommandInfo('open [nome_arquivo]')"><code> open [nome_arquivo]</code></a> - Abre um arquivo em modo gráfico.</li>
+        </ul>
+    </div>
+  
+    <!-- Categoria: Manipulação de Arquivos Especiais -->
+    <div class="category1" id="copiar-mover">
+         <h2>Passos para Copiar ou Mover Arquivos ou Diretórios para Mídias Externas</h2>
+    <ol>
+        <li>
+            <strong>Identifique a mídia externa conectada:</strong><br>
+            Use o comando:
+            <pre><code>lsblk</code></pre>
+            Localize o dispositivo correspondente, por exemplo: <code>/media/jaison/Seagate Expansion Drive</code>.
+        </li>
+        <li>
+            <strong>Verifique se a mídia está montada:</strong><br>
+            Confirme se o ponto de montagem aparece no comando <code>lsblk</code>. Se necessário, monte manualmente:
+            <pre><code>sudo mount /dev/sdX1 /mnt</code></pre>
+            Substitua <code>/dev/sdX1</code> pelo identificador do seu dispositivo.
+        </li>
+        <li>
+            <strong>Copie os arquivos ou diretórios desejados:</strong><br>
+            Para copiar os arquivos e preservar os originais, use o comando:
+            <pre><code>sudo cp -r /var/www/html/* "/media/jaison/Seagate Expansion Drive/"</code></pre>
+            O <code>-r</code> garante que subdiretórios e seus conteúdos sejam copiados.
+        </li>
+        <li>
+            <strong>Mova os arquivos ou diretórios desejados:</strong><br>
+            Use o comando:
+            <pre><code>sudo mv /var/www/html/* "/media/jaison/Seagate Expansion Drive/"</code></pre>
+            Esse comando move todo o conteúdo do diretório <code>/var/www/html/</code> para o HD externo.
+        </li>
+        <li>
+            <strong>Evitar sobrescritas:</strong><br>
+            Para evitar sobrescritas, use as opções <code>-i</code>:
+            <ul>
+                <li><strong>Para copiar:</strong>
+                    <pre><code>sudo cp -ri /var/www/html/* "/media/jaison/Seagate Expansion Drive/"</code></pre>
+                </li>
+                <li><strong>Para mover:</strong>
+                    <pre><code>sudo mv -i /var/www/html/* "/media/jaison/Seagate Expansion Drive/"</code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <strong>Verifique os arquivos copiados ou movidos:</strong><br>
+            Certifique-se de que os arquivos estão no HD externo:
+            <pre><code>ls "/media/jaison/Seagate Expansion Drive/"</code></pre>
+        </li>
+        <li>
+            <strong>Verifique se há arquivos problemáticos:</strong><br>
+            Certos sistemas de arquivos, como FAT32 ou exFAT, não permitem nomes de arquivos com caracteres inválidos. Renomeie arquivos problemáticos antes de copiá-los ou movê-los:
+            <pre><code>mv /var/www/html/keylogger.py. /var/www/html/keylogger.py</code></pre>
+        </li>
+    </ol>
+</div>        
+
+    <!-- Categoria: Permissões para Arquivos -->
+    <div class="category" id="permissoes-arquivos">
+        <h2>Permissões para Arquivos</h2>
+        <ul class="commands">
+            <li><a href="#" onclick="showCommandInfo('chmod +x [arquivo]')"><code>chmod +x [arquivo]</code></a> - Torna o arquivo executável (adiciona permissão de execução)</li>
+            <li><a href="#" onclick="showCommandInfo('chmod -x [arquivo]')"><code>chmod -x [arquivo]</code></a> - Remove a permissão de execução do arquivo</li>
+            <li><a href="#" onclick="showCommandInfo('chmod 600 [arquivo]')"><code>chmod 600 [arquivo]</code></a> - Permissão apenas para o dono do arquivo (leitura e escrita)</li>
+            <li><a href="#" onclick="showCommandInfo('chmod 700 [arquivo]')"><code>chmod 700 [arquivo]</code></a> - Permissão total para o dono do arquivo, ninguém mais acessa</li>
+            <li><a href="#" onclick="showCommandInfo('chmod 644 [arquivo]')"><code>chmod 644 [arquivo]</code></a> - Permissão de leitura do arquivo para todos, mas escrita só para o dono</li>
+            <li><a href="#" onclick="showCommandInfo('chmod 755 [arquivo]')"><code>chmod 755 [arquivo]</code></a> - Permissão total para o dono do arquivo, leitura e execução para os outros</li>
+            <li><a href="#" onclick="showCommandInfo('chmod 777 [arquivo]')"><code>chmod 777 [arquivo]</code></a> - Permissão total para todos (leitura, escrita e execução do arquivo)</li>
+            <li><a href="#" onclick="showCommandInfo('chmod a+x [arquivo]')"><code>chmod a+x [arquivo]</code></a> - Adiciona permissão de execução do arquivo para todos os usuários</li>
+            <li><a href="#" onclick="showCommandInfo('chmod g+r [arquivo]')"><code>chmod g+r [arquivo]</code></a> - Adiciona permissão de leitura do arquivo para o grupo</li>
+            <li><a href="#" onclick="showCommandInfo('chmod o-w [arquivo]')"><code>chmod o-w [arquivo]</code></a> - Remove permissão de escrita de outros usuários</li>
+            <li><a href="#" onclick="showCommandInfo('chmod u+x [arquivo]')"><code>chmod u+x [arquivo]</code></a> - Adiciona permissão de de execução do arquivo apenas para o dono</li>
+            <li><a href="#" onclick="showCommandInfo('chmod 644 *.[arquivo]')"><code>chmod 644 *.[arquivo]</code></a> - Concede permissão 644 a todos os arquivos com mesma extensão , como mp3 , mp4 , jpeg , jpg ,pdf , etc.</li> 
+        </ul>
+    </div>
+
+    <!-- Categoria: Comandos de Rede -->
+    <div class="category" id="comandos-rede">
+        <h2>Comandos de Rede</h2>
+        <ul class="commands">
+            <li><a href="#" onclick="showCommandInfo('ifconfig')"><code>ifconfig</code></a> - Mostra informações das interfaces de rede</li>
+            <li><a href="#" onclick="showCommandInfo('ping [endereço]')"><code>ping [endereço]</code></a> - Testa conectividade com um endereço</li>
+            <li><a href="#" onclick="showCommandInfo('netstat')"><code>netstat</code></a> - Mostra conexões de rede ativas</li>
+            <li><a href="#" onclick="showCommandInfo('nmap [alvo]')"><code>nmap [alvo]</code></a> - Realiza varredura de portas em um alvo</li>
+            <li><a href="#" onclick="showCommandInfo('curl [URL]')"><code>curl [URL]</code></a> - Faz requisições HTTP</li>
+            <li><a href="#" onclick="showCommandInfo('airmon-ng stop wlan()mon')"><code>airmon-ng stop wlan()mon</code></a> - Desativa interface em modo monitor</li>
+            <li><a href="#" onclick="showCommandInfo('systemctl restart networking')"><code>systemctl restart networking</code></a> - Reinicia todos os serviços de rede e recarrega as interfaces.</li>
+            <li><a href="#" onclick="showCommandInfo('ip route')"><code>ip route</code></a> - Encontrar o IP do rooteador . Está na linha <strong>default via</strong>. Ex: default via 192.168.1.1 dev eth0.</li>
+            <li><a href="#" onclick="showCommandInfo('curl ifconfig me')"><code>curl ifconfig me</code></a> - Descobrir o IP Público.</li>
+            <li><a href="#" onclick="showCommandInfo('curl icanhazip.com')"><code>curl icanhazip.com</code></a> - Também é usado para descobrir o IP Público.</li>
+            <li><a href="#" onclick="showCommandInfo('wget -qO- ipecho.net/plain')"><code>wget -qO- ipecho.net/plain</code></a> - É outra forma de descobrir o IP Público.</li>
+            <li><a href="#" onclick="showCommandInfo('netdiscover -r [IP ROTEADOR]/24')"><code>netdiscover -r [IP ROTEADOR]/24</code></a> - Descobre dispositivos na rede local.</li>
+            <li><a href="#" onclick="showCommandInfo('netdiscover -i [INTERFACE REDE] -r [IP ROTEADOR]/24')"><code>netdiscover -i [INTERFACE REDE] -r [IP ROTEADOR]/24</code></a> - Usa interface específica.</li>
+            <li><a href="#" onclick="showCommandInfo('netdiscover -r [INTERFACE REDE] [IP ROTEADOR]/24 -c 0')"><code>netdiscover -r [INTERFACE REDE] [IP ROTEADOR]/24 -c 0</code></a> -  Varredura contínua , roda indefinidamente , útil para monitorar novas conexões.</li> 
+        </ul>
+    </div>
+
+    <!-- Outras Categorias -->
+    <div class="category" id="outros">
+        <h2>Outros</h2>
+        <ul class="commands">
+            <li><a href="#" onclick="showCommandInfo('man [comando]')"><code>man [comando]</code></a> - Exibe o manual do comando</li>
+            <li><a href="#" onclick="showCommandInfo('history')"><code>history</code></a> - Lista comandos executados</li>
+            <li><a href="#" onclick="showCommandInfo('sudo [comando]')"><code>sudo [comando]</code></a> - Executa um comando como administrador</li>
+            <li><a href="#" onclick="showCommandInfo('exit')"><code>exit</code></a> - Encerra a sessão atual</li>
+        </ul>
+    </div>
+
+    <div class="category1" id="logs_system">
+        <h2>journalctl</h2> 
+  <p>O comando <code>journalctl</code> é extremamente útil para monitorar e visualizar todos os logs gerados pelo <strong>systemd</strong> e pelos serviços do sistema, como <strong>autenticação</strong>, <strong>rede</strong>, <strong>serviços do sistema</strong>, <strong>agendamentos do cron</strong>, e até mesmo <strong>erros e alertas</strong>.</p>
+
+  <p>Aqui estão algumas das funcionalidades mais comuns do <code>journalctl</code>:</p>
+
+  <ol>
+    <li><strong>Ver todos os logs desde o início</strong>:<br>
+      <pre><code>journalctl</code></pre> (sem opções) exibe todos os logs desde que o sistema foi iniciado.
+    </li>
+    <li><strong>Ver logs mais recentes</strong>:<br>
+      <pre><code>sudo journalctl -xe</code></pre>
+    </li>
+    <li><strong>Filtrar por data ou intervalo de tempo</strong>:<br>
+      Para ver os logs de um período específico, você pode usar opções como <code>--since</code> e <code>--until</code>. Exemplo:
+      <pre><code>journalctl --since "2025-02-17 00:00:00" --until "2025-02-17 23:59:59"</code></pre>
+    </li>
+    <li><strong>Ver logs de um serviço específico</strong>:<br>
+      Você pode monitorar os logs de um serviço específico, como o serviço <strong>sshd</strong> (para conexões SSH):
+      <pre><code>journalctl -u sshd</code></pre>
+    </li>
+    <li><strong>Ver logs em tempo real</strong>:<br>
+      Para ver os logs em tempo real, como se estivesse monitorando a saída de um arquivo de log, use:
+      <pre><code>journalctl -f</code></pre>
+    </li>
+    <li><strong>Ver logs de um comando específico</strong>:<br>
+      Se você deseja ver os logs gerados por um comando em específico, pode fazer isso, como, por exemplo, os logs do <strong>cron</strong>:
+      <pre><code>journalctl -u cron</code></pre>
+    </li>
+    <li><strong>Limitar a quantidade de logs</strong>:<br>
+      Para exibir apenas os últimos n logs:
+      <pre><code>journalctl -n 50</code></pre>
+    </li>
+    <li><strong>Logs de erro</strong>:<br>
+      Para filtrar apenas as mensagens de erro, você pode fazer isso:
+      <pre><code>journalctl -p err</code></pre>
+    </li>
+    <li><strong>Filtrar logs de determinados serviços</strong>:<br>
+      Para visualizar os logs de serviços específicos, você pode usar a opção <code>-u</code> seguida do nome do serviço. Alguns exemplos incluem:<br>
+      - Para ver os logs do serviço de rede:
+      <pre><code>journalctl -u network</code></pre>
+      - Para logs relacionados ao servidor Apache:
+      <pre><code>journalctl -u apache2</code></pre>
+      - Para monitorar os logs do serviço de firewall:
+      <pre><code>journalctl -u ufw</code></pre>
+      Esses filtros são extremamente úteis para encontrar logs específicos relacionados a um serviço sem precisar filtrar manualmente todos os registros.
+    </li>
+  </ol>
+  <p>Esses são apenas alguns exemplos do que é possível fazer com o <code>journalctl</code>. Ele oferece uma visão muito detalhada do que está acontecendo no sistema, ajudando a diagnosticar problemas, monitorar atividades e garantir que tudo está funcionando corretamente.</p>
+</div>
+
+    <!-- Enviar o Projeto do Apache2 ao GitHub -->
+<div class="category1" id="apache2">
+    <h2>Apache2</h2>
+    <h3>Passo a Passo para Enviar o Projeto do Apache2 ao GitHub</h3>
+    <ol>
+        <li>
+            <strong>Navegar para o Diretório do Projeto:</strong>
+            <pre><code>cd /var/www/html/nome-do-projeto</code></pre>
+        </li>
+        <li>
+            <strong>Inicializar o Repositório Git:</strong>
+            <pre><code>git init</code></pre>
+        </li>
+        <li>
+            <strong>Vincular o Repositório Local ao Repositório Remoto:</strong>
+            <pre><code>git remote add origin https://github.com/jay0382/Radio-Worship-Online.git</code></pre>
+        </li>
+        <li>
+            <strong>Adicionar os Arquivos ao Repositório Local:</strong>
+            <pre><code>git add .</code></pre>
+        </li>
+        <li>
+            <strong>Criar um Commit Inicial:</strong>
+            <pre><code>git commit -m "Commit inicial do projeto Radio-Worship-Online"</code></pre>
+        </li>
+        <li>
+            <strong>Enviar os Arquivos para o Repositório no GitHub:</strong>
+            <pre><code>git branch -M main
+git push -u origin main</code></pre>
+        </li>
+        <li>
+            <strong>Confirmar no GitHub:</strong>
+            <p>Acesse o repositório no GitHub em: 
+                <a href="https://github.com/jay0382/Radio-Worship-Online" target="_blank">https://github.com/jay0382/Radio-Worship-Online</a> e confirme se os arquivos foram enviados com sucesso.</p>
+        </li>
+    </ol>
+</div>
+
+<!-- Soluções para No-IP e CGNAT -->
+<div class="category1" id="noip-cgnat">
+    <h2>Soluções para No-IP e CGNAT</h2>
+    <h3>Passo a Passo para Resolver Bloqueios com CGNAT</h3>
+    <ol>
+        <li>
+            <strong>Confirme se você está atrás de CGNAT:</strong>
+            <ul>
+                <li>Verifique o IP público:
+                    <pre><code>
+1. Acesse um site como <a href="https://whatismyipaddress.com/" target="_blank">WhatIsMyIP</a>.
+2. Compare o IP público mostrado com o IP configurado no roteador.
+3. Se forem diferentes, você está sob CGNAT.
+                    </code></pre>
+                </li>
+                <li>Entre em contato com a operadora:
+                    <pre><code>
+Pergunte se sua conexão utiliza CGNAT e solicite um IP público dedicado.
+Algumas operadoras oferecem gratuitamente; outras cobram uma taxa adicional.
+                    </code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <strong>Use o Ngrok:</strong>
+            <ul>
+                <li>Instale o Ngrok:
+                    <pre><code>sudo apt install ngrok</code></pre>
+                    Ou baixe diretamente do site oficial: <a href="https://ngrok.com/download" target="_blank">ngrok.com</a>.
+                </li>
+                <li>Configure o túnel:
+                    <pre><code>
+# Inicie o servidor Apache:
+sudo systemctl start apache2
+
+# Inicie o Ngrok para a porta do seu servidor (exemplo: 8080):
+ngrok http 8080
+                    </code></pre>
+                    O Ngrok fornecerá um link público que pode ser usado para acessar o servidor.
+                </li>
+                <li>Atualize os caminhos no player:
+                    <pre><code>
+<audio controls>
+  <source src="https://seu-ngrok-link.ngrok.io/radio/Playlist/musica.mp3" type="audio/mpeg">
+</audio>
+                    </code></pre>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <strong>Mude para um Servidor de Hospedagem:</strong>
+            <ul>
+                <li><strong>Hospedagem gratuita:</strong> InfinityFree ou 000webhost.
+                    <pre><code>
+1. Faça upload das músicas para o servidor.
+2. Use os links gerados no player de áudio.
+                    </code></pre>
+                </li>
+                <li><strong>Hospedagem paga barata:</strong> Como Hostinger ou HostGator, que oferecem maior estabilidade.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <strong>Use um Servidor VPS:</strong>
+            <ul>
+                <li>Opções acessíveis incluem:
+                    <ul>
+                        <li>Oracle Cloud (Free Tier): 2 VMs gratuitas para sempre.</li>
+                        <li>Linode, Vultr ou DigitalOcean: Custam a partir de $5/mês.</li>
+                    </ul>
+                </li>
+                <li>Configure o Apache ou outro servidor web no VPS para hospedar suas músicas.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Considere Alternativas na Rede Local:</strong>
+            <ul>
+                <li>Configure um servidor DLNA ou Plex para transmitir as músicas na rede local.</li>
+                <li>Use um serviço como o Tailscale para criar uma rede VPN privada entre seus dispositivos.</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+<div class="category1" id="nova_particao">
+  <h2>Como Criar uma Nova Partição no Linux (Máquina ou Mídia Removível)</h2>
+
+  <p>Criar uma nova partição no Linux pode ser feito tanto em discos internos quanto em mídias removíveis, como pendrives ou HDDs externos. Aqui está um guia passo a passo para realizar essa tarefa utilizando o terminal com o <code>fdisk</code> ou <code>parted</code>, ferramentas que são bastante utilizadas para manipulação de partições.</p>
+
+  <h3>1. Identificar o dispositivo</h3>
+  <p>Antes de criar uma nova partição, é importante identificar o dispositivo de armazenamento onde a partição será criada. Para isso, use o comando <code>lsblk</code> ou <code>fdisk -l</code> para listar todos os dispositivos e suas partições:</p>
+  <pre><code>lsblk</code></pre>
+  <p>Ou:</p>
+  <pre><code>sudo fdisk -l</code></pre>
+  <p>O comando <code>lsblk</code> irá mostrar todos os discos e partições conectados. Localize o dispositivo onde você deseja criar a nova partição (por exemplo, <code>/dev/sdb</code>, <code>/dev/sdc</code>, etc.).</p>
+
+  <h3>2. Abrir a ferramenta de particionamento (fdisk ou parted)</h3>
+  <p>Agora, você pode usar o <code>fdisk</code> ou <code>parted</code> para modificar as partições. Vou mostrar como usar o <code>fdisk</code>, mas o <code>parted</code> tem uma sintaxe semelhante e pode ser usado da mesma forma.</p>
+
+  <h4>Usando o <code>fdisk</code>:</h4>
+  <p>Execute o comando abaixo para editar o dispositivo desejado (substitua <code>/dev/sdb</code> pelo seu dispositivo):</p>
+  <pre><code>sudo fdisk /dev/sdb</code></pre>
+  <p>Isso abrirá o utilitário <code>fdisk</code> para editar as partições do dispositivo. Para ver os comandos disponíveis dentro do <code>fdisk</code>, você pode digitar <code>m</code> e pressionar Enter.</p>
+
+  <h3>3. Criar a nova partição</h3>
+  <p>Dentro do <code>fdisk</code>, siga as etapas abaixo para criar uma nova partição:</p>
+
+  <ul>
+    <li><strong>Digite</strong> <code>n</code> para criar uma nova partição.</li>
+    <li><strong>Selecione</strong> o tipo de partição: 
+        - Para uma partição primária, digite <code>p</code>.
+        - Para uma partição estendida (caso você já tenha 4 partições primárias), digite <code>e</code>.
+    </li>
+    <li><strong>Escolha o número da partição</strong> (ex: <code>1</code>, <code>2</code>, etc.).</li>
+    <li><strong>Defina o primeiro setor</strong> (pressione Enter para usar o valor padrão).</li>
+    <li><strong>Defina o último setor ou o tamanho da partição</strong> (exemplo: <code>+10G</code> para uma partição de 10 GB ou apenas pressionando Enter para usar o valor máximo).</li>
+  </ul>
+
+  <h3>4. Salvar as alterações</h3>
+  <p>Depois de criar a nova partição, pressione <code>w</code> para escrever as alterações no disco. O <code>fdisk</code> irá aplicar as alterações e sair.</p>
+
+  <h3>5. Criar o sistema de arquivos na nova partição</h3>
+  <p>Agora que você criou a partição, precisa formatá-la. Use o comando <code>mkfs</code> para formatar a partição com o sistema de arquivos desejado:</p>
+
+  <ul>
+    <li><strong>Para formatar em FAT32:</strong>
+      <pre><code>sudo mkfs.vfat -F 32 /dev/sdb1</code></pre>
+    </li>
+    <li><strong>Para formatar em ext4:</strong>
+      <pre><code>sudo mkfs.ext4 /dev/sdb1</code></pre>
+    </li>
+    <li><strong>Para formatar em NTFS:</strong>
+      <pre><code>sudo mkfs.ntfs /dev/sdb1</code></pre>
+    </li>
+  </ul>
+  <p>Certifique-se de substituir <code>/dev/sdb1</code> pelo caminho correto da sua partição recém-criada.</p>
+
+  <h3>6. Criar uma etiqueta (opcional)</h3>
+  <p>Se desejar, você pode adicionar uma etiqueta (nome) à partição com o comando <code>e2label</code> (para ext4) ou <code>mlabel</code> (para FAT):</p>
+  <pre><code>sudo e2label /dev/sdb1 NovaParticao</code></pre>
+  <p>Ou, para sistemas de arquivos FAT:</p>
+  <pre><code>sudo mlabel -i /dev/sdb1 ::NovaParticao</code></pre>
+
+  <h3>7. Montar a nova partição</h3>
+  <p>Agora que a partição foi criada e formatada, você pode montá-la no sistema:</p>
+  <pre><code>sudo mount /dev/sdb1 /mnt</code></pre>
+  <p>Ou, se você estiver utilizando uma interface gráfica, o dispositivo pode ser montado automaticamente.</p>
+
+  <h3>Usando ferramentas gráficas</h3>
+  <p>Se preferir usar uma ferramenta gráfica, você pode utilizar o <strong>GParted</strong> ou a ferramenta <strong>Discos</strong>. No <strong>GParted</strong>, basta seguir estes passos:</p>
+  <ul>
+    <li>Abra o GParted (se não estiver instalado, instale com <code>sudo apt install gparted</code>).</li>
+    <li>Selecione o dispositivo onde deseja criar a partição.</li>
+    <li>Escolha a opção de criar nova partição e siga as instruções na tela.</li>
+  </ul>
+
+  <h3>Considerações finais</h3>
+  <p>Agora que você criou uma nova partição, você pode usá-la para armazenar dados ou instalar um novo sistema operacional. Lembre-se de que todas as alterações feitas nas partições podem destruir dados, então sempre faça backups antes de realizar essas operações!</p>
+</div>
+
+<div class="category1" id="nova_particao_com_criptografia">
+  <h2>Como Criar uma Nova Partição com Criptografia no Linux</h2>
+
+  <p>Se você deseja criar uma nova partição e adicionar uma camada de segurança usando criptografia, o <strong>LUKS (Linux Unified Key Setup)</strong> é uma excelente opção. Ele permite que você proteja dados com uma senha ou chave antes de acessar a partição.</p>
+
+  <h3>1. Identificar o dispositivo</h3>
+  <p>Primeiro, identifique o dispositivo onde a nova partição será criada, assim como mostrado anteriormente, utilizando o comando:</p>
+  <pre><code>lsblk</code></pre>
+
+  <h3>2. Criar a nova partição (passos básicos)</h3>
+  <p>Siga os mesmos passos descritos anteriormente para criar a nova partição utilizando o <code>fdisk</code> ou <code>parted</code>. Certifique-se de criar uma partição com o tamanho desejado.</p>
+
+  <h3>3. Criptografar a partição com LUKS</h3>
+  <p>Após criar a partição, você pode criptografá-la utilizando o <strong>LUKS</strong>. Para isso, execute o seguinte comando para inicializar a criptografia na partição:</p>
+  <pre><code>sudo cryptsetup luksFormat /dev/sdb1</code></pre>
+  <p>Esse comando vai formatar a partição com criptografia LUKS e solicitará uma senha. Escolha uma senha forte, pois ela será necessária para acessar a partição.</p>
+  
+  <p><strong>Nota:</strong> <code>/dev/sdb1</code> é um exemplo de partição, substitua pelo seu dispositivo correto.</p>
+
+  <h3>4. Abrir a partição criptografada</h3>
+  <p>Depois de criptografar a partição, você precisará "desbloqueá-la" para usá-la. Execute o comando abaixo, substituindo o nome do dispositivo:</p>
+  <pre><code>sudo cryptsetup luksOpen /dev/sdb1 minha_particao_criptografada</code></pre>
+  <p>Será solicitado a senha que você definiu para a partição criptografada.</p>
+
+  <h3>5. Criar o sistema de arquivos na partição criptografada</h3>
+  <p>Agora que a partição foi desbloqueada, você pode criar o sistema de arquivos desejado nela. Se você deseja formatar a partição com ext4, por exemplo, use o comando:</p>
+  <pre><code>sudo mkfs.ext4 /dev/mapper/minha_particao_criptografada</code></pre>
+  
+  <p>O nome <code>/dev/mapper/minha_particao_criptografada</code> é o caminho da partição que foi desbloqueada.</p>
+
+  <h3>6. Montar a partição criptografada</h3>
+  <p>Depois de criar o sistema de arquivos, você pode montar a partição criptografada no sistema, assim como faria com qualquer outra partição:</p>
+  <pre><code>sudo mount /dev/mapper/minha_particao_criptografada /mnt</code></pre>
+  <p>Agora você pode usar a partição normalmente, mas toda vez que precisar acessá-la, será necessário fornecer a senha definida anteriormente.</p>
+
+  <h3>7. Desmontar e bloquear a partição</h3>
+  <p>Quando terminar de usar a partição criptografada, você pode desmontá-la e bloquear o acesso novamente:</p>
+  <pre><code>sudo umount /mnt</code></pre>
+  <pre><code>sudo cryptsetup luksClose minha_particao_criptografada</code></pre>
+  <p>Esses comandos garantem que a partição seja segura novamente, e a senha será necessária para desbloqueá-la no futuro.</p>
+
+  <h3>Considerações finais</h3>
+  <p>Com a criptografia LUKS, você adiciona uma camada de segurança importante à sua partição. Lembre-se de sempre armazenar a senha de forma segura, pois sem ela você não poderá acessar os dados da partição criptografada.</p>
+</div>
+
+
+<div class="category1" id="formatacao_midia">
+  <h2>Formatar um pendrive ou qualquer mídia removível no Linux</h2>
+
+  <p>Formatar um pendrive ou qualquer outro dispositivo de armazenamento removível no Linux pode ser feito de maneira simples através de comandos no terminal ou utilizando ferramentas gráficas. Aqui estão os passos para realizar a formatação usando o terminal:</p>
+
+  <h3>1. Identificar o dispositivo</h3>
+  <p>Primeiro, é necessário identificar qual é o dispositivo correspondente ao seu pendrive. Para isso, você pode usar o comando <code>lsblk</code> ou <code>fdisk -l</code> para listar todos os dispositivos de armazenamento conectados ao sistema:</p>
+  <pre><code>lsblk</code></pre>
+  <p>Este comando vai mostrar todos os discos e partições. Encontre o seu dispositivo removível (normalmente será algo como <code>/dev/sdb</code>, <code>/dev/sdc</code>, etc.).</p>
+
+  <h3>2. Desmontar o dispositivo</h3>
+  <p>Antes de formatar, o dispositivo deve ser desmontado. Use o comando <code>umount</code> seguido do caminho do dispositivo. Exemplo:</p>
+  <pre><code>sudo umount /dev/sdb1</code></pre>
+  <p>Se houver múltiplas partições, você pode desmontar cada uma delas com <code>umount</code>.</p>
+
+  <h3>3. Formatando o dispositivo</h3>
+  <p>Agora que o dispositivo está desmontado, você pode usar o <code>mkfs</code> (make filesystem) para formatá-lo. Você pode escolher o sistema de arquivos desejado, como <strong>FAT32</strong>, <strong>ext4</strong>, <strong>NTFS</strong>, entre outros:</p>
+  
+  <ul>
+    <li><strong>Para formatar em FAT32:</strong>
+      <pre><code>sudo mkfs.vfat -F 32 /dev/sdb1</code></pre>
+    </li>
+    <li><strong>Para formatar em ext4:</strong>
+      <pre><code>sudo mkfs.ext4 /dev/sdb1</code></pre>
+    </li>
+    <li><strong>Para formatar em NTFS:</strong>
+      <pre><code>sudo mkfs.ntfs /dev/sdb1</code></pre>
+    </li>
+  </ul>
+
+  <p>Certifique-se de substituir <code>/dev/sdb1</code> pelo caminho correto do seu dispositivo. Para saber o tipo de sistema de arquivos que deseja utilizar, verifique se ele é compatível com o seu sistema ou dispositivo onde será utilizado.</p>
+
+  <h3>4. Criar uma nova etiqueta (opcional)</h3>
+  <p>Se você quiser criar uma nova etiqueta (nome) para o dispositivo, use o comando <code>e2label</code> para sistemas de arquivos <code>ext</code> ou <code>mlabel</code> para FAT:</p>
+  <pre><code>sudo e2label /dev/sdb1 MeuPendrive</code></pre>
+  <p>Ou, para FAT:</p>
+  <pre><code>sudo mlabel -i /dev/sdb1 ::MeuPendrive</code></pre>
+
+  <h3>5. Montar o dispositivo novamente</h3>
+  <p>Depois de formatado, você pode montar o dispositivo novamente no sistema com o comando <code>mount</code>:</p>
+  <pre><code>sudo mount /dev/sdb1 /mnt</code></pre>
+  <p>Ou, se você estiver usando um ambiente gráfico, o dispositivo geralmente será montado automaticamente.</p>
+
+  <h3>Usando ferramentas gráficas</h3>
+  <p>Se preferir uma interface gráfica para facilitar o processo, você pode utilizar ferramentas como <strong>GParted</strong> ou <strong>Discos</strong>, que estão disponíveis na maioria das distribuições Linux.</p>
+  <p>Para usar o <strong>GParted</strong>, por exemplo:</p>
+  <ul>
+    <li>Abra o GParted (se não estiver instalado, instale com <code>sudo apt install gparted</code>).</li>
+    <li>Selecione o seu dispositivo removível na lista de dispositivos.</li>
+    <li>Escolha a opção de formatação e siga as instruções na tela.</li>
+  </ul>
+
+  <h3>Considerações finais</h3>
+  <p>Esses passos são bastante diretos e funcionam na maioria das distribuições Linux. Lembre-se de ter cuidado ao identificar o dispositivo para evitar formatar o disco errado. Sempre faça backup dos dados antes de formatar qualquer mídia de armazenamento!</p>
+</div>
+
+<!-- Escaneamento de Mídias Removíveis com Clamav -->
+<div class="category1" id="clamav">
+    <h2>Escaneamento de Mídias Removíveis com Clamav</h2>
+    <ol>
+        <li>
+            <strong>Identificar o Dispositivo</strong>
+            <ul>
+                <li>Listar os dispositivos conectados e suas partições:</li>
+                <pre><code>lsblk -rpno NAME,MOUNTPOINT,SIZE,TYPE</code></pre>
+                <li>Procure pelo dispositivo correspondente (exemplo: <strong>/dev/sdb1</strong> ou <strong>/dev/sdc1</strong>).</li>
+                <li>Verifique se ele já está montado. Caso esteja, o ponto de montagem será mostrado na coluna <strong>MOUNTPOINT</strong>.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Montar o Dispositivo (Se Necessário)</strong>
+            <ul>
+                <li>Se o dispositivo não estiver montado (a coluna <strong>MOUNTPOINT</strong> estiver vazia), monte-o manualmente:</li>
+                <ol>
+                    <li>
+                        Crie um diretório para montar o dispositivo:
+                        <pre><code>sudo mkdir /mnt/dispositivo</code></pre>
+                    </li>
+                    <li>
+                        Monte a partição no diretório criado:
+                        <pre><code>sudo mount /dev/sdb1 /mnt/dispositivo</code></pre>
+                    </li>
+                </ol>
+                <li>Substitua <strong>/dev/sdb1</strong> pelo identificador correto do dispositivo encontrado no comando <strong>lsblk</strong>.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Atualizar o ClamAV</strong>
+            <ul>
+                <li>Certifique-se de que o banco de dados do ClamAV está atualizado:</li>
+                <pre><code>sudo freshclam</code></pre>
+            </ul>
+        </li>
+        <li>
+            <strong>Escanear o Dispositivo</strong>
+            <ul>
+                <li>Use o ClamAV para escanear todos os arquivos no dispositivo montado:</li>
+                <pre><code>sudo clamscan --recursive --remove /mnt/dispositivo</code></pre>
+                <li><strong>--recursive</strong>: Escaneia todos os subdiretórios.</li>
+                <li><strong>--remove</strong>: Remove automaticamente arquivos infectados.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Verificar os Resultados</strong>
+             <ul>
+                <li>O ClamAV exibirá os resultados diretamente no terminal, incluindo:</li>
+                <li>O número de arquivos escaneados.</li>
+                <li>Quais arquivos foram infectados (se houver).</li>
+                <li>Arquivos removidos automaticamente.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Desmontar o Dispositivo</strong>
+            <ul>
+                <li>Após o escaneamento, desmonte o dispositivo para liberá-lo:</li>
+                <pre><code>sudo umount /mnt/dispositivo</code></pre>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+ <div class="category1" id="esteganografia">
+        <h2>Esteganografia: O que é e como funciona?</h2>
+            A <strong>esteganografia</strong> é uma técnica usada para esconder informações dentro de arquivos como imagens, vídeos ou áudios, sem alterar significativamente sua aparência ou funcionalidade. Ela é frequentemente usada para fins legítimos, mas também pode ser empregada por agentes mal-intencionados.
+       
+        <h3>Exemplo de Código Python</h3>
+            Aqui está um exemplo de como esconder um arquivo dentro de uma imagem usando Python:
+            <pre><code>
+            def esconder_arquivo(imagem_caminho, arquivo_caminho, imagem_saida):
+               # Ler os bytes da imagem original
+               with open(imagem_caminho, 'rb') as img_file:
+                   img_data = img_file.read()
+
+               # Ler os bytes do arquivo a ser escondido
+               with open(arquivo_caminho, 'rb') as hidden_file:
+                   hidden_data = hidden_file.read()
+
+               # Combinar os dados
+               nova_imagem = img_data + b'---SEPARATOR---' + hidden_data
+
+               # Salvar a imagem com os dados escondidos
+               with open(imagem_saida, 'wb') as out_file:
+                   out_file.write(nova_imagem)
+
+               print(f"Arquivo {arquivo_caminho} escondido em {imagem_saida} com sucesso!") 
+            </code></pre>
+
+        Certifique-se de usar este código em um ambiente de teste seguro. Essa técnica pode ser usada para fins educacionais, mas deve ser tratada com responsabilidade.
+        <h3>Como se proteger?</h3>
+        <ul>
+            <li>Analise arquivos suspeitos com ferramentas como <a href="https://www.virustotal.com/" target="_blank">VirusTotal</a>.</li>
+            <li>Evite abrir imagens ou arquivos de fontes desconhecidas.</li>
+            <li>Use antivírus e ferramentas de análise para identificar conteúdos ocultos.</li>
+        </ul>
+    </div>
+
+    <div class="category1" id="explicacao-codigo">
+        <h2>Explicação do Código</h2>
+        <h3>Abaixo está a explicação de cada linha do código com comentários:</h3>
+        <ol>
+            <li>
+                <strong>Função</strong>esconder_arquivo
+                <pre><code>def esconder_arquivo(imagem_caminho, arquivo_caminho, imagem_saida):</code></pre>
+                   Define uma função chamada <strong>esconder_arquivo</strong> que aceita três parâmetros:
+                 <ul>
+                   <li><strong>imagem_caminho</strong>: o caminho para a imagem original onde o arquivo será embutido.</li>
+                   <li><strong>arquivo_caminho</strong>: o caminho para o arquivo que será escondido dentro da imagem.</li>
+                   <li><strong>imagem_saida</strong>: o caminho para salvar a nova imagem com o arquivo embutido.</li>
+                 </ul>
+             </li>
+             <li>        
+                 <strong>Ler os bytes da imagem original</strong>
+                 <pre><code>with open(imagem_caminho, 'rb') as img_file:
+     img_data = img_file.read()</code></pre>
+                   Usa o comando <strong>open</strong> para abrir a imagem especificada por <strong>imagem_caminho</strong> em modo de leitura binária <strong>('rb')</strong>.
+                 <ul> 
+                   <li><strong>img_file</strong> é o manipulador do arquivo da imagem.</li>
+                   <li><strong>img_file.read()</strong> lê todos os bytes da imagem original e os armazena em img_data.</li>
+                 </ul>
+             </li>
+             <li>          
+                 <strong>Ler os bytes do arquivo a ser escondido</strong>
+                 <pre><code>with open(arquivo_caminho, 'rb') as hidden_file:
+     hidden_data = hidden_file.read()</code></pre>
+                   Abre o arquivo a ser escondido, especificado por <strong>arquivo_caminho</strong>, também em modo de leitura binária <strong>('rb')</strong>.
+                 <ul>        
+                   <li><strong>hidden_file</strong> é o manipulador desse arquivo.</li>
+                   <li><strong>hidden_file.read()</strong> lê todos os bytes do arquivo a ser escondido e os armazena em <strong>hidden_data</strong>.
+                 </ul>
+             </li> 
+             <li>
+                 <strong>Combinar os dados</strong>
+                 <pre><code>nova_imagem = img_data + b'---SEPARATOR---' + hidden_data</code></pre>
+                   Cria uma nova sequência de bytes chamada nova_imagem:
+                 <ul>
+                   <li>Combina os bytes da imagem original <strong>(img_data)</strong> com um separador <strong>(b'---SEPARATOR---')</strong>,
+                       que é uma sequência de bytes que serve como marcador, seguido pelos bytes do arquivo escondido <strong>(hidden_data)</strong>.</li>
+                   <li>Esse separador ajuda a identificar a parte onde o arquivo escondido começa, caso precise recuperá-lo mais tarde.</li>
+                 </ul>
+             </li>
+             <li>
+                 <strong>Salvar a imagem com os dados escondidos</strong>
+                 <pre><code>with open(imagem_saida, 'wb') as out_file:
+     out_file.write(nova_imagem)</code></pre>
+                 <ul>
+                   <li>Abre (ou cria) o arquivo especificado por <strong>imagem_saida</strong> em modo de escrita binária <strong>('wb')</strong>.</li>
+                   <li>Escreve os bytes de <strong>nova_imagem</strong> no arquivo de saída, salvando a nova imagem com o arquivo escondido.</li>
+                 </ul>
+             </li> 
+             <li>  
+                 <strong>Mensagem de sucesso</strong>
+                 <pre><code>print(f"Arquivo {arquivo_caminho} escondido em {imagem_saida} com sucesso!")</code></pre>
+                 <ul> 
+                    <li>Exibe uma mensagem indicando que o arquivo foi escondido com sucesso na nova imagem.</li>
+                 </ul>
+             </li>
+             <li>
+                 <strong> Exemplo de uso:</strong>
+                 <pre><code>esconder_arquivo("imagem_original.jpg", "arquivo_secreto.txt", "imagem_com_arquivo.jpg")</code></pre>
+                   <p>Chama a função <strong>esconder_arquivo</strong> com os seguintes parâmetros:</p>
+                 <ul>
+                     <li><strong> "imagem_original.jpg"</strong>: caminho da imagem original.</li>
+                     <li><strong> "arquivo_secreto.txt"</strong>: caminho do arquivo que será escondido.</li>
+                     <li><strong> "imagem_com_arquivo.jpg"</strong>: caminho onde a nova imagem com o arquivo escondido será salva.</li>
+                 </ul>
+          </li>
+    </div>
+  
+  <div class="category1" id="steghide">
+    <h2>Steghide</h2>
+    <p>
+        O <strong>Steghide</strong> é uma ferramenta de código aberto para esteganografia, usada para ocultar dados em arquivos multimídia, como imagens, áudios, e vídeos. Ele é amplamente utilizado para fins educacionais e de pesquisa, especialmente em segurança da informação, onde se deseja explorar como dados podem ser escondidos em arquivos aparentemente inocentes.
+    </p>
+
+    <h2>Principais Características:</h2>
+    <ul>
+        <li>
+            <strong>Suporte a múltiplos formatos de arquivo:</strong> Steghide suporta imagens (<code>.bmp</code>, <code>.jpg</code>), áudios (<code>.wav</code>, <code>.au</code>), e outros formatos.
+        </li>
+        <li>
+            <strong>Criptografia:</strong> Os dados embutidos são criptografados usando o algoritmo AES (Advanced Encryption Standard).
+        </li>
+        <li>
+            <strong>Compactação:</strong> Compacta os dados antes de ocultá-los para reduzir o tamanho.
+        </li>
+        <li>
+            <strong>Proteção por senha:</strong> Para acessar ou extrair os dados ocultos, é necessário usar uma senha definida na inserção.
+        </li>
+    </ul>
+
+    <h2>Como Usar o Steghide</h2>
+
+    <h3>1. Instalação</h3>
+    <p>
+        No Linux (como no Kali ou Ubuntu), o Steghide pode ser instalado facilmente com o seguinte comando:
+    </p>
+    <pre><code>sudo apt update && sudo apt install steghide</code></pre>
+
+    <h3>2. Inserir Dados em um Arquivo</h3>
+    <p>Este comando insere dados em um arquivo de imagem ou áudio:</p>
+    <pre><code>steghide embed -cf imagem.jpg -ef segredo.txt -p senha123</code></pre>
+    <ul>
+        <li><code>-cf</code>: Arquivo de cobertura (imagem ou áudio onde os dados serão escondidos).</li>
+        <li><code>-ef</code>: Arquivo que será embutido.</li>
+        <li><code>-p</code>: Define uma senha para proteger os dados embutidos.</li>
+    </ul>
+
+    <h3>3. Extrair Dados de um Arquivo</h3>
+    <p>Para recuperar os dados ocultos:</p>
+    <pre><code>steghide extract -sf imagem.jpg -p senha123</code></pre>
+    <ul>
+        <li><code>-sf</code>: Arquivo de cobertura contendo os dados ocultos.</li>
+        <li><code>-p</code>: A senha necessária para extrair os dados.</li>
+    </ul>
+
+    <h3>4. Verificar Informações do Arquivo</h3>
+    <p>Para visualizar as informações básicas de um arquivo que pode conter dados ocultos:</p>
+    <pre><code>steghide info imagem.jpg</code></pre>
+
+    <h2>Dicas de Uso:</h2>
+    <ul>
+        <li>Use senhas fortes para proteger os dados.</li>
+        <li>Escolha arquivos de cobertura com muitos dados (imagens de alta qualidade ou arquivos de áudio grandes), pois isso reduz a chance de os dados ocultos serem detectados.</li>
+        <li>Sempre teste seus arquivos para verificar a integridade após a ocultação.</li>
+    </ul>
+</div>
+</div>  
+
+<!-- Botão para voltar ao topo -->
+<div class="back-to-top">
+    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">Voltar ao Início</button>
+</div>
+
+    <!-- Modal para exibir informações -->
+    <div id="modal" style="display: none;">
+        <h2 id="modal-title"></h2>
+        <p id="modal-info"></p>
+        <button onclick="closeModal()">Fechar</button>
+    </div>
+
+<footer>
+    &copy; 2024 - Página de Comandos Kali Linux
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

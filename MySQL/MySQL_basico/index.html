@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação: Introdução ao Banco de Dados</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Documentação: Introdução ao Banco de Dados</h1>
+    <p>Esta documentação descreve as etapas para criar e configurar um banco de dados básico, com suporte a login, utilizando MySQL, PHP e HTML.</p>
+    
+    <div class="section">
+        <h2>Acesso ao MySQL</h2>
+        <p><strong>Linux:</strong> <code>/var/lib/mysql</code></p>
+        <p><strong>Windows:</strong> <code>C:\Program Files\MySQL\MySQL Server X.X</code></p>
+    </div>
+
+    <div class="section">
+        <h2>Diretório do Servidor Local</h2>
+        <p><strong>Linux:</strong> <code>/var/www/html/</code></p>
+        <p><strong>Windows:</strong> <code>C:\xampp\htdocs\</code></p>
+    </div>
+
+     <div class="section">
+        <h2>Configuração Inicial</h2>
+        <h3>Verificar o status do MySQL</h3>
+        <pre><code>sudo systemctl status mysql</code></pre>
+        
+        <img src="images/lis.png" alt="status-mysql" width="500" class="image-style">
+        
+        <h3>Ajustar permissões (se necessário)</h3>
+        <pre><code>chmod -R 755 /var/lib/mysql</code></pre>
+        <h3>Acessar o MySQL</h3>
+        <pre><code>mysql -u root -p</code></pre>
+        <h3>Listar bancos de dados</h3>
+        <pre><code>SHOW DATABASES;</code></pre>
+
+        <img src="images/li2.png" alt="status-mysql" width="500" class="image-style">
+
+    </div>
+
+    <div class="section">
+        <h2>Etapas Realizadas</h2>
+        <h3>Criação do Banco de Dados</h3>
+        <pre><code>
+CREATE DATABASE TecInfoShop_db;
+USE TecInfoShop_db;
+        </code></pre>
+
+        <h3>Criação da Tabela</h3>
+        <pre><code>
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome_usuario VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    senha_hash VARCHAR(255) NOT NULL,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+        </code></pre>
+
+        <h3>Inserção de Usuário de Teste</h3>
+        <pre><code>
+INSERT INTO usuarios (nome_usuario, email, senha_hash) 
+VALUES ('usuario_teste', 'teste@email.com', SHA2('123456', 256));
+        </code></pre>
+    </div>
+
+    <div class="section">
+        <h2>Arquivos Criados</h2>
+        <h3>login.html</h3>
+        <p>Formulário de login simples que envia os dados para <code>login.php</code>.</p>
+        <h3>conexao.php</h3>
+        <p>Arquivo responsável pela conexão ao banco de dados.</p>
+        <h3>login.php</h3>
+        <p>Arquivo que valida os dados do login.</p>
+    </div>
+
+    <div class="section">
+        <h2>Código do Formulário (HTML)</h2>
+        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-br"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Login&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h2&gt;Login&lt;/h2&gt;
+    &lt;form action="login.php" method="post"&gt;
+        &lt;label&gt;Usuário ou E-mail:&lt;/label&gt;
+        &lt;input type="text" name="login" required&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;label&gt;Senha:&lt;/label&gt;
+        &lt;input type="password" name="senha" required&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;button type="submit"&gt;Entrar&lt;/button&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>Código de Conexão (PHP)</h2>
+        <pre>
+&lt;?php
+$host = "localhost";
+$usuario = "root";
+$senha = "sua_senha";
+$banco = "TecInfoShop_db";
+
+$conn = new mysqli($host, $usuario, $senha, $banco);
+
+if ($conn-&gt;connect_error) {
+    die("Falha na conexão: " . $conn-&gt;connect_error);
+}
+?&gt;
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>Código de Login (PHP)</h2>
+        <pre>
+&lt;?php
+session_start();
+include 'conexao.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $login = $_POST['login'];
+    $senha = $_POST['senha'];
+
+    $sql = "SELECT * FROM usuarios WHERE email = ? OR nome_usuario = ?";
+    $stmt = $conn-&gt;prepare($sql);
+    $stmt-&gt;bind_param("ss", $login, $login);
+    $stmt-&gt;execute();
+    $resultado = $stmt-&gt;get_result();
+
+    if ($resultado-&gt;num_rows &gt; 0) {
+        $usuario = $resultado-&gt;fetch_assoc();
+        $senha_hash = hash("sha256", $senha);
+
+        if ($senha_hash === $usuario['senha_hash']) {
+            $_SESSION['usuario'] = $usuario['nome_usuario'];
+
+            echo "Login bem-sucedido! Bem-vindo, " . $_SESSION['usuario'];
+        } else {
+            echo "Senha incorreta.";
+        }
+    } else {
+        echo "Usuário ou e-mail não encontrado.";
+    }
+}
+?&gt;
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>Testes Realizados</h2>
+        <ul>
+            <li>Login com e-mail incorreto: <em>Usuário ou e-mail não encontrado.</em></li>
+            <li>Login com senha incorreta: <em>Senha incorreta.</em></li>
+            <li>Login com dados corretos: <em>Login bem-sucedido! Bem-vindo, usuario_teste</em></li>
+        </ul>
+   
+        <img src="images/login.png" alt="status-mysql" width="300" class="image-style">
+        <img src="images/bemsucedido.png" alt="status-mysql" width="300" class="image-style">
+
+    </div>
+</body>
+</html>

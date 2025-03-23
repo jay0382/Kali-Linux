@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços e Portas - Kali Linux</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Serviços e Portas do Kali Linux</h1>
+        <p>Lista de serviços disponíveis no Kali Linux e suas respectivas portas.</p>
+    </header>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Serviço</th>
+                    <th>Descrição</th>
+                    <th>Portas Utilizadas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Apache2</td><td>Servidor Web</td><td>80 (HTTP), 443 (HTTPS)</td></tr>
+                <tr><td>MySQL / MariaDB</td><td>Banco de Dados</td><td>3306</td></tr>
+                <tr><td>PostgreSQL</td><td>Banco de Dados Avançado</td><td>5432</td></tr>
+                <tr><td>Nginx</td><td>Servidor Web Leve</td><td>80, 443</td></tr>
+                <tr><td>OpenSSH</td><td>Acesso Remoto Seguro</td><td>22</td></tr>
+                <tr><td>Dnsmasq</td><td>Servidor DNS e DHCP</td><td>53</td></tr>
+                <tr><td>Samba</td><td>Compartilhamento de Arquivos</td><td>137-139, 445</td></tr>
+                <tr><td>Vsftpd</td><td>Servidor FTP</td><td>21</td></tr>
+                <tr><td>ProFTPD</td><td>Servidor FTP</td><td>21</td></tr>
+                <tr><td>Tor</td><td>Navegação Anônima</td><td>9050</td></tr>
+                <tr><td>Squid</td><td>Servidor Proxy</td><td>3128</td></tr>
+                <tr><td>TeamViewer</td><td>Controle Remoto</td><td>5938</td></tr>
+                <tr><td>VNC</td><td>Acesso Remoto</td><td>5900-5903</td></tr>
+                <tr><td>Docker</td><td>Gerenciamento de Containers</td><td>2375-2376</td></tr>
+                <tr><td>KDE Connect</td><td>Comunicação entre dispositivos</td><td>1714-1764</td></tr>
+                <tr><td>CUPS</td><td>Serviço de Impressão</td><td>631</td></tr>
+                <tr><td>NetBIOS</td><td>Resolução de nomes</td><td>137-139</td></tr>
+                <tr><td>UPnP</td><td>Descoberta de Dispositivos</td><td>1900</td></tr>
+                <tr><td>Metasploit</td><td>Testes de Penetração</td><td>3790, 4444</td></tr>
+                <tr><td>NFS</td><td>Compartilhamento de Arquivos</td><td>2049</td></tr>
+                <tr><td>MongoDB</td><td>Banco de Dados NoSQL</td><td>27017</td></tr>
+                <tr><td>Python HTTP Server</td><td>Servidor Web Simples</td><td>8000</td></tr>
+                <tr><td>SMTP</td><td>Envio de E-mails</td><td>25, 587</td></tr>
+                <tr><td>IMAP/POP3</td><td>Recebimento de E-mails</td><td>143, 993, 110, 995</td></tr>
+                <tr><td>Zabbix Agent</td><td>Monitoramento de Servidores</td><td>10050</td></tr>
+                <tr><td>Grafana</td><td>Painel de Monitoramento</td><td>3000</td></tr>
+                <tr><td>Jupyter Notebook</td><td>Ambiente Interativo de Código</td><td>8888</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+      <h2>Comandos para Gerenciar Serviços no Kali Linux</h2>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Ação</th>
+                    <th>Comando</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Ver status</td><td><code>sudo systemctl status &lt;serviço&gt;</code></td></tr>
+                <tr><td>Iniciar serviço</td><td><code>sudo systemctl start &lt;serviço&gt;</code></td></tr>
+                <tr><td>Parar serviço</td><td><code>sudo systemctl stop &lt;serviço&gt;</code></td></tr>
+                <tr><td>Reiniciar serviço</td><td><code>sudo systemctl restart &lt;serviço&gt;</code></td></tr>
+                <tr><td>Ativar no boot</td><td><code>sudo systemctl enable &lt;serviço&gt;</code></td></tr>
+                <tr><td>Desativar do boot</td><td><code>sudo systemctl disable &lt;serviço&gt;</code></td></tr>
+                <tr><td>Bloquear serviço</td><td><code>sudo systemctl mask &lt;serviço&gt;</code></td></tr>
+                <tr><td>Desbloquear serviço</td><td><code>sudo systemctl unmask &lt;serviço&gt;</code></td></tr>
+                <tr><td>Listar serviços rodando</td><td><code>sudo systemctl list-units --type=service --state=running</code></td></tr>
+                <tr><td>Listar todos os serviços disponíveis no sistema</td><td><code>sudo systemctl list-unit --type=service</code></td></tr>
+                <tr><td>Ver quais serviços estão escutando portas específicas</td><td><code>sudo ss -tulnp</code></td></tr>          
+           </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

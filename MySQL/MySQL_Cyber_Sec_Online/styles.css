@@ -1,0 +1,56 @@
+/* Estilização geral */
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza tudo na tela */
+}
+
+/* Adiciona uma borda geral ao conteúdo */
+.container {
+    width: 80%;
+    max-width: 900px;
+    max-heidth: 300px;
+    border: 2px solid cyan;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Estiliza títulos */
+h1, h2, h3 {
+    color: cyan;
+    text-align: center;
+}
+
+/* Parágrafos e listas */
+p {
+    color: white;
+    font-size: 16px;
+}
+
+ul {
+    list-style-type: square;
+}
+
+/* Código dentro de pre */
+pre {
+    background-color: black;
+    color: #00ff00; /* Verde */
+    padding: 10px;
+    border-radius: 5px;
+    max-height: 600px; /* Remove qualquer limite de altura */
+}
+
+/* Código dentro de code */
+code {
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+    color: #00ff00; /* Verde para código */
+}
+
+Isso vai corrigir o layout, garantindo que os blocos fiquem um abaixo do outro e centralizados, além de manter a estética limpa e sem bordas extras no código. Agora é só aplicar e testar!
+

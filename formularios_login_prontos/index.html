@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modais de Formulários de Login Prontos</title>
+</head>
+<body>
+    <header>
+           <h1>Bem-vindo!</h1>
+            <p>Este é o conteúdo principal.</p>
+    </header>
+
+<main>
+<section>
+<pre>    
+     &lt;!-- Botões de Entrar e Criar Conta --&gt;
+    &lt;div id="button-container"&gt;
+        &lt;button id="btnLogin" onclick="showLogin()"&gt;Entrar&lt;/button&gt;
+        &lt;button id="btnCreateAccount" onclick="showCreateAccount()"&gt;Criar Conta&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Modal de Login --&gt;
+    &lt;div id="loginModal" class="modal"&gt;
+        &lt;div class="modal-content"&gt;
+            &lt;span class="close" onclick="closeModal('loginModal')"&gt;&times;&lt;/span&gt;
+            &lt;h2&gt;Login&lt;/h2&gt;
+            &lt;form id="loginForm"&gt;
+                &lt;label for="emailLogin"&gt;Usuário ou Email:&lt;/label&gt;
+                &lt;input type="text" id="emailLogin" name="email" required&gt;
+                &lt;label for="passwordLogin"&gt;Senha:&lt;/label&gt;
+                &lt;div class="password-container"&gt;
+                    &lt;input type="password" id="passwordLogin" name="password" required&gt;
+                    &lt;button type="button" class="toggle-password" onclick="togglePassword('passwordLogin')"&gt;👁&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;button type="submit"&gt;Logar&lt;/button&gt;
+            &lt;/form&gt;
+            &lt;div class="login-links"&gt;
+                &lt;a href="#" onclick="showCreateAccount(); closeModal('loginModal')"&gt;Não tem conta? Crie uma agora.&lt;/a&gt;
+                &lt;a href="#" onclick="showForgotPassword(); closeModal('loginModal')"&gt;Esqueceu a senha?&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Modal de Criar Conta --&gt;
+    &lt;div id="createAccountModal" class="modal"&gt;
+        &lt;div class="modal-content"&gt;
+            &lt;span class="close" onclick="closeModal('createAccountModal')"&gt;&times;&lt;/span&gt;
+            &lt;h2&gt;Criar Conta&lt;/h2&gt;
+            &lt;form id="registerForm"&gt;
+                &lt;label for="emailCreate"&gt;Email:&lt;/label&gt;
+                &lt;input type="email" id="emailCreate" name="name" required&gt;
+                &lt;label for="usernameCreate"&gt;Nome de Usuário:&lt;/label&gt;
+                &lt;input type="text" id="usernameCreate" name="username" required&gt;
+                &lt;label for="passwordCreate"&gt;Senha:&lt;/label&gt;
+                &lt;div class="password-container"&gt;
+                    &lt;input type="password" id="passwordCreate" name="password" required&gt;
+                    &lt;button type="button" class="toggle-password" onclick="togglePassword('passwordCreate')"&gt;👁&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;label for="confirmPasswordCreate"&gt;Confirmar Senha:&lt;/label&gt;
+                &lt;div class="password-container"&gt;
+                    &lt;input type="password" id="confirmPasswordCreate" name="confirmPassword" required&gt;
+                    &lt;button type="button" class="toggle-password" onclick="togglePassword('confirmPasswordCreate')"&gt;👁&lt;/button&gt;
+                &lt;/div&gt;
+                &lt;button type="submit"&gt;Criar Conta&lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Modal de Esqueceu a Senha --&gt;
+    &lt;div id="forgotPasswordModal" class="modal"&gt;
+        &lt;div class="modal-content"&gt;
+            &lt;span class="close" onclick="closeModal('forgotPasswordModal')"&gt;&times;&lt;/span&gt;
+            &lt;h2&gt;Esqueceu a Senha?&lt;/h2&gt;
+            &lt;form id="forgotPasswordForm"&gt;
+                &lt;label for="emailForgot"&gt;Digite seu e-mail:&lt;/label&gt;
+                &lt;input type="email" id="emailForgot" name="email" required&gt;
+                &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+ </pre>   
+ </section>
+ </main>
+    
+  </body>
+  </html>  

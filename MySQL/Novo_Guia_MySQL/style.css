@@ -1,0 +1,81 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #000; /* Fundo preto */
+    color: #fff; /* Texto branco */
+    padding-top: 100px; /* Para evitar sobreposição do h1 */
+}
+
+header {
+    background-color: #001f3f;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Título principal */
+h1 {
+    color: #00ffff; /* Ciano */
+    text-align: center;
+    font-size: 32px;
+    margin-top: -90px; /* Faz o h1 ficar acima da borda do body */
+    position: relative;
+}
+
+/* Subtítulos */
+h2 {
+    color: #fff; /* Ajuste depois */
+    font-size: 24px;
+}
+
+h3 {
+    color: #fff; /* Ajuste depois */
+    font-size: 20px;
+}
+
+/* Container principal */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    background: transparent;
+    padding: 0px;
+    border: 3px solid #00ffff; /* Borda ciano no body */
+    border-radius: 10px;
+}
+
+/* Seções */
+.section {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 2px solid #00ffff; /* Borda ciano nas sections */
+    border-radius: 10px;
+    margin: 15px;
+}
+
+/* Blocos de código */
+pre {
+    background: #333; /* Cinza médio */
+    padding: 10px;
+    border-left: 5px solid #00ffff; /* Borda ciano à esquerda */
+    overflow-x: auto;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+/* Código dentro do pre */
+code {
+    font-family: "Courier New", Courier, monospace;
+    color: #00ff00; /* Verde vivo */
+}
+
+/* Parágrafos */
+p {
+    color: #ffffff; /* Branco */
+}
+
+/* Destaques */
+.highlight {
+    color: #27ae60;
+    font-weight: bold;
+}

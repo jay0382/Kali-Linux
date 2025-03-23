@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Firewall Kali Linux</title>
+</head>
+<body>
+
+<a id="topo"></a>
+<header>
+    <h1>Firewall Kali Linux</h1>
+</header>
+
+<div class="container">
+
+    <!-- Introdução -->
+    <section>
+        <h2>Introdução</h2>
+        <p>O firewall é uma das primeiras linhas de defesa em sistemas Linux, incluindo o Kali Linux. Ele controla o tráfego de rede, permitindo ou bloqueando conexões com base em regras específicas. Kali oferece ferramentas como <code>ufw</code>, <code>iptables</code> e <code>nftables</code> para gerenciar a segurança de rede. Este guia apresenta os comandos essenciais para configurar e proteger seu sistema de forma eficaz.</p>
+    </section>
+
+    <!-- Links externos -->
+    <section class="links-externos">
+        <h2>Links Externos Úteis</h2>
+        <ul>
+            <li><a href="https://www.kali.org/docs/networking/basic-firewall/" target="_blank">Documentação Oficial Kali Linux – Firewall</a></li>
+            <li><a href="https://wiki.ubuntu.com/UncomplicatedFirewall" target="_blank">Ubuntu Wiki – UFW (também válido para Kali)</a></li>
+            <li><a href="https://wiki.archlinux.org/title/Iptables" target="_blank">Arch Wiki – iptables</a></li>
+            <li><a href="https://wiki.nftables.org/wiki-nftables/index.php/Main_Page" target="_blank">Wiki Oficial nftables</a></li>
+        </ul>
+    </section>
+
+    <!-- Blocos de conteúdo já formatados -->
+    <section>
+        <h2>Comandos do Firewall no Kali Linux (UFW)</h2>
+        <ul class="commands">
+            <li><a href="#"><code>sudo ufw status</code></a> - Verifica o status do firewall e as regras ativas.</li>
+            <li><a href="#"><code>sudo ufw enable</code></a> - Ativa o firewall e aplica as regras configuradas.</li>
+            <li><a href="#"><code>sudo ufw disable</code></a> - Desativa o firewall, permitindo todo o tráfego.</li>
+            <li><a href="#"><code>sudo ufw allow 80</code></a> - Permite tráfego na porta 80 (HTTP).</li>
+            <li><a href="#"><code>sudo ufw allow 443</code></a> - Permite tráfego na porta 443 (HTTPS).</li>
+            <li><a href="#"><code>sudo ufw allow from 192.168.0.100</code></a> - Permite conexões apenas do IP 192.168.0.100.</li>
+            <li><a href="#"><code>sudo ufw deny 22</code></a> - Bloqueia conexões na porta 22 (SSH).</li>
+            <li><a href="#"><code>sudo ufw delete allow 80</code></a> - Remove permissão da porta 80.</li>
+            <li><a href="#"><code>sudo ufw reset</code></a> - Reseta todas as regras do firewall e começa do zero.</li>
+            <li><a href="#"><code>sudo ufw default deny incoming</code></a> - Bloqueia conexões recebidas por padrão.</li>
+            <li><a href="#"><code>sudo ufw default allow outgoing</code></a> - Permite conexões de saída por padrão.</li>
+            <li><a href="#"><code>sudo ufw allow proto tcp from any to any port 22</code></a> - Permite conexões SSH (porta 22), protocolo TCP.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Comandos Avançados (iptables e nftables)</h2>
+        <ul class="commands">
+            <h3>iptables</h3>
+            <li><a href="#"><code>sudo iptables -L</code></a> - Lista todas as regras (iptables).</li>
+            <li><a href="#"><code>sudo iptables -F</code></a> - Remove todas as regras (iptables).</li>
+            <li><a href="#"><code>sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT</code></a> - Permite conexões SSH (porta 22).</li>
+            <li><a href="#"><code>sudo iptables-save > regras.txt</code></a> - Salva regras em arquivo.</li>
+            <li><a href="#"><code>sudo iptables-restore < regras.txt</code></a> - Restaura regras salvas.</li>
+
+            <h3>nftables</h3>
+            <li><a href="#"><code>sudo nft list ruleset</code></a> - Lista todas as regras (nftables).</li>
+            <li><a href="#"><code>sudo nft flush ruleset</code></a> - Remove todas as regras (nftables).</li>
+            <li><a href="#"><code>sudo nft add table inet firewall</code></a> - Cria tabela chamada 'firewall'.</li>
+            <li><a href="#"><code>sudo nft add chain inet firewall input { type filter hook input priority 0; }</code></a> - Cria chain de entrada.</li>
+            <li><a href="#"><code>sudo nft add rule inet firewall input ip protocol tcp dport 22 accept</code></a> - Permite SSH (porta 22).</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Bloqueios Específicos e Segurança</h2>
+        <ul class="commands">
+            <li><a href="#"><code>sudo ufw deny from 203.0.113.0/24</code></a> - Bloqueia faixa de IPs.</li>
+            <li><a href="#"><code>sudo iptables -A INPUT -s 45.33.32.156 -j DROP</code></a> - Bloqueia IP específico.</li>
+            <li><a href="#"><code>sudo iptables -A INPUT -p tcp --syn -m limit --limit 1/s -j ACCEPT</code></a> - Limita conexões TCP (anti-DDoS).</li>
+            <li><a href="#"><code>sudo ufw deny 23</code></a> - Bloqueia porta 23 (Telnet).</li>
+            <li><a href="#"><code>sudo ufw deny 445</code></a> - Bloqueia porta 445 (SMB).</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Hardening SSH com Fail2Ban</h2>
+        <ul class="commands">
+            <li><a href="#"><code>sudo ufw allow 22</code></a> - Permite SSH.</li>
+            <li><a href="#"><code>sudo ufw limit 22/tcp</code></a> - Limita tentativas de login via SSH.</li>
+            <li><a href="#"><code>sudo nano /etc/ssh/sshd_config</code></a> - Edita configs do SSH.</li>
+            <li><pre><code># Recomendações sshd_config:
+Port 2222
+PermitRootLogin no
+PasswordAuthentication no</code></pre></li>
+            <li><a href="#"><code>sudo apt install fail2ban</code></a> - Instala Fail2Ban.</li>
+            <li><a href="#"><code>sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local</code></a> - Copia config padrão.</li>
+            <li><a href="#"><code>sudo nano /etc/fail2ban/jail.local</code></a> - Edita proteção para SSH.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Firewall Básico para Servidor Web</h2>
+        <ul class="commands">
+            <li><a href="#"><code>sudo ufw default deny incoming</code></a> - Bloqueia conexões recebidas.</li>
+            <li><a href="#"><code>sudo ufw default allow outgoing</code></a> - Permite conexões de saída.</li>
+            <li><a href="#"><code>sudo ufw allow 80</code></a> - Permite HTTP (porta 80).</li>
+            <li><a href="#"><code>sudo ufw allow 443</code></a> - Permite HTTPS (porta 443).</li>
+            <li><a href="#"><code>sudo ufw allow 22</code></a> - Permite SSH.</li>
+        </ul>
+    </section>
+
+    <section>
+    <h2>Firewall com Interface Gráfica (GUI)</h2>
+    <p>Se preferir gerenciar o firewall visualmente, pode usar ferramentas com interface gráfica. Elas são ideais para iniciantes ou para quem prefere evitar o terminal.</p>
+    <ul class="commands">
+        <li><a href="#"><code>sudo apt install gufw</code></a> - Instala o GUFW, interface gráfica para UFW.</li>
+        <li><a href="#"><code>sudo gufw</code></a> - Abre o GUFW com interface amigável.</li>
+    </ul>
+    <p>O GUFW permite criar, editar e aplicar regras com apenas alguns cliques, além de visualizar facilmente as portas abertas e bloqueadas.</p>
+</section>
+
+    <div class="topo">
+        <a href="#topo">↑ Voltar ao Topo</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Firewall Kali Linux - Cibersegurança</p>
+</footer>
+
+</body>
+</html>

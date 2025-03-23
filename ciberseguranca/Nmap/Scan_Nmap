@@ -1,0 +1,100 @@
+┌──(jaison㉿K-Linux)-[~]
+└─$ sudo nmap --script=vuln 192.168.10.1/24
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-01 14:06 -03
+Nmap scan report for CP60_MEL_r28.lan (192.168.10.1)
+Host is up (0.0046s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT   STATE SERVICE
+53/tcp open  domain
+80/tcp open  http
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+| http-enum: 
+|   /css/: Potentially interesting folder w/ directory listing
+|   /icons/: Potentially interesting folder w/ directory listing
+|   /img/: Potentially interesting folder w/ directory listing
+|_  /js/: Potentially interesting folder w/ directory listing
+MAC Address: 1A:7D:73:0A:15:7D (Unknown)
+
+Nmap scan report for 192.168.10.133
+Host is up (0.0082s latency).
+All 1000 scanned ports on 192.168.10.133 are in ignored states.
+Not shown: 1000 filtered tcp ports (no-response)
+MAC Address: B0:95:75:B3:C3:B3 (TP-Link Technologies)
+
+Nmap scan report for K-Linux.lan (192.168.10.138)
+Host is up (0.000023s latency).
+Not shown: 998 closed tcp ports (reset)
+PORT     STATE SERVICE
+80/tcp   open  http
+| http-sql-injection: 
+|   Possible sqli for queries:
+|     http://K-Linux.lan:80/?C=N%3BO%3DD%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/?C=M%3BO%3DA%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/?C=D%3BO%3DA%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/?C=S%3BO%3DA%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/?C=M%3BO%3DA%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/?C=D%3BO%3DA%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/?C=N%3BO%3DA%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/?C=S%3BO%3DA%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/src/?C=S%3BO%3DA%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/src/?C=N%3BO%3DD%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/src/?C=M%3BO%3DA%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/src/?C=D%3BO%3DA%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/?C=M%3BO%3DD%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/?C=D%3BO%3DA%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/?C=N%3BO%3DA%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/?C=S%3BO%3DA%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/Wi-Fi-Monitor/?C=N%3BO%3DD%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/Wi-Fi-Monitor/?C=S%3BO%3DA%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/Wi-Fi-Monitor/?C=M%3BO%3DA%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/Wi-Fi-Monitor/?C=D%3BO%3DA%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/reprodutor_online_musicas/?C=N%3BO%3DD%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/reprodutor_online_musicas/?C=S%3BO%3DA%27%20OR%20sqlspider
+|     http://K-Linux.lan:80/reprodutor_online_musicas/?C=D%3BO%3DA%27%20OR%20sqlspider
+|_    http://K-Linux.lan:80/reprodutor_online_musicas/?C=M%3BO%3DA%27%20OR%20sqlspider
+| http-csrf: 
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=K-Linux.lan
+|   Found the following possible CSRF vulnerabilities: 
+|     
+|     Path: http://K-Linux.lan:80/Evil_Twin/
+|     Form id: 
+|     Form action: index.php
+|     
+|     Path: http://K-Linux.lan:80/p%C3%A1gin_de_teste_login_09_02_25/
+|     Form id: cadastroform
+|_    Form action: process-cadastro.php
+| http-enum: 
+|   /: Root directory w/ listing on 'apache/2.4.63 (debian)'
+|   /login.html: Possible admin folder
+|   /server-status/: Potentially interesting folder
+|_  /src/: Potentially interesting directory w/ listing on 'apache/2.4.63 (debian)'
+| http-fileupload-exploiter: 
+|   
+|     Couldn't find a file-type field.
+|   
+|     Couldn't find a file-type field.
+|   
+|     Couldn't find a file-type field.
+|   
+|     Couldn't find a file-type field.
+|   
+|     Couldn't find a file-type field.
+|   
+|     Couldn't find a file-type field.
+|   
+|     Couldn't find a file-type field.
+|   
+|_    Couldn't find a file-type field.
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+8080/tcp open  http-proxy
+| http-enum: 
+|   /: Root directory w/ listing on 'apache/2.4.63 (debian)'
+|   /login.html: Possible admin folder
+|   /server-status/: Potentially interesting folder
+|_  /src/: Potentially interesting directory w/ listing on 'apache/2.4.63 (debian)'
+
+Nmap done: 256 IP addresses (3 hosts up) scanned in 212.01 seconds
+                                                       

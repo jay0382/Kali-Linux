@@ -1,0 +1,83 @@
+  body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #001f3f; /* azul escuro */
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            color: cyan;
+            margin: 0;
+        }
+        .container {
+            border: 2px solid cyan;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 1000px;
+        }
+        section {
+            border: 2px solid cyan;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            witdh: 900px;
+        }
+        h2, h3 {
+            color: cyan;
+        }
+        p {
+            color: white;
+        }
+        ul.commands li {
+            margin: 8px 0;
+        }
+        ul.commands a {
+            color: cyan;
+            text-decoration: none;
+        }
+        ul.commands a:hover {
+            text-decoration: underline;
+        }
+        pre {
+            background-color: #444;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #00ff00; /* verde-vivo */
+        }
+        footer {
+            background-color: #001f3f;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        .topo {
+            text-align: right;
+            margin-top: 20px;
+        }
+        .topo a {
+            color: cyan;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .topo a:hover {
+            text-decoration: underline;
+        }
+        .links-externos {
+            margin-top: 20px;
+        }
+        .links-externos a {
+            color: cyan;
+            text-decoration: none;
+        }
+        .links-externos a:hover {
+            text-decoration: underline;
+        }

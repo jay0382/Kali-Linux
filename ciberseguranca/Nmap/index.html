@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Completo do Nmap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Guia Completo do Nmap</h1>
+    </header>
+
+    <div class="container">
+        
+        <section>
+            <h2>O que é o Nmap?</h2>
+            <p>
+                O <strong>Nmap (Network Mapper)</strong> é uma ferramenta de código aberto usada para varredura de redes
+                e auditoria de segurança. Ele permite descobrir hosts ativos, serviços, sistemas operacionais e possíveis
+                vulnerabilidades em uma rede.
+            </p>
+            <p>Para mais informações acesse a página de documentação do Nmap</p>
+            <a href="https://nmap.org/man/pt_BR/" target="_blank">Página de documentação do Nmap</a> 
+        </section>
+
+        <section>
+            <h2>Instalando o Nmap</h2>
+            <p>No Kali Linux, o Nmap já vem instalado. Mas caso precise reinstalar, use o comando:</p>
+            <pre><code>sudo apt install nmap</code></pre>
+        </section>
+
+        <section>
+            <h2>Comandos Básicos do Nmap</h2>
+            <p>Abaixo estão alguns comandos essenciais para escaneamento de redes:</p>
+ 
+            <ul class="command-list">
+               <li>
+                  <pre><code class="command">nmap 192.168.1.1</code></pre> <span class="comment">Escaneia um único IP</span>
+               </li>
+               <li>
+                  <pre><code class="command">nmap 192.168.1.1/24</code></pre> <span class="comment">Escaneia toda a sub-rede</span>
+               </li>
+               <li>
+                  <pre><code class="command">nmap -p 80 192.168.1.1</code></pre> <span class="comment">Verifica se a porta 80 está aberta</span>
+               </li>
+               <li>
+                  <pre><code class="command">nmap -sV 192.168.1.1</code></pre> <span class="comment">Descobre serviços e versões rodando no IP</span>
+               </li>
+               <li>
+                  <pre><code class="command">nmap -O 192.168.1.1</code></pre> <span class="comment">Tenta identificar o sistema operacional</span>
+               </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Comandos Avançados do Nmap</h2>
+            <p>Alguns comandos avançados para auditoria de segurança:</p>
+           
+            <ul class="command-list">
+               <li>
+                  <pre><code class="command">nmap -A 192.168.1.1</code></pre> <span class="comment">Escaneamento completo (OS, versão, scripts)</span>
+               </li>
+               <li>
+                  <pre><code class="command">nmap -Pn 192.168.1.1</code></pre> <span class="comment">Ignora ping e assume que o host está ativo</span>
+               </li>
+               <li>
+                  <pre><code class="command">nmap --script=vuln 192.168.1.1</code></pre> <span class="comment">Busca vulnerabilidades conhecidas</span>
+               </li>
+               <li>
+                  <pre><code class="command">nmap -sS 192.168.1.1</code></pre> <span class="comment">Escaneamento stealth (SYN Scan)</span>
+               </li>
+               <li>  
+                  <pre><code class="command">nmap -sU 192.168.1.1 </code></pre> <span class="comment">Escaneamento de portas UDP</span>
+               </li>
+               <li>
+                  <pre><code class="command">nmap -A -T4 192.168.10.1/24 </code></pre> <span class="comment">Escaneamento completo com informações detalhahas como, serviços ativos e suas versões, Sistema Operacional, mapeia a rede, executa um traceroute, ajuda na auditoria de segurança.</span>
+               </li>
+            </ul>
+            <p>Explicação do Comando:</p>
+            <ul>
+               <li><strong>sudo</strong> → Necessário para acessar informações mais detalhadas de portas e SO.</li>
+               <li><strong>nmap</strong> → Executa o scan.</li> 
+               <li><strong>-A</strong> → Ativa detecção de SO, versão dos serviços, scan de scripts NSE e traceroute.</li>
+               <li><strong>-T4</strong> → Define a velocidade do scan como "agressiva", tornando-o mais rápido sem exagerar na detecção de IDS/IPS.</li> 
+               <li><strong>192.168.10.1/24</strong> → Escaneia a faixa inteira de 192.168.10.1 até 192.168.10.255.</li> 
+               <li><a href="New_Scan" target="_blank">Veja o resultado do scan</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Conclusão</h2>
+            <p>
+                O Nmap é uma ferramenta essencial para profissionais de segurança e redes.
+                Seu uso responsável pode ajudar a identificar falhas antes que atacantes explorem vulnerabilidades.
+            </p>
+        </section>
+
+    </div>
+
+</body>
+</html>

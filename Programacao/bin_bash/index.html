@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação - Bash Scripts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Documentação - Bash Scripts</h1>
+
+    <div class="container">
+
+        <section>
+            <h2>Introdução ao Bash</h2>
+            <p>O Bash é um interpretador de comandos usado em sistemas Unix/Linux e no Termux. Ele permite automatizar tarefas, manipular arquivos e interagir com o sistema operacional.</p>
+        </section>
+
+        <section>
+            <h2>Aula 1: Primeiro Script</h2>
+            <p>Para criar um script no Bash, siga os passos abaixo:</p>
+            <pre><code>nano script1.sh</code></pre>
+            <p>Escreva o seguinte código dentro do arquivo:</p>
+            <pre><code>#!/bin/bash
+echo "Olá, bem-vindo ao Bash!"
+echo "A data e hora atual são:"
+date</code></pre>
+            <p>Salve com <code>CTRL + X</code>, depois <code>Y</code> e <code>ENTER</code>.</p>
+            <p>Dê permissão para execução:</p>
+            <pre><code>chmod +x script1.sh</code></pre>
+            <p>Agora execute o script:</p>
+            <pre><code>./script1.sh</code></pre>
+        </section>
+
+        <section>
+            <h2>Aula 2: Variáveis no Bash</h2>
+            <p>As variáveis armazenam valores que podem ser usados em comandos. Exemplo:</p>
+            <pre><code>#!/bin/bash
+MEU_NOME="Jaison"
+echo "Olá, $MEU_NOME!"</code></pre>
+        </section>
+
+        <section>
+            <h2>Aula 3: Capturando Entrada do Usuário</h2>
+            <p>O comando <code>read</code> permite capturar informações digitadas pelo usuário:</p>
+            <pre><code>#!/bin/bash
+echo "Digite seu nome:"
+read NOME
+echo "Olá, $NOME! Bem-vindo ao Bash."</code></pre>
+        </section>
+
+        <section>
+            <h2>Exemplo Completo: Nome, Idade, Cidade e Profissão</h2>
+            <pre><code>#!/bin/bash
+echo "Qual é seu nome?"
+read NOME
+
+echo "Qual a sua idade?"
+read IDADE
+
+echo "Qual a cidade que você mora?"
+read CIDADE
+
+echo "Qual a sua profissão?"
+read PROFISSAO
+
+echo "Olá, $NOME! Você tem $IDADE anos, mora em $CIDADE e trabalha como $PROFISSAO."</code></pre>
+        </section>
+
+        <section>
+            <h2>Aula 4: Condicionais `if`, 'elif' e 'else' no Bash</h2>
+            <p>O comando `if` permite tomar decisões no script com base em condições.</p>
+            <p>elif 'else if' → Permite testar outras condições se a primeira for falsa.</p>
+            <p>else → Define um bloco de código padrão que será executado caso nenhuma condição anterior seja verdadeira.</p>
+
+            <h3>Sintaxe Básica</h3>
+            <pre><code>if [ condição ]; then
+    # Comandos se a condição for verdadeira
+else
+    # Comandos se a condição for falsa
+fi</code></pre>
+
+            <h3>Exemplo: Verificar Maioridade</h3>
+            <pre><code>#!/bin/bash
+echo "Digite sua idade:"
+read IDADE
+
+if [ "$IDADE" -ge 18 ]; then
+    echo "Você é maior de idade."
+else
+    echo "Você é menor de idade."
+fi</code></pre>
+
+            <h3>Operadores de Comparação</h3>
+            <ul>
+                <li><code>-eq</code> → Igual (`==`)</li>
+                <li><code>-ne</code> → Diferente (`!=`)</li>
+                <li><code>-gt</code> → Maior (`>`)</li>
+                <li><code>-lt</code> → Menor (`<`)</li>
+                <li><code>-ge</code> → Maior ou igual (`>=`)</li>
+                <li><code>-le</code> → Menor ou igual (`<=`)</li>
+            </ul>
+
+            <h3>Exemplo: Comparação de Números</h3>
+            <pre><code>#!/bin/bash
+echo "Digite um número:"
+read NUMERO
+
+if [ "$NUMERO" -gt 10 ]; then
+    echo "O número é maior que 10."
+else
+    echo "O número é menor ou igual a 10."
+fi</code></pre>
+
+            <h3>Verificando Strings</h3>
+            <ul>
+                <li><code>=</code> → Igual</li>
+                <li><code>!=</code> → Diferente</li>
+                <li><code>-z</code> → String vazia</li>
+                <li><code>-n</code> → String não vazia</li>
+            </ul>
+
+            <h3>Exemplo: Login Simples</h3>
+            <pre><code>#!/bin/bash
+echo "Digite a senha:"
+read SENHA
+
+if [ "$SENHA" = "segredo123" ]; then
+    echo "Acesso permitido!"
+else
+    echo "Senha incorreta!"
+fi</code></pre>
+
+            <h3>Usando `elif` para Várias Condições</h3>
+            <pre><code>#!/bin/bash
+echo "Digite sua idade:"
+read IDADE
+
+if [ "$IDADE" -lt 12 ]; then
+    echo "Você é uma criança."
+elif [ "$IDADE" -lt 18 ]; then
+    echo "Você é um adolescente."
+else
+    echo "Você é um adulto."
+fi</code></pre>
+
+            <h3>💡 Desafio para Você</h3>
+            <p>Crie um script que:</p>
+            <ul>
+                <li>Pergunta **o nome do usuário**</li>
+                <li>Pergunta **qual sistema operacional ele usa** (`Linux`, `Windows` ou `Mac`)</li>
+                <li>Se for **Linux**, exibe `"Ótima escolha! Linux é poderoso."`</li>
+                <li>Se for **Windows**, exibe `"Windows é popular, mas Linux é mais seguro."`</li>
+                <li>Se for **Mac**, exibe `"Mac é elegante, mas caro!"`</li>
+                <li>Se digitar algo diferente, exibe `"Opção inválida!"`</li>
+            </ul>
+
+            <h3>Resultado do desafio</h3>
+            <pre><code>#!/bin/bash
+
+echo "Qual é seu nome:"
+read NOME
+
+echo "Qual o sistema operacional que você usa? (Linux, Windows ou Mac)"
+read SISTEMA
+
+# Comparação correta usando "=" para strings
+if [ "$SISTEMA" = "Linux" ]; then
+   echo "Ótima escolha! Linux é poderoso."
+elif [ "$SISTEMA" = "Windows" ]; then
+   echo "Windows é popular, mas Linux é mais seguro."
+elif [ "$SISTEMA" = "Mac" ]; then
+   echo "Mac é elegante, mas caro!"
+else
+   echo "Opção Inválida!"
+fi</code></pre>
+      </section>
+
+      <section>
+          <h2>Aula 3: Loops 'while' e 'for' no Bash</h2>
+          <p>Os loops permitem repetir comandos automaticamente, sem precisar copiá-los várias vezes.</p>
+          <p>1 Loop <strong>while</strong> (Enquanto a condição for verdadeira).</p>
+          <p>O <strong>while</strong> executa um bloco de comandos enquanto uma condição for verdadeira.</p>
+         
+          <pre><code>while [ condição ]; do
+    # Comandos a serem repetidos
+done</code></pre>
+ 
+          <p>Exemplo: Contador de 1 a 5</p>
+          <pre><code>#!/bin/bash
+
+NUM=1  # Inicia a variável
+
+while [ "$NUM" -le 5 ]; do  # Enquanto NUM for menor ou igual a 5
+    echo "Número: $NUM"
+    NUM=$((NUM + 1))  # Incrementa a variável
+done</code></pre>
+          <p><strong>Explicação</strong></p>
+          <p>1 <strong>NUM=1</strong> → Define o valor inicial da variável.</p>
+          <p>2 <strong>while [ "$NUM" -le 5 ]; do</strong> → Continua enquanto <strong>NUM ≤ 5</strong>.
+          <p>3 <strong>echo "Número: $NUM"</strong> → Exibe o número atual.</p>
+          <p>4 <strong>NUM=$((NUM + 1))</strong> → Incrementa <strong>NUM</strong> para evitar loop infinito.</p>
+          <p>5 <strong>done</strong> → Indica o fim do loop.</p>  
+          <p>Saída Esperada:</p>
+          <pre><code>Número: 1
+Número: 2
+Número: 3
+Número: 4
+Número: 5</code></pre>
+      </section> 
+        
+    </div>
+
+</body>
+</html>

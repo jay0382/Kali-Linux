@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shodan Dorks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Lista de Dorks para o Shodan</h1>
+</header>
+
+<div class="container">
+    <section>
+        <h2>1. Buscar por Tipo de Dispositivo</h2>
+        <p>Esses dorks ajudam a encontrar dispositivos específicos expostos na internet.</p>
+        <pre><code>"IP Webcam Server"
+"Mikrotik"
+"port:3389"
+"port:23"</code></pre>
+    </section>
+
+    <section>
+        <h2>2. Buscar por País ou Cidade</h2>
+        <p>Esses dorks ajudam a encontrar dispositivos em países ou cidades específicas.</p>
+        <pre><code>"country:BR"
+"country:US"
+"country:BR city:São Paulo"</code></pre>
+    </section>
+
+    <section>
+        <h2>3. Buscar por Organização ou ASN</h2>
+        <p>Filtre por provedores de internet ou organizações.</p>
+        <pre><code>"org:Vivo"
+"org:Microsoft"</code></pre>
+    </section>
+
+    <section>
+        <h2>4. Buscar por Serviços e Protocolos</h2>
+        <p>Veja serviços expostos com portas específicas.</p>
+        <pre><code>"port:21 Anonymous user"
+"port:3306"
+"port:9200"</code></pre>
+    </section>
+
+    <section>
+        <h2>5. Buscar por Sistemas Operacionais</h2>
+        <p>Filtre dispositivos por sistema operacional.</p>
+        <pre><code>"os:Windows 7"
+"os:Linux"</code></pre>
+    </section>
+
+    <section>
+        <h2>6. Buscar por Vulnerabilidades</h2>
+        <p>Identifique sistemas vulneráveis.</p>
+        <pre><code>"port:445 has_smb:yes"
+"product:Apache version:2.4.49"</code></pre>
+    </section>
+
+    <section>
+        <h2>7. Buscar por Faixas de IP</h2>
+        <p>Busque dispositivos por endereço IP ou range.</p>
+        <pre><code>"net:179.222.232.178"
+"net:200.200.0.0/16"</code></pre>
+    </section>
+
+     <section>
+        <h2>8. Buscando dispositivos vulneráveis</h2>
+        <p>Filtros para encontrar sistemas com vulnerabilidades conhecidas.</p>
+        <pre><code>"port:445 os:windows has_smb:yes"
+"product:Apache version:2.4.49"
+"product:Mikrotik -has_ssl:true"</code></pre>
+     </section>
+
+     <section>
+        <h2>9. Filtrando por localização e organização</h2>
+        <p>Buscando dispositivos por localização e provedores.</p>
+        <pre><code>"country:BR org:'Vivo'"
+"org:'Microsoft'"
+"country:BR city:'São Paulo'"</code></pre>
+     </section>
+   
+     <section> 
+        <h2>10. Encontrando câmeras de segurança expostas</h2>
+        <p>Câmeras IP que podem estar abertas na internet.</p>
+        <pre><code>"IP Webcam Server"
+"title:'Hikvision' port:80"
+"Server: SQ-WEBCAM Content-Type: multipart/x-mixed-replace"</code></pre>
+     </section>
+ 
+     <section>
+        <h2>11. Procurando portas específicas abertas</h2>
+        <p>Serviços sensíveis acessíveis na internet.</p>
+        <pre><code>"port:3306"
+"port:21 Anonymous user"
+"port:3389"</code></pre>
+     </section>
+ 
+     <section>
+        <h2>12. Encontrando páginas de login e painéis administrativos</h2>
+        <p>Interfaces de administração expostas.</p>
+        <pre><code>"title:'RouterOS' Mikrotik"
+"http.favicon.hash:472654231"
+"title:'DVR Login'"</code></pre>
+     </section>
+
+     <section>
+        <h2>13. Buscando por arquivos sensíveis</h2>
+        <p>Arquivos de configuração e credenciais vazadas.</p>
+        <pre><code>"http.title:'Index of /' '.env'"
+"http.title:'Index of /' '.htaccess'"</code></pre>
+     </section> 
+
+</div>
+
+</body>
+</html>

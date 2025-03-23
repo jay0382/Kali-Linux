@@ -1,0 +1,33 @@
+ body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            text-align: 30px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        pre {
+            background: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            color: #c0392b;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section pre {
+            color: #c0392b;
+        }
+  
+        .image-style {
+        margin: 20px; /* Adiciona espaço ao redor das imagens */
+        border: 2px solid #ccc; /* Cria uma borda cinza clara */
+        border-radius: 10px; /* Bordas arredondadas */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destaque */
+       }

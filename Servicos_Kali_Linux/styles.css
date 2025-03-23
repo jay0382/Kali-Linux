@@ -1,0 +1,63 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #ff4c4c;
+    padding: 20px;
+    font-size: 1.5em;
+}
+
+/* Container da Tabela */
+.container {
+    width: 90%;
+    margin: 20px auto;
+    overflow-x: auto;
+}
+
+/* Estilo da Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #333;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Cabeçalho da Tabela */
+thead {
+    background-color: #ff4c4c;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #555;
+    text-align: left;
+}
+
+/* Linhas Alternadas */
+tbody tr:nth-child(even) {
+    background-color: #444;
+}
+
+/* Hover nas Linhas */
+tbody tr:hover {
+    background-color: #555;
+}
+
+/* Estilizar o texto dos comandos */
+code {
+    background: #222;
+    padding: 5px 8px;
+    border-radius: 5px;
+    color: #ff4c4c;
+    font-weight: bold;
+    font-family: "Courier New", monospace;
+}

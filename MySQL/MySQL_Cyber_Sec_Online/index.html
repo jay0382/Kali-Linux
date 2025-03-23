@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação: Introdução ao Banco de Dados</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>📘 Documentação: Introdução ao Banco de Dados</h1>
+    <p>Esta documentação descreve as etapas para criar e configurar um banco de dados intermediário, com suporte a login, utilizando MySQL, PHP e HTML.</p>
+    
+    <h2>1️⃣ Estrutura do Banco de Dados</h2>
+    <p>Primeiro, vamos criar um banco de dados que contemple:</p>
+    <ul>
+        <li>Tabela para <b>usuários</b> com os campos necessários.</li>
+        <li>Tabela para <b>progresso</b> do usuário nos tópicos.</li>
+    </ul>
+
+<section>    
+    <h3>SQL para o Banco de Dados</h3>
+    <pre><code>
+CREATE DATABASE CyberSecOnline;
+
+USE CyberSecOnline;
+
+-- Tabela de Usuários
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome_usuario VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    senha_hash VARCHAR(255) NOT NULL,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Tabela de Progresso
+CREATE TABLE progresso (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NOT NULL,
+    topico_id INT NOT NULL,
+    concluido BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
+-- Tabela de Tópicos (para referência dos conteúdos)
+CREATE TABLE topicos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome_topico VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    ordem INT UNIQUE NOT NULL
+);
+
+-- Inserir tópicos iniciais
+INSERT INTO topicos (nome_topico, descricao, ordem) VALUES
+('Introdução à Cibersegurança', 'Conceitos básicos sobre segurança digital.', 1),
+('Introdução ao Kali Linux', 'Princípios básicos e ferramentas.', 2),
+('Ferramentas de Hacking', 'Principais ferramentas e seu uso.', 3);
+
+    </code></pre>
+</section>
+    
+<section>
+    <h2>2️⃣ Atualizar Formulário de Criar Conta</h2>
+    <p>Vamos criar um script PHP para registrar o usuário no banco de dados.</p>
+    <h3>Arquivo: criar_conta.php</h3>
+    <pre>
+&lt;<?php
+session_start();
+include 'conexao.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome_usuario = $_POST['nome_usuario'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+    $confirmar_senha = $_POST['confirmar_senha'];
+
+    if ($senha !== $confirmar_senha) {
+        die("Erro: As senhas não coincidem!");
+    }
+
+    $senha_hash = hash("sha256", $senha);
+
+    $sql = "INSERT INTO usuarios (nome_usuario, email, senha_hash) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sss", $nome_usuario, $email, $senha_hash);
+
+    if ($stmt->execute()) {
+        echo "Conta criada com sucesso! Agora você pode fazer login.";
+    } else {
+        echo "Erro ao criar conta: " . $stmt->error;
+    }
+}
+?>&gt;
+    </pre>
+</section>
+ 
+<section>   
+    <h2>3️⃣ Atualizar Formulário de Login</h2>
+    <p>Adicione a funcionalidade para verificar as credenciais e carregar o progresso do usuário.</p>
+    <h3>Arquivo: login.php</h3>
+    <pre><code>
+&lt;<?php
+session_start();
+include 'conexao.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $login = $_POST['login'];
+    $senha = $_POST['senha'];
+
+    $sql = "SELECT * FROM usuarios WHERE email = ? OR nome_usuario = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $login, $login);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
+
+    if ($resultado->num_rows > 0) {
+        $usuario = $resultado->fetch_assoc();
+        $senha_hash = hash("sha256", $senha);
+
+        if ($senha_hash === $usuario['senha_hash']) {
+            $_SESSION['usuario'] = $usuario['id'];
+            echo "Login bem-sucedido! Bem-vindo, " . $usuario['nome_usuario'];
+        } else {
+            echo "Senha incorreta.";
+        }
+    } else {
+        echo "Usuário ou e-mail não encontrado.";
+    }
+}
+?>&gt;
+   </code></pre> 
+</section>
+
+<section> 
+    <h2>4 Progresso do Usuário</h2>
+    <p>Após o login, carregamos os tópicos e o progresso:</P>
+    <h3>Arquivo: dashboard.php</h3>
+    <pre><code>
+&lt;?php
+// Inicia a sessão para manter o estado do usuário logado
+session_start();
+
+// Inclui o arquivo de conexão com o banco de dados
+include 'conexao.php';
+
+// Verifica se o usuário está logado, caso contrário, exibe uma mensagem de acesso negado
+if (!isset($_SESSION['usuario'])) {
+    die("Acesso negado");
+}
+
+// Obtém o ID do usuário logado
+$usuario_id = $_SESSION['usuario'];
+
+// Consulta SQL para buscar os tópicos e o progresso do usuário
+$sql = "SELECT t.nome_topico, p.concluido
+        FROM topicos t
+        LEFT JOIN progresso p ON t.id = p.topico_id AND p.usuario_id = ?";
+
+// Prepara a consulta para evitar SQL Injection
+$stmt = $conn-&gt;prepare($sql);
+
+// Associa o ID do usuário como parâmetro na consulta
+$stmt-&gt;bind_param("i", $usuario_id);
+
+// Executa a consulta
+$stmt-&gt;execute();
+
+// Obtém o resultado da consulta
+$resultado = $stmt-&gt;get_result();
+
+// Loop para exibir os tópicos e o status de conclusão do usuário
+while ($topico = $resultado-&gt;fetch_assoc()) {
+    echo $topico['nome_topico'] . " - " . ($topico['concluido'] ? "Concluído" : "Pendente") . "&lt;br&gt;";
+}
+?&gt;
+  </code></pre>
+
+<h2>Explicação do Código</h2>
+<p>O código abaixo gerencia o progresso do usuário nos tópicos de aprendizado após o login.</p>
+
+<ul>
+    <li><strong>Sessão:</strong> A sessão é iniciada com <code>session_start()</code> para manter o estado do usuário logado.</li>
+    <li><strong>Conexão com o banco de dados:</strong> O arquivo <code>conexao.php</code> é incluído para estabelecer a conexão com o banco.</li>
+    <li><strong>Verificação de login:</strong> Se o usuário não estiver logado (<code>$_SESSION['usuario']</code> não existir), a execução é interrompida com a mensagem <code>"Acesso negado"</code>.</li>
+    <li><strong>Consulta SQL:</strong> A consulta busca os tópicos e o progresso do usuário na tabela <code>progresso</code>, usando <code>LEFT JOIN</code> para garantir que todos os tópicos sejam retornados, mesmo se o progresso não existir.</li>
+    <li><strong>Preparação da consulta:</strong> O <code>prepare()</code> é usado para evitar SQL Injection.</li>
+    <li><strong>Execução e Exibição dos dados:</strong> A consulta é executada e um loop exibe cada tópico, indicando se está <code>"Concluído"</code> ou <code>"Pendente"</code>, dependendo do status na tabela de progresso.</li>
+</ul>
+
+<p>Esse código permite acompanhar o progresso de um usuário nos tópicos de aprendizado.</p>
+
+    </code></pre>
+</section>
+
+<section>    
+    <h2>4️⃣ Código de Conexão ao Banco de Dados</h2>
+    <h3>Arquivo: conexao.php</h3>
+    <pre><code>
+<pre><code>
+&lt;?php
+// Configurações de conexão com o banco de dados
+$host = "localhost"; // Endereço do servidor
+$usuario = "root";   // Usuário que acessará o MySQL
+$senha = "";         // Senha do MySQL (adicione aqui se necessário)
+$banco = "cyberseconline"; // Nome do banco de dados
+
+// Criar conexão
+$conn = new mysqli($host, $usuario, $senha, $banco);
+
+// Verificar conexão
+if ($conn-&gt;connect_error) {
+    die("Falha na conexão: " . $conn-&gt;connect_error);
+}
+?&gt;
+</code></pre>
+
+<h2>Explicação do Código</h2>
+
+<ul>
+    <li><strong>Configuração das Variáveis:</strong>
+        <ul>
+            <li><code>$host</code>: Define o endereço do servidor MySQL. Para ambiente local, geralmente é <code>localhost</code>.</li>
+             <li><code>$usuario</code>: Usuário que acessará o MySQL, normalmente <code>root</code> em servidores locais.</li>
+            <li><code>$senha</code>: A senha do usuário MySQL. Se você configurou uma senha para <code>root</code>, insira aqui.</li>
+            <li><code>$banco</code>: Nome do banco de dados criado (neste caso, <code>"cyberseconline"</code>).</li>
+        </ul>
+    </li>
+    <li><strong>Criação da Conexão:</strong>
+        <p>Usamos <code>new mysqli</code> para criar a conexão com os parâmetros definidos.</p>
+    </li>
+    <li><strong>Verificação da Conexão:</strong>
+        <p>Caso a conexão falhe, o código para a execução e exibe a mensagem de erro com <code>die()</code>.</p>
+    </li>
+</ul>
+</section>
+    
+<section>
+    <h2>5️⃣ Ajuste de JavaScript</h2>
+    <pre>
+        <code>
+// Função para exibir o modal de login
+function showLogin() {
+    document.getElementById("loginModal").style.display = "block";
+}
+
+// Função para exibir o modal de criar conta
+function showCreateAccount() {
+    document.getElementById("createAccountModal").style.display = "block";
+}
+
+// Função para fechar qualquer modal
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
+}
+
+// Fechar modais ao clicar fora deles
+window.onclick = function (event) {
+    const loginModal = document.getElementById("loginModal");
+    const createAccountModal = document.getElementById("createAccountModal");
+    if (event.target === loginModal) {
+        loginModal.style.display = "none";
+    } else if (event.target === createAccountModal) {
+        createAccountModal.style.display = "none";
+    }
+};
+
+// Validação e envio do formulário de login
+document.getElementById("loginForm").addEventListener("submit", async function (event) {
+    event.preventDefault(); // Impede o envio padrão do formulário
+
+    const login = document.getElementById("emailLogin").value.trim();
+    const password = document.getElementById("passwordLogin").value.trim();
+
+    let isValid = true;
+
+    // Verificação básica
+    if (login === "") {
+        alert("Por favor, insira seu e-mail ou nome de usuário.");
+        isValid = false;
+    }
+
+    if (password.length < 6) {
+        alert("A senha deve ter no mínimo 6 caracteres.");
+        isValid = false;
+    }
+
+    if (isValid) {
+        // Envia os dados para o backend usando FormData
+        const formData = new FormData();
+        formData.append("login", login);
+        formData.append("senha", password);
+
+        try {
+            const response = await fetch("login.php", {
+                method: "POST",
+                body: formData,
+            });
+
+            const data = await response.text(); // Backend retorna texto
+
+            if (data.includes("Login bem-sucedido")) {
+                alert(data);
+                // Redirecionar ou executar outra ação
+            } else {
+                alert(data); // Exibe erros como senha incorreta ou usuário não encontrado
+            }
+        } catch (error) {
+            console.error("Erro na conexão com o backend:", error);
+            alert("Erro de conexão. Tente novamente mais tarde.");
+        }
+    }
+});
+
+// Validação e envio do formulário de criação de conta
+document.getElementById("registerForm").addEventListener("submit", async function (event) {
+    event.preventDefault(); // Impede o envio padrão do formulário
+
+    const email = document.getElementById("emailCreate").value.trim();
+    const username = document.getElementById("usernameCreate").value.trim();
+    const password = document.getElementById("passwordCreate").value.trim();
+    const confirmPassword = document.getElementById("confirmPasswordCreate").value.trim();
+
+    let isValid = true;
+
+    // Validação do e-mail
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert("Por favor, insira um e-mail válido.");
+        isValid = false;
+    }
+
+    if (username.length === 0) {
+        alert("O nome de usuário é obrigatório.");
+        isValid = false;
+    }
+
+    if (password.length < 6) {
+        alert("A senha deve ter no mínimo 6 caracteres.");
+        isValid = false;
+    }
+
+    if (password !== confirmPassword) {
+        alert("As senhas não coincidem.");
+        isValid = false;
+    }
+
+    if (isValid) {
+        // Envia os dados para o backend usando FormData
+        const formData = new FormData();
+        formData.append("nome_usuario", username);
+        formData.append("email", email);
+        formData.append("senha", password);
+        formData.append("confirmar_senha", confirmPassword);
+
+        try {
+            const response = await fetch("criar_conta.php", {
+                method: "POST",
+                body: formData,
+            });
+
+            const data = await response.text(); // Backend retorna texto
+
+            if (data.includes("Conta criada com sucesso")) {
+                alert(data);
+                // Redirecionar ou executar outra ação
+            } else {
+                alert(data); // Exibe erros como senhas não coincidem
+            }
+        } catch (error) {
+            console.error("Erro na conexão com o backend:", error);
+            alert("Erro de conexão. Tente novamente mais tarde.");
+        }
+    }
+});
+
+// Função para alternar a visibilidade da senha
+function togglePassword(inputId) {
+    const input = document.getElementById(inputId);
+    input.type = input.type === "password" ? "text" : "password";
+}
+        </code>
+    </pre>
+</section>
+    
+    <footer>
+        <p>&copy; 2025 Guia SQL. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

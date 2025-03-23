@@ -1,0 +1,86 @@
+
+# Relatorio de Scan de Vulnerabilidades com Nmap - 2025-03-01
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Inicio do Scan Nmap com o script de vulnerabilidades
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-01 14:06 -03
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# --- Dispositivo: Roteador OpenWrt (192.168.10.1) ---
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Nmap scan report for CP60_MEL_r28.lan (192.168.10.1)
+
+Host is up (0.0046s latency).                                                                                                            # Host esta¡ ativo com baixa latencia
+Not shown: 998 closed tcp ports (reset)                                                                                            # 998 portas fechadas
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+PORT   STATE SERVICE
+
+53/tcp open  domain                                                                                                                         # Serviço DNS ativo (dnsmasq)
+80/tcp open  http                                                                                                                              # Painel de administracao web OpenWrt ativo
+|_http-dombased-xss: Couldn't find any DOM based XSS.                                                                   # Nenhuma vulnerabilidade XSS baseada em DOM encontrada
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.                                                          # Nenhuma vulnerabilidade XSS armazenada detectada
+|_http-csrf: Couldn't find any CSRF vulnerabilities.                                                                            # Nenhuma vulnerabilidade CSRF detectada
+| http-enum:                                                                                                                                     # Diretórios acessi­veis na interface web
+|   /css/: Potentially interesting folder w/ directory listing
+|   /icons/: Potentially interesting folder w/ directory listing
+|   /img/: Potentially interesting folder w/ directory listing
+|_  /js/: Potentially interesting folder w/ directory listing
+MAC Address: 1A:7D:73:0A:15:7D (Unknown)                                                                                      # Endereco MAC desconhecido
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# --- Dispositivo: TP-Link (192.168.10.133) ---
+
+Nmap scan report for 192.168.10.133
+Host is up (0.0082s latency).                                                                                                              # Dispositivo esta¡ online
+All 1000 scanned ports on 192.168.10.133 are in ignored states.                                                         # Todas as portas filtradas
+Not shown: 1000 filtered tcp ports (no-response)                                                                                # Nenhuma resposta das portas
+MAC Address: B0:95:75:B3:C3:B3 (TP-Link Technologies)                                                                     # Fabricante TP-Link
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# --- Dispositivo: Servidor K-Linux (192.168.10.138) ---
+
+Nmap scan report for K-Linux.lan (192.168.10.138)
+Host is up (0.000023s latency).                                                                                                            # Baixi­ssima latencia, possivelmente o host do proprio scanner
+Not shown: 998 closed tcp ports (reset)                                                                                               # 998 portas fechadas
+PORT     STATE SERVICE
+80/tcp   open  http                                                                                                                              # Servidor HTTP Apache rodando na porta 80
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# --- SQL Injection encontrado ---
+
+| http-sql-injection:                                                                                                                             # Possi­veis falhas de injecao SQL encontradas
+|   Possible sqli for queries:
+|     http://K-Linux.lan:80/?C=N%3BO%3DD' OR sqlspider
+|     http://K-Linux.lan:80/Wi-Fi-Monitor/?C=D%3BO%3DA' OR sqlspider
+|     http://K-Linux.lan:80/reprodutor_online_musicas/?C=M%3BO%3DA' OR sqlspider
+|_    # URLs onde a vulnerabilidade foi detectada
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# --- CSRF encontrado ---
+
+| http-csrf:                                                                                                                                           # Possi­vel vulnerabilidade de CSRF
+| Spidering limited to: maxdepth=3; maxpagecount=20; withinhost=K-Linux.lan
+|   Found the following possible CSRF vulnerabilities: 
+|     Path: http://K-Linux.lan:80/Evil_Twin/
+|     Form action: index.php                                                                                                                  # Formulario sem protecao contra CSRF
+|_    Path: http://K-Linux.lan:80/p%C3%A1gin_de_teste_login_09_02_25/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# --- Diretorios sensi­veis expostos ---
+
+| http-enum:
+|   /: Root directory w/ listing on 'apache/2.4.63 (debian)'
+|   /login.html: Possible admin folder                                                                                                   # Pagina de login administrativa detectada
+|   /server-status/: Potentially interesting folder                                                                                   # Informacoes do Apache podem estar expostas
+|_  /src/: Diretorio possivelmente contendo codigo-fonte
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# --- Teste de Upload de Arquivos ---
+
+| http-fileupload-exploiter:
+|_    Couldn't find a file-type field.  # Nao foi possi­vel validar uploads, mas pode haver falhas
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# --- Porta 8080 (Servidor HTTP Proxy) ---
+
+8080/tcp open  http-proxy                                                                                                                   # Servidor Apache rodando em porta alternativa
+| http-enum:
+|   /: Root directory w/ listing on 'apache/2.4.63 (debian)'
+|   /login.html: Possible admin folder                                                                                                  # Pagina de login possivelmente exposta
+|   /server-status/: Potentially interesting folder  # Pode conter informacoes Uteis para ataque
+|_  /src/: Diretorio possivelmente contendo codigo-fonte
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Nmap done: 256 IP addresses (3 hosts up) scanned in 212.01 seconds  # Finalizacao do scan

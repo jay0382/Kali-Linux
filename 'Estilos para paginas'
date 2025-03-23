@@ -1,0 +1,12 @@
+css separado do html
+body: background-color: black;
+header: background-color: azul escuro, h1: ciano; 
+container: border: ciano; border-radius: 10px; width: 1000px; margin: 20px auto; 
+introdução dentro do container;
+section: border: ciano; border-radius: 10px; width: 900px; 
+h2,h3: ciano;
+p: white;
+a: color: limegreen;  text-decoration: none;
+a:hover: text-decoration: underline;
+se tiver pre code, pre: background-color: #333, code: limegreen; 
+footer fora do container
