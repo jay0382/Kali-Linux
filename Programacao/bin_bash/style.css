@@ -1,32 +1,57 @@
-       body {
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            color: cyan;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .container {
-            width: 900px;
-            margin: auto;
-            padding: 20px;
-            border: 2px solid cyan;
-            border-radius: 10px;
-        }
-        section {
-            margin-bottom: 20px;
-            padding: 10px;
-            border: 2px solid cyan;
-            border-radius: 10px;
-        }
-        h2, h3 {
-            color: cyan;
-        }
-        p {
-            color: white;
-        }
+/* Estilos Base */
+  body {
+    background-color: #000;
+    color: #FFF;
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #00005A;
+    padding: 25px 0;
+    text-align: center;
+    border-bottom: 3px solid #00FFFF;
+    margin-bottom: 15px;
+}
+
+header h1 {
+    color: #00FFFF;
+    margin: 0;
+    font-size: 2.2em;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+.container {
+    width: 900px;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid cyan;
+    border-radius: 10px;
+}
+section {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid cyan;
+    border-radius: 10px;
+}
+h2, h3 {
+    color: cyan;
+}
+p {
+    color: white;
+}
+a {
+    color: limegreen;
+    text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
         pre {
             background-color: #333;
             padding: 10px;
@@ -38,3 +63,21 @@
             font-weight: bold;
         }
 
+        .hidden {
+            display: none;
+        }
+
+        button {
+            background-color: cyan;  
+            border: none;
+            padding: 8px 15px;
+            margin: 10px 0;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            color: black;
+        }
+
+        button:hover {
+            background-color: #00cccc;
+        }

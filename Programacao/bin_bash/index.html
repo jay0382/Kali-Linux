@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+  <header>
     <h1>Documentação - Bash Scripts</h1>
+  </header>
 
     <div class="container">
 
@@ -156,7 +157,12 @@ fi</code></pre>
                 <li>Se digitar algo diferente, exibe `"Opção inválida!"`</li>
             </ul>
 
-            <h3>Resultado do desafio</h3>
+             <button onclick="document.getElementById('resultadoCase').classList.toggle('hidden')">
+    Visualizar resultado
+  </button>
+
+  <div id="resultadoCase" class="hidden">
+    <h3>Resultado do desafio</h3>
             <pre><code>#!/bin/bash
 
 echo "Qual é seu nome:"
@@ -178,7 +184,7 @@ fi</code></pre>
       </section>
 
       <section>
-          <h2>Aula 3: Loops 'while' e 'for' no Bash</h2>
+          <h2>Aula 5: Loops 'while' e 'for' no Bash</h2>
           <p>Os loops permitem repetir comandos automaticamente, sem precisar copiá-los várias vezes.</p>
           <p>1 Loop <strong>while</strong> (Enquanto a condição for verdadeira).</p>
           <p>O <strong>while</strong> executa um bloco de comandos enquanto uma condição for verdadeira.</p>
@@ -209,7 +215,292 @@ Número: 3
 Número: 4
 Número: 5</code></pre>
       </section> 
-        
+
+  <section>
+    <h2>Aula 6: Loop <code>for</code> no Bash</h2>
+    <p>O loop <code>for</code> permite percorrer uma sequência de valores automaticamente, repetindo comandos para cada valor.</p>
+
+    <h3>Sintaxe</h3>
+    <pre><code>for VARIAVEL in lista_de_valores; do
+    # Comandos a serem executados
+done</code></pre>
+
+    <h3>Exemplo 1: Números de 1 a 5</h3>
+    <pre><code>#!/bin/bash
+
+for i in 1 2 3 4 5; do
+    echo "Número: $i"
+done</code></pre>
+
+    <h3>Exemplo 2: Lista de nomes</h3>
+    <pre><code>#!/bin/bash
+
+for NOME in Ana Bruno Carlos; do
+    echo "Olá, $NOME!"
+done</code></pre>
+
+    <h3>Exemplo 3: Comando <code>{1..5}</code> (forma simplificada)</h3>
+    <pre><code>#!/bin/bash
+
+for i in {1..5}; do
+    echo "Contando: $i"
+done</code></pre>
+
+    <h3>Explicação</h3>
+    <p><strong>for i in {1..5}</strong> → Gera os números de 1 a 5.</p>
+    <p><strong>do ... done</strong> → Tudo dentro desse bloco será executado para cada número.</p>
+
+    <h3>💡 Desafio para Você</h3>
+    <p>Crie um script que:</p>
+    <ul>
+        <li>Pergunte quantas vezes uma mensagem deve ser exibida.</li>
+        <li>Peça qual mensagem será exibida.</li>
+        <li>Use um <code>for</code> para mostrar a mensagem repetidamente.</li>
+    </ul>
+
+     <button onclick="document.getElementById('resultadoCase1').classList.toggle('hidden')">
+    Visualizar resultado
+  </button>
+
+  <div id="resultadoCase1" class="hidden">
+    <h3>Resultado do desafio</h3>
+    <pre><code>#!/bin/bash
+
+echo "Quantas vezes deseja exibir a mensagem?"
+read VEZES
+
+echo "Digite a mensagem:"
+read MENSAGEM
+
+for ((i = 1; i <= VEZES; i++)); do
+    echo "$i - $MENSAGEM"
+done</code></pre>
+</section>
+
+<section>
+  <h2>Aula 7: Usando <code>case</code> no Bash</h2>
+  <p>O <code>case</code> é usado para executar diferentes comandos dependendo do valor de uma variável. Ele é uma alternativa mais organizada ao <code>if/elif/else</code>.</p>
+
+  <h3>Sintaxe</h3>
+  <pre><code>case $VARIAVEL in
+  "opção1")
+    # comandos
+    ;;
+  "opção2")
+    # comandos
+    ;;
+  *)
+    # comandos padrão (caso nenhuma opção anterior seja verdadeira)
+    ;;
+esac</code></pre>
+
+  <h3>Exemplo: Escolhendo uma linguagem favorita</h3>
+  <pre><code>#!/bin/bash
+
+echo "Qual sua linguagem favorita? (Python, Bash, JavaScript)"
+read LINGUAGEM
+
+case $LINGUAGEM in
+  "Python")
+    echo "Python é excelente para automações!"
+    ;;
+  "Bash")
+    echo "Bash é perfeito para scripts de sistema."
+    ;;
+  "JavaScript")
+    echo "JavaScript domina a web!"
+    ;;
+  *)
+    echo "Opção desconhecida."
+    ;;
+esac</code></pre>
+
+  <h3>Exemplo: Menu de opções</h3>
+  <pre><code>#!/bin/bash
+
+echo "Escolha uma opção:"
+echo "1 - Ver data atual"
+echo "2 - Listar arquivos"
+echo "3 - Mostrar diretório atual"
+
+read OPCAO
+
+case $OPCAO in
+  1)
+    date
+    ;;
+  2)
+    ls
+    ;;
+  3)
+    pwd
+    ;;
+  *)
+    echo "Opção inválida!"
+    ;;
+esac</code></pre>
+
+  <h3>💡 Dica:</h3>
+  <p>Use o <code>*</code> no final para capturar qualquer valor não reconhecido.</p>
+
+  <h3>Desafio para Você</h3>
+  <p>Crie um script que:</p>
+  <ul>
+    <li>Mostre 3 opções para o usuário: Exibir hora, Exibir calendário, Sair</li>
+    <li>Use <code>case</code> para executar o comando correspondente</li>
+    <li>Se digitar qualquer outra coisa, mostre "Opção inválida!"</li>
+  </ul>
+
+  <button onclick="document.getElementById('resultadoCase2').classList.toggle('hidden')">
+    Visualizar resultado
+  </button>
+
+  <div id="resultadoCase2" class="hidden">
+    <h3>Resultado desafio</h3>
+  <pre><code>#!/bin/bash
+
+echo "O que deseja fazer?"
+echo "1 - Ver a hora"
+echo "2 - Ver o calendário"
+echo "3 - Sair"
+
+read ESCOLHA
+
+case $ESCOLHA in
+  1)
+    date +"%T"
+    ;;
+  2)
+    cal
+    ;;
+  3)
+    echo "Saindo..."
+    ;;
+  *)
+    echo "Opção inválida!"
+    ;;
+esac</code></pre>
+</section>
+
+<section>
+  <h2>Aula 9: Criando Ferramenta – Selecionar Interface Wireless (wlan)</h2>
+  <p>Nesta aula, vamos criar um script que lista apenas as interfaces wireless (por exemplo, <code>wlan0</code>, <code>wlan1</code>) e permite ao usuário escolher uma delas pelo número.</p>
+
+  <h3>🛠️ O que o script faz:</h3>
+  <ul>
+    <li>Filtra interfaces <code>wlan*</code> usando <code>ip link</code></li>
+    <li>Numera as interfaces disponíveis</li>
+    <li>Permite a seleção por número</li>
+    <li>Exibe a interface selecionada</li>
+  </ul>
+
+  <button onclick="document.getElementById('resultadoWlan').classList.toggle('hidden')">
+    Visualizar resultado
+  </button>
+
+  <div id="resultadoWlan" class="hidden">
+    <h3>Resultado exemplo</h3>
+    <pre><code>#!/bin/bash
+
+# Lista apenas interfaces wlan*
+INTERFACES=($(ip -o link show | awk -F': ' '{print $2}' | grep '^wlan'))
+
+# Verifica se há interfaces
+if [ ${#INTERFACES[@]} -eq 0 ]; then
+  echo "Nenhuma interface wireless (wlan) foi encontrada."
+  exit 1
+fi
+
+# Exibe a lista numerada
+echo "Interfaces wireless disponíveis:"
+for i in "${!INTERFACES[@]}"; do
+  printf "%02d - %s\n" "$((i+1))" "${INTERFACES[$i]}"
+done
+
+# Solicita a escolha do usuário
+echo -n "Digite o número da interface desejada: "
+read ESCOLHA
+
+INDEX=$((ESCOLHA - 1))
+
+if [[ "$INDEX" -ge 0 && "$INDEX" -lt "${#INTERFACES[@]}" ]]; then
+  echo "Interface selecionada: ${INTERFACES[$INDEX]}"
+else
+  echo "Opção inválida!"
+  exit 1
+fi</code></pre>
+  </div>
+
+  <h3>💡 Dica:</h3>
+  <p>Você pode usar a interface selecionada em comandos como <code>airmon-ng start</code>, <code>airodump-ng</code> ou <code>ip link set</code>.</p>
+</section>
+
+
+<section>
+  <h2>Aula ?: Usando Cores no Bash</h2>
+  <p>No Bash, você pode usar códigos ANSI para mudar a cor do texto exibido no terminal. Isso é ótimo para criar títulos, alertas e destacar partes importantes.</p>
+
+  <h3>Sintaxe com <code>echo -e</code></h3>
+  <pre><code>echo -e "\e[CORmSeu texto aqui\e[0m"</code></pre>
+  <p><strong>\e[0m</strong> → Reset da cor ao final (obrigatório para não colorir o resto da tela).</p>
+
+  <h3>Principais Códigos de Cor</h3>
+  <ul>
+    <li><code>\e[31m</code> → Vermelho</li>
+    <li><code>\e[32m</code> → Verde</li>
+    <li><code>\e[33m</code> → Amarelo</li>
+    <li><code>\e[34m</code> → Azul</li>
+    <li><code>\e[35m</code> → Roxo</li>
+    <li><code>\e[36m</code> → Ciano</li>
+    <li><code>\e[37m</code> → Branco</li>
+  </ul>
+
+  <h3>Exemplo: Texto colorido</h3>
+  <pre><code>#!/bin/bash
+
+echo -e "\e[31mALERTA VERMELHO!\e[0m"
+echo -e "\e[32mTudo certo por aqui.\e[0m"
+echo -e "\e[36mBem-vindo à ferramenta BashColor!\e[0m"</code></pre>
+
+  <h3>Exemplo: Título da ferramenta</h3>
+  <pre><code>#!/bin/bash
+
+echo -e "\e[1;31m=====================================\e[0m"
+echo -e "\e[1;33m        🔧 Minha Ferramenta          \e[0m"
+echo -e "\e[1;31m=====================================\e[0m"</code></pre>
+
+  <h3>💡 Dica:</h3>
+  <p>Use <code>\e[1;</code> antes do número para deixar a cor <strong>em negrito</strong>. Exemplo: <code>\e[1;34m</code></p>
+
+  <h3>Desafio para Você</h3>
+  <p>Crie um script com um título personalizado da sua ferramenta, com:</p>
+  <ul>
+    <li>Uma moldura de <code>=</code></li>
+    <li>Um nome estiloso centralizado com ícone (ex: 🔐 CyberKey, 🧠 BrainScan, ☠️ HackX)</li>
+    <li>Cores diferentes para o título e moldura</li>
+  </ul>
+
+   <button onclick="document.getElementById('resultadoCase3').classList.toggle('hidden')">
+    Visualizar resultado
+  </button>
+
+  <div id="resultadoCase3" class="hidden">
+    <h3>Resultado do desafio</h3>
+  <pre><code>#!/bin/bash
+
+echo -e "\e[1;34m=====================================\e[0m"
+echo -e "\e[1;32m      ☠️ HACK-X - NETWORK TOOL      \e[0m"
+echo -e "\e[1;34m=====================================\e[0m"</code></pre>
+
+</section>
+
+    <section>
+        <h2>Scripts Prontos</h2>
+         <p>Crie seus próprios scripts como: Ferramemtas, automatizar propessos, criar jogos básicos, etc.</p>
+         <ul>
+             <li><a href="Criando_Bot_TikTok">Tutorial: Criando Bot TikTok</a></li> 
+         </ul>       
+    </section>        
     </div>
 
 </body>

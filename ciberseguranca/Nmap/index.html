@@ -51,6 +51,16 @@
                <li>
                   <pre><code class="command">nmap -O 192.168.1.1</code></pre> <span class="comment">Tenta identificar o sistema operacional</span>
                </li>
+               <li>
+                  <pre><code class="command">nmap -p 554 --open 192.168.10.1/24</code></pre> <span class="comment">Encontrar dispositivos com RTSP ativo (como câmeras de segurança) na sua rede local.</span>
+            </ul>
+                  <p>Explicação do Comando:</p>
+            <ul>
+               <li><strong>sudo</strong> → Necessário para acessar informações mais detalhadas de portas e SO.</li>
+               <li><strong>nmap</strong> → Executa o scan.</li>
+               <li><strong>-p 554</strong> → Especifica a porta que será escaneada — nesse caso, a porta 554, usada geralmente por RTSP (Real Time Streaming Protocol), comum em câmeras IP e sistemas de vigilância.</li>
+               <li><strong>--open</strong> → Mostra somente hosts com a porta 554 aberta, ignorando os que estão com a porta fechada ou filtrada. Isso torna o scan mais limpo e direto.</li>
+               <li><strong>192.168.10.1/24</strong> → Escaneia a faixa inteira de 192.168.10.1 até 192.168.10.255.</li>
             </ul>
         </section>
 
@@ -85,7 +95,7 @@
                <li><strong>-A</strong> → Ativa detecção de SO, versão dos serviços, scan de scripts NSE e traceroute.</li>
                <li><strong>-T4</strong> → Define a velocidade do scan como "agressiva", tornando-o mais rápido sem exagerar na detecção de IDS/IPS.</li> 
                <li><strong>192.168.10.1/24</strong> → Escaneia a faixa inteira de 192.168.10.1 até 192.168.10.255.</li> 
-               <li><a href="New_Scan" target="_blank">Veja o resultado do scan</a></li>
+               <li><a href="relatorio.txt" target="_blank">Veja o resultado do scan</a></li>
             </ul>
         </section>
 

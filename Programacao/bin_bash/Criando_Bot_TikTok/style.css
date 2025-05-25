@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos Base */
+  body {
+    background-color: #000;
+    color: #FFF;
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #00005A;
+    padding: 25px 0;
+    text-align: center;
+    border-bottom: 3px solid #00FFFF;
+}
+
+header h1 {
+    color: #00FFFF;
+    margin: 0;
+    font-size: 2.2em;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+}
+
+/* Container principal */
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #00ffff; 
+    border-radius: 8px;
+    background-color: #000000;
+    box-shadow: 0px 4px 8px rgba(0, 255, 255, 0.2);
+}
+
+/* Seções */
+section {
+    background: #000000;
+    border: 1px solid #00ffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 8px rgba(0, 255, 255, 0.2);
+    max-width: 959px;
+}
+
+h2, h3, h4 {
+    color: #00FFFF;
+    margin-bottom: 10px;
+    text-align: left;
+    }
+
+/* Listas */
+ul {
+    list-style: square;
+    margin-left: 20px;
+    text-align: left;
+}
+
+li {
+    color: #FFFFFF;
+}
+
+/* Parágrafos */
+p {
+    color: #FFFFFF;
+    text-align: left;
+}
+
+/* Bloco de Código */
+pre {
+    background-color: #222;
+    padding: 10px;
+    border-radius: 10px;
+    color: #33FF57;
+    text-align: left;
+    overflow-x: auto;
+    font-family: "Courier New", monospace;
+}
+
+.code-block {
+  background: #1e1e1e;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-family: "Courier New", monospace;
+  font-size: 14px;
+  overflow-x: auto;
+  text-align: left; /* alinha tudo à esquerda */
+  white-space: nowrap;
+}
+
+.tag {
+  color: #00ff00;
+}
+
+.comentario {
+  color: #ffffff;
+}
+
+/* Rodapé */
+footer {
+    background: #000000;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    border-top: 2px solid #00ffff;
+}
+
+footer p {
+    color: #00FFFF;
+    text-align: center;
+}
+
+/* Lista de comandos */
+.command-list {
+    list-style: none;
+    padding: 0;
+}
+
+.command-list li {
+    display: flex;
+    align-items: center;
+    background-color: #222;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+/* Comandos em verde */
+.command {
+    color: #00ff00;
+    font-family: monospace;
+    font-size: 14px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Comentários em branco */
+.comment {
+    margin-left: 10px;
+    color: white;
+    font-size: 14px;
+}
+
+/* Exibição do código HTML */
+.html-code {
+    color: #00ff00;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    display: block;
+}
+
+.destaque {
+    background-color: #00FFFF;
+    color: #000;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+
+
+
+

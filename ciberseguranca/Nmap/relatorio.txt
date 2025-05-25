@@ -1,0 +1,97 @@
+# Relatório de Scan de Vulnerabilidades com Nmap - 2025-03-01
+==================================================================================================================
+
+🔍 Início do Scan Nmap com o script de vulnerabilidades  
+Starting Nmap 7.95 (https://nmap.org) at 2025-03-01 14:06 -03
+
+------------------------------------------------------------------------------------------------------------------
+🖥️ Dispositivo: Roteador OpenWrt (192.168.10.1)
+------------------------------------------------------------------------------------------------------------------
+Nmap scan report for CP60_MEL_r28.lan (192.168.10.1)
+Host is up (0.0046s latency)
+
+🔐 Portas Abertas:
+  - 53/tcp  open  domain   → Serviço DNS ativo (dnsmasq)
+  - 80/tcp  open  http     → Painel de administração web OpenWrt ativo
+
+🔎 Vulnerabilidades HTTP:
+  - XSS DOM-based:      Nenhuma vulnerabilidade detectada
+  - XSS armazenado:     Nenhuma vulnerabilidade detectada
+  - CSRF:               Nenhuma vulnerabilidade detectada
+
+📂 Diretórios acessíveis:
+  - /css/       → Listagem de diretório ativa
+  - /icons/     → Listagem de diretório ativa
+  - /img/       → Listagem de diretório ativa
+  - /js/        → Listagem de diretório ativa
+
+📡 MAC Address: 1A:7D:73:0A:15:7D (Desconhecido)
+
+------------------------------------------------------------------------------------------------------------------
+📶 Dispositivo: TP-Link (192.168.10.133)
+------------------------------------------------------------------------------------------------------------------
+Nmap scan report for 192.168.10.133  
+Host is up (0.0082s latency)
+
+🔐 Portas:
+  - Todas as 1000 portas estão filtradas (no-response)
+
+📡 MAC Address: B0:95:75:B3:C3:B3 (TP-Link Technologies)
+
+------------------------------------------------------------------------------------------------------------------
+🖥️ Dispositivo: Servidor K-Linux (192.168.10.138)
+------------------------------------------------------------------------------------------------------------------
+Nmap scan report for K-Linux.lan (192.168.10.138)  
+Host is up (0.000023s latency)
+
+🔐 Portas Abertas:
+  - 80/tcp open http → Servidor Apache em execução
+
+------------------------------------------------------------------------------------------------------------------
+🧬 SQL Injection encontrado
+------------------------------------------------------------------------------------------------------------------
+http-sql-injection:
+  - Possíveis falhas de injeção SQL nas URLs:
+    • http://K-Linux.lan:80/?C=N%3BO%3DD' OR sqlspider
+    • http://K-Linux.lan:80/Wi-Fi-Monitor/?C=D%3BO%3DA' OR sqlspider
+    • http://K-Linux.lan:80/reprodutor_online_musicas/?C=M%3BO%3DA' OR sqlspider
+
+------------------------------------------------------------------------------------------------------------------
+🛡️ CSRF encontrado
+------------------------------------------------------------------------------------------------------------------
+http-csrf:
+  - Formulários sem proteção nas URLs:
+    • http://K-Linux.lan:80/Evil_Twin/         → action: index.php
+    • http://K-Linux.lan:80/página_de_teste_login_09_02_25/
+
+------------------------------------------------------------------------------------------------------------------
+📁 Diretórios sensíveis expostos
+------------------------------------------------------------------------------------------------------------------
+http-enum:
+  - /                   → Listagem ativa em Apache/2.4.63 (Debian)
+  - /login.html         → Página de login administrativa
+  - /server-status/     → Informações do Apache expostas
+  - /src/               → Pode conter código-fonte sensível
+
+------------------------------------------------------------------------------------------------------------------
+📤 Teste de Upload de Arquivos
+------------------------------------------------------------------------------------------------------------------
+http-fileupload-exploiter:
+  - Não foi possível validar campos de tipo de arquivo.
+    → Pode haver falhas, mas não confirmadas.
+
+------------------------------------------------------------------------------------------------------------------
+🔌 Porta 8080 (Servidor HTTP Proxy)
+------------------------------------------------------------------------------------------------------------------
+8080/tcp open http-proxy → Servidor Apache rodando em porta alternativa
+
+http-enum:
+  - /                   → Listagem ativa em Apache/2.4.63 (Debian)
+  - /login.html         → Página de login possivelmente exposta
+  - /server-status/     → Informações úteis para ataque
+  - /src/               → Diretório possivelmente contendo código-fonte
+
+------------------------------------------------------------------------------------------------------------------
+✅ Finalização do scan
+------------------------------------------------------------------------------------------------------------------
+Nmap done: 256 IP addresses scanned (3 hosts up) in 212.01 seconds

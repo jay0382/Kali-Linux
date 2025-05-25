@@ -92,6 +92,64 @@
             <p><strong>Planilhas públicas com dados:</strong></p>
             <pre><code>filetype:xls site:br intext:"senha"</code></pre>
         </div>
+        
+        <div class="section">
+            <h2>💣 Dorks Ultra-Avançadas e Críticas (Para Fins Educacionais)</h2>
+
+            <p><strong>Variáveis de ambiente expostas (.env):</strong></p> 
+            <pre><code>filetype:env intext:DB_PASSWORD | intext:AWS_SECRET_ACCESS_KEY | intext:API_SECRET | intext:MAIL_PASSWORD</code></pre>
+ 
+            <p><strong>Logs com senhas e erros expostos:</strong></p>
+            <pre><code>filetype:log inurl:"/logs/" intext:"password" OR intext:"error"</code></pre>
+
+            <p><strong>Arquivos SQL/ZIP com banco de dados:</strong></p>
+            <pre><code>intitle:"index of" (db.sql | dump.sql | site_backup.zip)</code></pre>
+
+            <p><strong>Emails pessoais expostos (excluindo redes sociais):</strong></p>
+            <pre><code>intext:"@gmail.com" -site:facebook.com -site:linkedin.com</code></pre>
+
+            <p><strong>Painéis administrativos comuns:</strong></p>
+            <pre><code>inurl:admin/login | inurl:cpanel | inurl:dashboard intitle:"Admin"</code></pre>
+
+            <p><strong>Amazon S3 Buckets públicos:</strong></p>
+            <pre><code>site:http://s3.amazonaws.com intitle:"index of" "bucket"</code></pre>
+
+            <p><strong>Arquivos públicos no OneDrive:</strong></p>
+            <pre><code>site:onedrive.live.com "shared by"</code></pre>
+        
+            <p><strong>Documentos com senhas e e-mails:</strong></p>
+            <pre><code>filetype:doc "senha" intext:@gmail.com | @hotmail.com | @yahoo.com</code></pre>
+
+            <p><strong>PDFs, TXT e DOC com CPF e RG:</strong></p>
+            <pre><code>filetype:pdf | filetype:txt | filetype:doc intext:"CPF" AND intext:"RG" numrange:00000000000-99999999999</code></pre>
+
+            <p><strong>Planilhas com CPF, RG e telefone:</strong></p>
+            <pre><code>filetype:xls intext:"CPF" AND intext:"RG" AND "telefone" numrange:00000000000-99999999999</code></pre>
+        </div> 
+       
+        <div class="section">
+            <h2>🖨 Dorks para Impressoras Expostas</h2>
+
+            <p><em>Essa consulta retorna interfaces de impressoras que estão expostas na internet. Em muitos casos, é possível visualizar status do dispositivo, histórico de impressão e, se mal configuradas, até comandos remotos.</em></p>
+        
+            <p><strong>Interface de impressoras HP (web panel):</strong></p>
+            <pre><code>inurl:"hp/device/InternalPage/Index?id=HP.Device"</code></pre>
+
+            <p><strong>Interface padrão de impressoras (genérica):</strong></p>
+            <pre><code>inurl:printer/main.html</code></pre>
+        </div>
+
+        <div class="section">
+            <h2>🏛 Vazamento de Documentos Oficiais e Repositórios</h2>
+
+            <p><strong>Documentos confidenciais em sites governamentais:</strong></p>
+            <pre><code>intitle:confidencial (filetype:doc | filetype:docx | filetype:pdf | filetype:xls | filetype:csv) site:.gov.br</code></pre>
+            <p><em>Busca arquivos que possivelmente contêm conteúdo sigiloso ou interno publicado em domínios governamentais.</em></p>
+
+            <p><strong>Repositórios Git públicos indexados em sites brasileiros:</strong></p>
+            <pre><code>intitle:"index of" intext:.git site:com.br</code></pre>
+            <p><em>Revela diretórios onde `.git` está acessível, podendo expor todo o código-fonte, histórico de commits e senhas hardcoded.</em></p>
+        </div>
 
         <div class="section">
             <h2>🕵️ Onde usar isso?</h2>
@@ -103,8 +161,8 @@
 
         <div class="section">
             <h2>🌍 Bases de Dados com Dorks Avançados</h2>
-            <p><a href="https://www.exploit-db.com/google-hacking-database" target="_blank" style="color: cyan;">https://www.exploit-db.com/google-hacking-database</a></p>
-            <p><a href="https://www.hackers-arise.com/post/advanced-google-hacking" target="_blank" style="color: cyan;">https://www.hackers-arise.com/post/advanced-google-hacking</a></p>
+            <p><a href="https://www.exploit-db.com/google-hacking-database" target="_blank">Google Hacking Database</a></p>
+            <p><a href="https://www.hackers-arise.com/post/advanced-google-hacking" target="_blank">Advanced Google Hacking</a></p>
         </div>
 
         <div class="section">
@@ -120,7 +178,7 @@
     </div>
 
     <footer>
-        <p>CyberSecOnline - Aprendizado em Cibersegurança Avançada © 2025</p>
+         <p>&copy; 2025 - Portal Hackers Brasil | Todos os direitos reservados.</p>
     </footer>
 </body>
 </html>

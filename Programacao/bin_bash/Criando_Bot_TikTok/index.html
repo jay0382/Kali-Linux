@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot TikTok no Kali Linux - Portal Hackers Brasil</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link para o CSS externo -->
+</head>
+<body>
+
+    <header>
+        <h1>📋 Tutorial Completo: Criando o Bot de TikTok no Kali Linux e Android</h1>
+    </header>
+
+    <div class="container">
+
+        <section>
+            <h2>🛠️ 1. Preparar o Celular Android</h2>
+            <p><strong>✅ Passo 1: Ativar Opções de Desenvolvedor</strong><br>
+            No celular, vá em <em>Configurações → Sobre o telefone</em>.<br>
+            Toque <strong>7 vezes</strong> em "Número da versão" até aparecer "Você é um desenvolvedor agora".</p>
+
+            <p><strong>✅ Passo 2: Ativar Depuração USB</strong><br>
+            Ainda nas <em>Configurações</em>, vá em <em>Opções do desenvolvedor</em>.<br>
+            Ative <strong>Depuração USB</strong>.</p>
+
+            <p><strong>✅ Passo 3: Conectar o celular via USB ao Kali Linux</strong><br>
+            Use um cabo USB de boa qualidade.<br>
+            Quando conectar, escolha "Transferência de Arquivos" ou "Somente Carregamento" — tanto faz para ADB.</p>
+        </section>
+
+        <section>
+            <h2>🛠️ 2. Configurar o Kali Linux</h2>
+            <p><strong>✅ Passo 1: Verificar o ADB</strong></p>
+            <pre><code>adb devices</code></pre>
+            <p>Se aparecer seu dispositivo listado, está OK.<br>
+            ⚠️ Se aparecer "unauthorized", olhe o celular e autorize a depuração.</p>
+
+            <p><strong>✅ Passo 2: Testar conexão com o shell do Android</strong></p>
+            <pre><code>adb shell</code></pre>
+            <p>Se cair no prompt ($ ou #), está conectado. Para sair do shell:</p>
+            <pre><code>exit</code></pre>
+        </section>
+
+        <section>
+            <h2>🛠️ 3. Identificar a Posição Correta do Botão de Curtir</h2>
+            <p><strong>✅ Para Samsung Galaxy A05s:</strong><br>
+            Coordenada correta do botão de like:</p>
+            <pre><code>adb shell input tap 990 1450</code></pre>
+
+            <p><strong>✅ Para testar:</strong><br>
+            Deixe um vídeo aberto no TikTok e rode:</p>
+            <pre><code>adb shell input tap 990 1450</code></pre>
+            <p>Se o coração ficar vermelho ✅, está certo!</p>
+        </section>
+
+        <section>
+            <h2>🛠️ 4. Criar o Script do Bot</h2>
+            <p><strong>✅ Passo 1: Criar o arquivo:</strong></p>
+            <pre><code>nano tiktok-bot.sh</code></pre>
+
+            <p><strong>✅ Passo 2: Código do Bot:</strong></p>
+            <pre><code>#!/bin/bash
+
+echo "🔵 TikTok Bot iniciado!"
+echo "Pressione CTRL+C para parar."
+
+contador_swipe=0
+contador_like=0
+
+while true; do
+    adb shell input touchscreen swipe 500 1600 500 400 300
+    let contador_swipe++
+    echo "➡️  Vídeos trocados: $contador_swipe"
+
+    sleep 2
+
+    if (( RANDOM % 2 == 0 )); then
+        adb shell input tap 990 1450
+        let contador_like++
+        echo "❤️  Curtidas dadas: $contador_like"
+        sleep 1
+    fi
+
+    tempo=$((8 + RANDOM % 8))
+    echo "⏳ Aguardando $tempo segundos para próximo vídeo..."
+    sleep $tempo
+done</code></pre>
+
+            <p><strong>✅ Passo 3: Salvar o arquivo:</strong><br>
+            CTRL+O → Enter para salvar<br>
+            CTRL+X para sair</p>
+
+            <p><strong>✅ Passo 4: Tornar executável:</strong></p>
+            <pre><code>chmod +x tiktok-bot.sh</code></pre>
+
+            <p><strong>✅ Passo 5: Rodar o bot:</strong></p>
+            <pre><code>./tiktok-bot.sh</code></pre>
+
+            <p><strong>O bot faz:</strong><br>
+            - Trocar vídeos ✅<br>
+            - Curtir aleatoriamente ✅<br>
+            - Aguardar 8 a 15 segundos ✅</p>
+        </section>
+
+        <section>
+            <h2>🧠 Explicação técnica: coordenadas X e Y no ADB</h2>
+            <p><strong>adb shell input tap X Y</strong><br>
+            X = posição horizontal (esquerda ➔ direita)<br>
+            Y = posição vertical (topo ➔ fundo)</p>
+
+            <p><strong>Exemplos:</strong></p>
+            <ul>
+                <li>0 0 → Canto superior esquerdo</li>
+                <li>1080 0 → Canto superior direito</li>
+                <li>0 2400 → Canto inferior esquerdo</li>
+                <li>1080 2400 → Canto inferior direito</li>
+            </ul>
+
+            <p>Para o Galaxy A05s (1080x2408), usamos:</p>
+            <pre><code>adb shell input tap 990 1400</code></pre>
+
+            <p>✅ Atinge o botão certo!<br>
+            ✅ Evita abrir comentários sem querer!</p>
+        </section>
+
+        <section>
+            <h2>🎨 Explicação visual da tela para o ADB tap</h2>
+            <pre>
+┌──────────────────────────────────────────────────┐
+│  Y=0 (topo)                                       │
+│                                                  ▲│
+│                                                  ││
+│                                                  ││
+│                                                  ││
+│                                                  ││
+│                                                  ││
+│                        X=540                    →│ (Centro da tela na horizontal)
+│                                                  ││
+│                                                  ││
+│                                                  ││
+│                    ✦ Coração de Like             ││
+│                 (posição ~990, 1400)              ││
+│                                                  ▼│
+│  Y=2408 (fundo da tela)                           │
+└──────────────────────────────────────────────────┘
+            </pre>
+
+            <p><strong>Resumo:</strong></p>
+            <ul>
+                <li>X=0 → Esquerda</li>
+                <li>X=1080 → Direita</li>
+                <li>Y=0 → Topo</li>
+                <li>Y=2408 → Base da tela</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Portal Hackers Brasil - Todos os direitos reservados © 2025</p>
+    </footer>
+
+</body>
+</html>

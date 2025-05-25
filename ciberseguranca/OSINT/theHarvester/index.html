@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>theHarvester - Portal Hackers Brasil</title>
+    <link rel="stylesheet" href="style.css"> <!-- Substitua pelo caminho do seu CSS -->
+</head>
+<body>
+
+<header>
+    <h1>theHarvester</h1>
+</header>
+
+<main>
+
+  <div class="container">
+    <section>
+        <h2>Introdução</h2>
+        <p>
+            <strong>theHarvester</strong> é uma ferramenta de coleta de informações públicas (OSINT - Open Source Intelligence)
+            que auxilia profissionais de segurança, pentesters e pesquisadores a encontrar dados expostos sobre domínios e empresas.
+            Ela realiza buscas em diversas fontes abertas para coletar subdomínios, e-mails, hosts, dados do Shodan, GitHub e muito mais.
+        </p>
+    </section>
+
+    <section>
+        <h2>Principais Parâmetros</h2>
+        <ul class="commands">
+            <li><strong><code>-d</code></strong> : Define o domínio alvo. <span class="destaque">Obrigatório)</span></li>
+            <li><strong><code>-l</code></strong> : Limite de resultados. Padrão: 500.</li>
+            <li><strong><code>-S</code></strong> : Começa na posição X nos resultados. Padrão: 0.</li>
+            <li><strong><code>-b</code></strong> : Define as fontes de busca (Google, Bing, DuckDuckGo, Shodan, etc.).</li>
+            <li><strong><code>-p</code></strong> : Usa proxies definidos em <span class="destaque">proxies.yaml</span>.</li>
+            <li><strong><code>-s</code></strong> : Usa o Shodan para dados adicionais dos hosts encontrados.</li>
+            <li><strong><code>--screenshot</code></strong> : Captura prints das páginas encontradas.</li>
+            <li><strong><code>-v</code></strong> : Verifica hosts virtuais.</li>
+            <li><strong><code>-e</code></strong> : Define um servidor DNS específico.</li>
+            <li><strong><code>-t</code></strong> : Verifica possibilidade de <span class="destaque">takeover</span> de subdomínio.</li>
+            <li><strong><code>-r</code></strong> : Resolve os subdomínios encontrados via DNS.</li>
+            <li><strong><code>-n</code></strong> : Faz lookup DNS.</li>
+            <li><strong><code>-c</code></strong> : Realiza brute-force de DNS (descoberta de subdomínios).</li>
+            <li><strong><code>-f</code></strong> : Salva os resultados em arquivos XML e JSON.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Fontes de Busca Suportadas</h2>
+        <p>
+            O <strong>theHarvester</strong> pode consultar várias fontes, incluindo:
+            <pre><code>google, bing, duckduckgo, crtsh, shodan, github-code, virustotal, censys, yahoo, entre outros</code></pre>
+        </p>
+    </section>
+
+    <section>
+        <h2>Exemplos de Uso</h2>
+
+        <h3>Busca básica</h3>
+        <pre><code>theHarvester -d exemplo.com -b google,bing -l 100</code></pre>
+        <p>Coleta 100 resultados no Google e Bing para o domínio "exemplo.com".</p>
+
+        <h3>Busca com brute-force de subdomínios e DNS resolve</h3>
+        <pre><code>theHarvester -d exemplo.com -b duckduckgo -c -r -l 200</code></pre>
+        <p>Busca no DuckDuckGo, faz brute-force e resolve subdomínios encontrados.</p>
+
+        <h3>Busca completa com proxy e salvando resultados</h3>
+        <pre><code>theHarvester -d exemplo.com -b google,bing,crtsh -p -f resultado</code></pre>
+        <p>Usa proxies, pesquisa em múltiplas fontes e salva os resultados em arquivos <code>resultado.xml</code> e <code>resultado.json</code>.</p>
+    </section>
+
+    <section>
+        <h2>Aviso de Responsabilidade</h2>
+        <p>
+            O uso do <strong>theHarvester</strong> deve ser feito com responsabilidade e apenas em domínios e sistemas autorizados. 
+            Coletar dados de terceiros sem permissão pode ser considerado ilegal em diversas jurisdições.
+            Esta página tem fins exclusivamente educacionais.
+        </p>
+    </section>
+
+    <section>
+        <p><a href="index.html">← Voltar para a página inicial</a></p>
+    </section>
+</div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Portal Hackers Brasil. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comandos Kali Linux</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        function toggleIndice() {
+            var indice = document.getElementById('indice');
+            if (indice.style.display === 'none') {
+                indice.style.display = 'block';
+            } else {
+                indice.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>Kali Linux</h1>
+</header>
+
+<div class="container">
+
+    <section id="sobre-kali">
+        <h2>O que é Kali Linux?   <img src="images/kali.png" alt="Logo" class="logo-kali"></h2>
+
+        <p>
+          O <strong>Kali Linux</strong> é uma distribuição baseada em Debian voltada para testes de penetração, auditoria de segurança e forense digital.
+          Desenvolvido e mantido pela <strong>Offensive Security</strong>, o Kali é reconhecido mundialmente como uma das ferramentas mais poderosas para profissionais da área de cibersegurança.
+        </p>
+
+        <h3>📜 Origem e História</h3>
+        <p>
+          O Kali Linux surgiu como sucessor do famoso <em>BackTrack Linux</em>, uma distribuição popular entre hackers éticos. Lançado oficialmente em <strong>13 de março de 2013</strong>, o Kali foi projetado desde o início com foco em estabilidade, segurança e suporte a ferramentas de pentest.
+        </p>
+
+        <h3>💻 Distribuição Especializada</h3>
+        <p>
+          A distribuição oferece mais de <strong>600 ferramentas</strong> pré-instaladas para testes de invasão, como Nmap, Wireshark, Metasploit, Aircrack-ng e Burp Suite.
+          É amplamente utilizada em laboratórios, treinamentos e certificações como o OSCP. 
+        </p>
+
+        <h3>⚙️ Disponibilidade e Versões</h3>
+        <p>
+          O Kali pode ser executado em diferentes formatos: Live USB, VM (VirtualBox/VMware), modo persistente, além de versões para ARM e dispositivos móveis.
+          Também existe o <strong>Kali NetHunter</strong>, uma versão adaptada para smartphones Android com foco em testes de segurança móveis.
+        </p>
+
+        <h3>🔐 Foco na Ética</h3>
+        <p>
+          Embora seja uma ferramenta poderosa, o Kali Linux deve ser utilizado com responsabilidade, sempre com autorização do ambiente testado.
+          O objetivo é fortalecer a segurança, não explorá-la de forma maliciosa.
+        </p>
+    </section>
+
+    <section id="semi-introducao"> 
+        <p><strong>Explore os principais comandos e ferramentas do Kali Linux.</strong><br>
+          Esta seção reúne tutoriais e instruções práticas para uso em ambientes de cibersegurança e administração de sistemas Linux.</p>
+
+        <button onclick="toggleIndice()">Mostrar Índice</button>
+    </section>
+
+    <section id="indice" style="display: none;">
+        <h2>Índice</h2>
+        <ul class="commands">
+            <li><a href="#caminhos-diretorios">Caminhos Para Diretórios Importantes no Kali Linux</a></li>
+            <li><a href="#manipulacao-diretorios">Manipulação de Diretórios e Arquivos</a></li>
+            <li><a href="#copiar-mover">Copiar ou Mover Arquivos para Mídias Externas</a></li>
+            <li><a href="#permissoes-arquivos">Permissões para Arquivos</a></li>
+            <li><a href="#comandos-rede">Comandos de Rede</a></li>
+            <li><a href="#logs_system">Journalctl</a></li>
+            <li><a href="Firewall_Kali_Linux">Firewall Kali Linux</a></li>
+            <li><a href="Servicos_Kali_Linux">Serviços e Portas no Kali Linux</a></li>
+            <li><a href="#apache2">Apache2</a></li>
+            <li><a href="#noip-cgnat">No-IP e CGNAT</a></li>
+            <li><a href="#nova_particao_com_criptografi">Partição com Criptografia no Linux</a></li>
+            <li><a href="#nova_particao">Criar Nova Partição no Linux</a></li>
+            <li><a href="#formatacao_midia">Formatar Mídia no Linux</a></li>
+            <li><a href="#clamav">Escaneamento com Clamav</a></li>
+            <li><a href="#esteganografia">Esteganografia</a></li>
+            <li><a href="#steghide">Steghide</a></li>
+            <li><a href="#explicacao-codigo">Explicação do Código</a></li>
+            <li><a href="#atualizar-horario">Atualizar o Horário no Kali Linux</a></li>
+        </ul>
+    </section>
+
+    <section id="caminhos-diretorios">
+        <h2>📁 Caminhos Para Diretórios Importantes no Kali Linux</h2>
+        <ul class="commands">
+            <li><pre><code><strong>cd /usr/share/backgrounds</strong></code> – Imagens de fundo da área de trabalho.</pre></li>
+            <li><pre><code><strong>cd /var/lib/mysql</strong></code> – Banco de dados MySQL.</pre></li>
+            <li><pre><code><strong>cd /etc</strong></code> – Arquivos de configuração do sistema.</pre></li>
+            <li><pre><code><strong>cd /var/log</strong></code> – Logs do sistema (auditoria e eventos).</pre></li>
+            <li><pre><code><strong>cd /usr/share/wordlists</strong></code> – Wordlists (listas de senhas).</pre></li>
+            <li><pre><code><strong>cd /usr/bin</strong></code> – Executáveis dos comandos instalados.</pre></li>
+            <li><pre><code><strong>cd /home/usuário</strong></code> – Pasta do usuário comum.</pre></li>
+            <li><pre><code><strong>cd /root</strong></code> – Pasta do root (superusuário).</pre></li>
+            <li><pre><code><strong>cd /tmp</strong></code> – Arquivos temporários, apagados ao reiniciar.</pre></li>
+            <li><pre><code><strong>cd /opt</strong></code> – Softwares instalados manualmente.</pre></li>
+            <li><pre><code><strong>cd /mnt</strong></code> – Montagem manual de discos e pendrives.</pre></li>
+            <li><pre><code><strong>cd /media</strong></code> – Montagem automática de mídias removíveis.</pre></li>
+            <li><pre><code><strong>cd /boot</strong></code> – Inicialização do sistema (GRUB, kernel).</pre></li>
+            <li><pre><code><strong>cd /lib/modules/$(uname -r)/</strong></code> – Módulos do kernel ativo.</pre></li>
+            <li><pre><code><strong>cd /var/www/html</strong></code> – Diretório de páginas web (Apache2).</pre></li>
+            <li><pre><code><strong>cd /etc/network</strong></code> – Configurações de rede e interfaces.</pre></li>
+            <li><pre><code><strong>cd /etc/apt</strong></code> – Gerenciador de pacotes apt.</pre></li>
+            <li><pre><code><strong>cd /usr/share/icons</strong></code> – Ícones e temas do sistema.</pre></li>
+        </ul>
+    </section>
+
+    <section id="manipulacao-diretorios">
+        <h2>🗂️  Manipulação de Diretórios e Arquivos</h2>
+        <ul class="commands">
+            <li><pre><code><strong>ls</strong></code> – Lista arquivos e diretórios.</pre></li>
+            <li><pre><code><strong>ls -l</strong></code> – Lista com detalhes (permissões, proprietário, grupos).</pre></li>
+            <li><pre><code><strong>cd [diretório]</strong></code> – Muda para o diretório especificado.</pre></li>
+            <li><pre><code><strong>mkdir [nome]</strong></code> – Cria um novo diretório.</pre></li>
+            <li><pre><code><strong>rm [arquivo]</strong></code> – Remove um arquivo.</pre></li>
+            <li><pre><code><strong>rmdir [diretório]</strong></code> – Remove um diretório vazio.</pre></li>
+            <li><pre><code><strong>rm -r [diretório]</strong></code> – Remove diretório e todo seu conteúdo.</pre></li>
+            <li><pre><code><strong>mv [arquivo] [novo_nome]</strong></code> – Renomeia arquivo ou diretório.</pre></li>
+            <li><pre><code><strong>mv [arquivo] [subdiretório]/</strong></code> – Move para subdiretório atual.</pre></li>
+            <li><pre><code><strong>mv [arquivo] /caminho/destino/</strong></code> – Move para outro diretório.</pre></li>
+            <li><pre><code><strong>mv /origem/arquivo /destino/</strong></code> – Move de fora para outro diretório.</pre></li>
+            <li><pre><code><strong>mv *.txt /destino/</strong></code> – Move arquivos com extensão específica.</pre></li>
+            <li><pre><code><strong>mv * /destino/</strong></code> – Move todos os arquivos do diretório atual.</pre></li>
+            <li><pre><code><strong>mv /origem/* /destino/</strong></code> – Move tudo de um diretório específico.</pre></li>
+            <li><pre><code><strong>cat [arquivo]</strong></code> – Exibe conteúdo de um arquivo.</pre></li>
+            <li><pre><code><strong>echo "mensagem" > arquivo.txt</strong></code> – Cria um arquivo .txt com conteúdo.</pre></li>
+            <li><pre><code><strong>echo "mensagem" | sudo tee arquivo.txt > /dev/null && sudo chmod 666 arquivo.txt</strong></code> – Cria arquivo com permissões ajustadas.</pre></li>
+            <li><pre><code><strong>echo "mensagem" | sudo tee -a arquivo.txt > /dev/null && sudo chmod 666 arquivo.txt</strong></code> – Adiciona linha ao arquivo com permissões.</pre></li>
+            <li><pre><code><strong>open [arquivo]</strong></code> – Abre arquivo em modo gráfico.</pre></li>
+            <li><pre><code><strong>unzip [nome_do_arquivo_zip]</strong></code> - Extrair arquivos zip.</pre></li>
+        </ul>
+    </section>
+    
+    <!-- Categoria: Manipulação de Arquivos Especiais -->
+    <section id="copiar-mover">
+         <h2>Como manipular arquivos e diretórios em Mídias Externas</h2>
+         <p>Passos para Copiar ou Mover Arquivos ou Diretórios para Mídias Externas</p>
+    
+            <h3><strong>1. Identifique a mídia externa conectada:</strong></h3>
+            Use o comando:
+            <pre><code>lsblk</code></pre>
+            Localize o dispositivo correspondente, por exemplo: <code>/media/jaison/Seagate Expansion Drive</code>.
+        
+            <h3><strong>2. Verifique se a mídia está montada:</strong></h3>
+            Confirme se o ponto de montagem aparece no comando <code>lsblk</code>. Se necessário, monte manualmente:
+            <pre><code>sudo mount /dev/sdX1 /mnt</code></pre>
+            Substitua <code>/dev/sdX1</code> pelo identificador do seu dispositivo.
+        
+            <h3><strong>3. Copie os arquivos ou diretórios desejados:</strong></h3>
+            Para copiar os arquivos e preservar os originais, use o comando:
+            <pre><code>sudo cp -r /var/www/html/* "/media/jaison/Seagate Expansion Drive/"</code></pre>
+            O <code>-r</code> garante que subdiretórios e seus conteúdos sejam copiados.
+        
+            <h3><strong>4. Mova os arquivos ou diretórios desejados:</strong></h3>
+            Use o comando:
+            <pre><code>sudo mv /var/www/html/* "/media/jaison/Seagate Expansion Drive/"</code></pre>
+            Esse comando move todo o conteúdo do diretório <code>/var/www/html/</code> para o HD externo.
+        
+            <h3><strong>4. Evitar sobrescritas:</strong></h3>
+            Para evitar sobrescritas, use as opções <code>-i</code>:
+            <ul>
+                <li>
+                    <h3><strong>Para copiar:</strong></h3>
+                    <pre><code>sudo cp -i /var/www/html/* "/media/jaison/Seagate Expansion Drive/"</code></pre>
+                </li>
+                <li>
+                    <h3><strong>Para mover:</strong></h3>
+                    <pre><code>sudo mv -i /var/www/html/* "/media/jaison/Seagate Expansion Drive/"</code></pre>
+                </li>
+            </ul>
+        
+            <h3><strong>5. Verifique os arquivos copiados ou movidos:</strong></h3>
+            Certifique-se de que os arquivos estão no HD externo:
+            <pre><code>ls "/media/jaison/Seagate Expansion Drive/"</code></pre>
+        
+            <h3><strong>6. Verifique se há arquivos problemáticos:</strong></h3>
+            Certos sistemas de arquivos, como FAT32 ou exFAT, não permitem nomes de arquivos com caracteres inválidos. Renomeie arquivos problemáticos antes de copiá-los ou movê-los:
+            <pre><code>mv /var/www/html/keylogger.py. /var/www/html/keylogger.py</code></pre>
+    </section>
+
+     <!-- Categoria: Permissões para Arquivos -->
+    <section id="permissoes-arquivos">
+        <h2>Permissões para Arquivos</h2>
+        <ul class="commands">
+            <li><pre><code><strong>chmod +x [arquivo]</strong></code> - Torna o arquivo executável (adiciona permissão de execução)</pre></li>
+            <p class="permissao">Permissão : <span class="espacado"> rwxr-xr-x</span></p>
+            <li><pre><code><strong>chmod -x [arquivo]</strong></code> - Remove a permissão de execução do execução do arquivo</pre></li>
+            <p class="permissao">Permissão : <span class="espacado"> rw-r--r--</span></p>
+            <li><pre><code><strong>chmod 600 [arquivo]</strong></code> - Permissão apenas para o dono do arquivo (leitura e escrita)</pre></li>
+            <p class="permissao">Permissão : <span class="espacado"> rw-------</span></p>
+            <li><pre><code><strong>chmod 700 [arquivo]</strong></code> - Permissão total para o dono do arquivo, ninguém mais acessa</pre></li>
+            <p class="permissao">Permissão : <span class="espacado"> rwx------</span></p>
+            <li><pre><code><strong>chmod 644 [arquivo]</strong></code> - Permissão de leitura do arquivo para todos, mas escrita só para o dono</pre></li> 
+            <p class="permissao">Permissão : <span class="espacado"> rw-r--r--</span></p>
+            <li><pre><code><strong>chmod 755 [arquivo]</strong></code> - Permissão total para o dono do arquivo, leitura e execução para os outros</pre></li>
+            <p class="permissao">Permissão : <span class="espacado"> rwxr-xr-x</span></p>
+            <li><pre><code><strong>chmod 777 [arquivo]</strong></code> - Permissão total para todos (leitura, escrita e execução do arquivo)</pre></li>
+            <p class="permissao">Permissão : <span class="espacado"> rwxrwxrwx</span></p>
+            <li><pre><code><strong>chmod a+x [arquivo]</strong></code> - Adiciona permissão de execução do arquivo para todos os usuários</pre></li>
+            <p class="permissao">Permissão : <span class="espacado"> rwxr-xr-x</span></p>
+            <li><pre><code><strong>chmod g+r [arquivo]</strong></code> - Adiciona permissão de leitura do arquivo para o grupo</pre></li>
+            <p class="permissao">Permissão : <span class="espacado"> rw-r--r--</span></p>
+            <li><pre><code><strong>chmod o-w [arquivo]</strong></code> - Remove permissão de escrita de outros usuários</prte></li>
+            <p class="permissao">Permissão : <span class="espacado"> rw-r--r--</span></p>
+            <li><pre><code><strong>chmod u+x [arquivo]</strong></code> - Adiciona permissão de de execução do arquivo apenas para o dono</pre></li>
+            <p class="permissao">Permissão : <span class="espacado"> rwx------</span></p>
+            <li><pre><code><strong>chmod 644 *.[arquivo]</strong></code> - Concede permissão 644 a todos os arquivos com mesma extensão , como mp3 , mp4 , jpeg , jpg ,pdf , etc.</pre></li>
+            <p class="permissao">Permissão : <span class="espacado"> rw-r--r--</span></p>
+        </ul>
+    </section>
+
+      <!-- Categoria: Comandos de Rede -->
+    <section id="comandos-rede">
+        <h2>🌐 Comandos de Rede</h2>
+        <ul class="commands">
+            <li><pre><code><strong>ifconfig</strong></code> - Mostra informações das interfaces de rede</li>
+            <li><pre><code><strong>iw list | grep -A 20 'valid interface combinations'</strong></code> - Listar interfaces disponíveis e ver o limite de APs simultâneos suportados em cada interface.</pre></li>
+            <li><pre><code><strong>ping [endereço]</strong></code> - Testa conectividade com um endereço</li>
+            <li><pre><code><strong>netstat</strong></code> - Mostra conexões de rede ativas</li>
+            <li><pre><code><strong>nmap [alvo]</strong></code> - Realiza varredura de portas em um alvo</li>
+            <li><pre><code><strong>tcdump -i wlan0 -n</strong></code> - Monitorar tráfego com tcpdump.</li>
+            <li><pre><code><strong>curl [URL]</strong></code> - Faz requisições HTTP</li>
+            <li><pre><code><strong>airmon-ng stop wlan()mon</strong></code> - Desativa interface em modo monitor</li>
+            <li><pre><code><strong>systemctl restart networking</strong></code> - Reinicia todos os serviços de rede e recarrega as interfaces.</li>
+            <li><pre><code><strong>ip route</strong></code> - Encontrar o IP do rooteador . Está na linha <strong>default via</strong>. Ex: default via 192.168.1.1 dev eth0.</li>
+            <li><pre><code><strong>curl ifconfig me</strong></code> - Descobrir o IP Público.</li>
+            <li><pre><code><strong>curl icanhazip.com</strong></code> - Também é usado para descobrir o IP Público.</li>
+            <li><pre><code><strong>wget -qO- ipecho.net/plain</strong></code> - É outra forma de descobrir o IP Público.</li>
+            <li><pre><code><strong>netdiscover -r [IP ROTEADOR]/24</strong></code> - Descobre dispositivos na rede local.</li>
+            <li><pre><code><strong>netdiscover -i [INTERFACE REDE] -r [IP ROTEADOR]/24</strong></code> - Usa interface específica.</li>
+            <li><pre><code><strong>netdiscover -r [INTERFACE REDE] [IP ROTEADOR]/24 -c 0</strong></code> -  Varredura contínua , roda indefinidamente , útil para monitorar novas conexões.</li>
+            <li><pre><code><strong>nmcli -s -g 802-11-wireless-security.psk connection show "NOME_REDE"</strong></code> - Visualizar a senha do WI-Fi, em que o dispositivo está conecatod.</li>
+            <li><pre><code><strong>nmcli device wifi show</strong></code> - Visualizar detalhes da rede Wi-Fi, em que o dispositivo está conecatod, SSID, Senha, gera QRCode</li>
+            <li><pre><code><strong>dhclient -v wlan0</strong></code> - Viusalizar detalhes da concessão DHCP.</li>
+        </ul>
+    </section>
+
+     <!-- Outras Categorias -->
+    <section id="outros">
+        <h2>Outros</h2>
+        <ul class="commands">
+            <li><pre><code><strong>man [comando]</strong></code> - Exibe o manual do comando.</li>
+            <li><pre><code><strong>history</strong></code> - Lista comandos executados.</li>
+            <li><pre><code><strong>sudo [comando]</strong></code> - Executa um comando como administrador.</li>
+            <li><pre><code><strong>exit</strong></code> - Encerra a sessão atual.</li>
+            <li><pre><code><strong>shutdown</strong></code> - Desligar o sistema.</li>
+            <li><pre><code><strong>shutdown +10</strong></code> - Desligar o sitema em 10 minutos.</li>
+            <li><pre><code><strong>shutdown -h 22:30</strong></code> - Desligar o sistema com horário espec[ifico formato 24h.</li>
+            <li><pre><code><strong>shutdown -c</strong></code> - Cancelar um desligamento.</li>
+            <li><pre><code><strong>reboot</strong></code> - Reinicia o sistema.</li>
+            <li><pre><code><strong>passwd</strong></code> - Alterar senha do usuário atual</li>
+            <li><pre><code><strong>passwd [usuário]</strong></code> - Alterar senha de outro usuário , é preciso usar o <b>sudo</b>.</li>
+            <li><pre><code><strong>adduser [novo_usuário]</strong></code> - Adiciona novo usuário sem privilégios.</li>
+            <li><pre><code><strong>useradd -m -s /bin/bash [novoo_usuario]</strong></code> - Cria novo usuário com -m (diretório home), -s /bin/bash (Define o shell padrão como Bash).</li>
+            <li><pre><code><strong>usermod -aG sudo [nome_do_usuario]</strong></code> - Adicionar o usuário ao grupo sudo, (opcional).</li>
+            <li><pre><code><strong>id [nome_do_usuario]</strong></code> - Verificar se o novo usuário foi criado corretamente.</li>
+            <li><pre><code><strong>ls /home</strong></code> - Verificar o diretório home, para listar os usuários.</li>
+            <li><pre><code><strong>sudo - [nome_do_usuario]</strong></code> - Trocar para o novo usuário.</li>
+            <li><pre><code><strong>deluser [nome_do_usuario]</strong></code> - Remover um usuário.</li>
+            <li><pre><code><strong>deluser --remove-home [nome_do_usuario]</strong></code> - Remover usuário junto com o diretório home.</li>
+            <li><pre><code><strong>xdpyinfo | grep dimensions</strong></code> - Ver a resolução do monitor.</li>
+            <li><pre><code><strong>apt-get upgrade</strong></code> - Atualiza pacotes existentes apenas. Não instala nada novo e não remove nada.</li>
+            <li><pre><code><strong>apt-get dist-upgrade</strong></code> - Atualiza pacotes existentes, instala pacotes novos necessários e remove pacotes antigos se for preciso para completar a atualização.</li> 
+            <li><pre><code><strong>apt-get clean</strong></code> - Limpa todo o cache de pacotes .deb baixados</li>
+            <li><pre><code><strong>apt-get autoclean</strong></code> - Limpa apenas pacotes .deb que não podem mais ser baixados (são antigos/obsoletos)</li>
+            <li><pre><code><strong>apt-get autoremove</strong></code> - Remove programas e dependências instaladas que não são mais necessárias.</li>
+            <li><pre><code><strong>cal</strong></code> - Exibe o calendário do mês atual.</li>
+            <li><pre><code><strong>cal [ano]</strong></code> - Exibe o calendário do ano escolhido.</li>
+            <li><pre><code><strong>linux_logo</strong></code> - Exibe a logo do debian, com informações do hardware.</li>   
+        </ul>
+
+    </section>
+
+    <section id="atualizar-horario">
+        <h2>🕒 Como Atualizar o Horário no Kali Linux</h2>
+
+        <p> Para manter o horário correto no Kali Linux, especialmente durante testes em redes ou certificados SSL, é importante garantir que o sistema esteja sincronizado com um servidor de tempo. Você pode usar o comando <code>timedatectl</code> para verificar e atualizar o horário, ou ativar a sincronização automática com <code>systemctl enable systemd-timesyncd</code>. Também é possível ajustar manualmente usando <code>date</code> ou configurar seu fuso horário com <code>dpkg-reconfigure tzdata</code></p>.
+        
+           <h3>1. Ajustar a Data e Hora Manualmente</h3>
+               <pre><code>sudo date -s "09 APR 2025 15:45:00"</code></pre>
+
+           <h3>2. Verificar a Data e Hora Atual</h3>
+               <pre><code>date</code></pre>
+
+           <h3>3. Definir o Fuso Horário para Brasília</h3>
+               <pre><code>sudo timedatectl set-timezone America/Sao_Paulo</code></pre>
+
+           <h3>4. Confirmar o Fuso Horário e o Status da Sincronização</h3>
+               <pre><code>timedatectl</code></pre>
+
+           <h3>5. Ativar a Sincronização Automática com a Internet (NTP)</h3>
+               <pre><code>sudo timedatectl set-ntp true</code></pre>
+
+           <h3>6. (Opcional) Reiniciar o serviço de sincronização, se necessário</h3>
+               <pre><code>sudo systemctl restart systemd-timesyncd</code></pre>
+
+           <h3>7. Verificar novamente o status</h3>
+               <pre><code>timedatectl</code></pre>
+
+           <p>Se <strong>System clock synchronized</strong> aparecer como <code>yes</code> e <strong>NTP service</strong> como <code>active</code>, está tudo pronto! ✅</p>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2025 Portal Hacker Brasil – Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>

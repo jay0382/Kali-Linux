@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comandos Termux</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Comandos Termux</h1>
+        <p>Aprenda os principais comandos e tutoriais para dominar o Termux.</p>
+    </header>
+
+    <main>
+        <section id="categorias">
+            <h2>Categorias</h2>
+            <ul>
+                <li><a href="#manipulacao">Manipulação de Diretórios e Arquivos</a></li>
+                <li><a href="#rede">Comandos de Rede</a></li>
+                <li><a href="#apache">Tutorial: Instalar e Configurar Apache</a></li>
+                <li><a href="#ferramentas">Comandos de Ferramentas</a></li>
+                <li><a href="#permissoes">Permissões de Arquivos</a></li>
+</ul>
+            </ul>
+        </section>
+
+        <section id="conteudo">
+            <article id="manipulacao">
+                <h3>Manipulação de Diretórios e Arquivos</h3>
+                <ul>
+                    <li><strong>ls</strong>: Lista os arquivos e diretórios.</li>
+                    <li><strong>ls-a</strong>: Lista todos arquivos, (incluindo arquivos ocultos que começam com .).</li>
+                    <li><strong>ls-l</strong>: Lista arquivos com detalhes, ( permissões, tamanho, etc. )</li>
+                    <li><strong>cd</strong>: Navega até um diretório.</li>
+                    <li><strong>cd ..</strong>: Volta um duretório.</li>
+                    <li><strong>cd/</strong>: Volta para o diretório raiz.</li>
+                    <li><strong>cd</strong>: Volta ao diretório inicial.</li>
+                    <li><strong>rm</strong>: Remove arquivos ou diretórios.
+                    <br>Exemplos:
+                    <li><pre><code>rm (arqiivo.txt)</code></pre> Remove arquivo txt com ou sem conteúdo.</li>
+                    <li><pre><code>rmdir (diretório)</code></pre> Remove diretório vazio.</li>
+                    <li><pre><code>rm -r (diretório)</code></pre> Remove diretório e seus conteúdos.</li>
+                    <li><pre><code>rm -rf (diretório)</code></pre> Remove diretório e seus conteúdos sem confirmação.</li>
+                    <li><strong>mv</strong>: Move ou renomeia arquivos e diretórios.
+                    <br>Exemplos:
+                    <li><pre><code>mv (nome_antigo_arquivo) (novo_nome_arquivo)</code></pre> Renomeia o arquivo.</li>
+                    <li><pre><code>mv (nome_antigo_diretório) (novo_nome_diretório)</code></pre> Renomeia diretório.</li>
+                    <li><pre><code>mv (arquivo ou diretório) diretório/</code></pre> Move o arquivo ou diretório, para um subdiretório, no diretório atual.</li>
+                    <li><pre><code>mv (arquivo ou diretório) /caminho/do/destino/</code></pre> Move um arquivo ou diretório para outro diretório diferente do atual.</li>
+                    <li><pre><code>mv /caminho/de/origem/arquivo .</pre></code> Move um arquivo de outro diretório para o diretório atual.</li>
+                    <li><pre><code>mv /caminho/de/origem/Pasta ./</code></pre> Move uma pasta inteira de outro diretório para o diretório atual.</li>
+                    <li><pre><code>mv /caminho/de/origem/arquivo_ou_diretório caminho/de/destino</code></pre> Mover um arquivo ou diretório que nem a origem nem o destino seja o diretório atual.</li>
+                    <li><strong>cp</strong>: Copia arquivos ou diretórios.
+                    <br>Exemplos:
+                    <li><pre><code>cp (arquivo ou diretório) diretório/</code></pre> Copia o arquivo ou diretório, para um subdiretório, no diretório atual.</li>
+                    <li><pre><code>cp (arquivo ou diretório) /caminho/do/destino/</code></pre> Copia um arquivo ou diretório para outro diretório fora do atual.</li>
+                    <li><pre><code> cp (diretório com subdiretórios e arquivos) /caminho/do/destino</code></pre> Copia um diretório juntoncom subdiretórios e arquivos para outro diretório fora do atual.</li>
+                    <li><strong>echo</strong>: Exibe texto ou adiciona conteúdo a um arquivo.
+                    <br>Exemplos:
+                    <li><pre><code>echo "Olá, Termux!"</code></pre> Exibe a mensagem "Olá, Termux!" no terminal.</li>
+                    <li><pre><code>echo "Bem-vindo" > arquivo.txt</code></pre> Cria o arquivo <code>arquivo.txt</code> com o texto "Bem-vindo".</li>              
+                    <li><pre><code>echo "Nova linha" >> arquivo.txt</code></pre> Adiciona "Nova linha" ao final do arquivo <code>arquivo.txt</code>.</li>
+                    <li><pre><code>echo -e "1. Item\n2. Item\n3. Item" > lista.txt</code></pre> Cria o arquivo <code>lista.txt</code> com uma lista numerada.</li>              
+                    <li><pre><code>echo -e "• Item 1\n• Item 2\n• Item 3" > lista.txt</code></pre> Cria o arquivo <code>lista.txt</code> com itens pontuados.</li>
+                    <strong>cat</strong>: Exibe o conteúdo de um arquivo ou combina arquivos.
+                    <br>Exemplos:
+                    <li><pre><code>cat arquivo.txt</code></pre> Exibe o conteúdo do arquivo <code>arquivo.txt</code> no terminal.</li>
+                    <li><pre><code>cat arquivo1.txt arquivo2.txt > combinado.txt</code></pre> Combina os conteúdos de <code>arquivo1.txt</code> e <code>arquivo2.txt</code> em um novo arquivo chamado <code>combinado.txt</code>.</li>
+                    <li><pre><code>cat -n arquivo.txt</code></pre> Exibe o conteúdo de <code>arquivo.txt</code> com os números das linhas.</li>           
+                </ul>
+            </article>
+
+            <article id="rede">
+                <h3>Comandos de Rede</h3>
+                <ul>
+                    <li><strong>ifconfig</strong>: Exibe informações de rede.</li>
+                    <li><strong>curl https://api.ipify.org</strong>: Exibe informações do IP Público, atribuído pelo provedor de Internet.</li>
+                    <li><strong>ping</strong>: Testa a conectividade com outro dispositivo.</li>
+                    <li><strong>wget</strong>: Faz o download de arquivos da internet.</li>
+                </ul>
+            </article>
+
+            <article id="apache">
+                <h3>Tutorial: Instalar e Configurar Apache</h3>
+                <ol>
+                    <li><strong>Caminho padrão do Apache2 no Termux</strong>
+                        <pre><code>/data/data/com.termux/files/usr/share/apache2/default-site/htdocs</code></pre>
+                    </li>
+                    <li><strong>Instalar o Apache:</strong></code></pre>
+                        <pre><code>pkg install apache2</code></pre>
+                    </li>
+                    <li><strong>Iniciar o Apache:</strong>
+                        <pre><code>apachectl start</code></pre>
+                    </li>
+                    <li><strong>Verificar status do Apache:</strong>
+                        <pre><code>apachectl status</code></pre>
+                    </li>
+                    <li><strong>Parar o Apache:</strong>
+                        <pre><code>apachectl stop</code></pre>
+                    </li>
+                </ol>
+            </article>
+        </section>
+
+            <section id="ferramentas">
+    <h2>Comandos de Ferramentas</h2>
+
+    <article id="nmap">
+        <h3>Comando <code>nmap</code></h3>
+        <p>O <code>nmap</code> é uma ferramenta poderosa para escanear redes e obter informações sobre hosts e serviços.</p>
+        <p>Exemplo de uso básico:</p>
+        <pre><code>nmap 192.168.1.0/24</code></pre>
+        <p>
+            Este comando escaneia todos os dispositivos na rede <code>192.168.1.0/24</code>.
+        </p>
+        <p>Outros exemplos:</p>
+        <ul>
+            <li><pre><code>nmap -sS 192.168.1.1</code></pre> Escaneia portas TCP em modo stealth.</li>
+            <li><pre><code>nmap -O 192.168.1.1</code></pre> Detecta o sistema operacional.</li>
+            <li><pre><code>nmap --script=vuln 192.168.1.1</code></pre> Busca vulnerabilidades.</li>
+        </ul>
+    </article>
+
+    <article id="curl">
+        <h3>Comando <code>curl</code></h3>
+        <p>O <code>curl</code> é usado para realizar requisições HTTP diretamente do terminal.</p>
+        <p>Exemplo:</p>
+        <pre><code>curl https://example.com</code></pre>
+        <p>
+            Este comando faz uma requisição à página <code>https://example.com</code> e exibe a resposta no terminal.
+        </p>
+    </article>
+</section>
+
+            <section id="permissoes">
+    <h2>Comandos de Permissões</h2>
+
+    <article id="chmod">
+    <h3>Comando <code>chmod</code></h3>
+    <p>O comando <code>chmod</code> é usado para alterar as permissões de arquivos e diretórios no Linux.</p>
+
+    <h4>Entendendo os Números de Permissões</h4>
+    <p>As permissões são divididas em três partes:</p>
+    <ul>
+        <li><strong>Dono</strong>: O proprietário do arquivo.</li>
+        <li><strong>Grupo</strong>: Os usuários pertencentes ao mesmo grupo do arquivo.</li>
+        <li><strong>Outros</strong>: Todos os outros usuários.</li>
+    </ul>
+
+    <h4>Exemplos de Permissões Comuns:</h4>
+    <ul>
+        <li><strong>644</strong>:
+            <ul>
+                <li><code>-rw-r--r--</code></li>
+                <li>Dono: Leitura e Escrita.</li>
+                <li>Grupo: Apenas Leitura.</li>
+                <li>Outros: Apenas Leitura.</li>
+            </ul>
+        </li>
+        <li><strong>777</strong>:
+            <ul>
+                <li><code>-rwxrwxrwx</code></li>
+                <li>Dono: Leitura, Escrita e Execução.</li>
+                <li>Grupo: Leitura, Escrita e Execução.</li>
+                <li>Outros: Leitura, Escrita e Execução.</li>
+            </ul>
+        </li>
+        <li><strong>600</strong>:
+            <ul>
+                <li><code>-rw-------</code></li>
+                <li>Dono: Leitura e Escrita.</li>
+                <li>Grupo: Sem Permissão.</li>
+                <li>Outros: Sem Permissão.</li>
+            </ul>
+        </li>
+        <li><strong>755</strong>:
+            <ul>
+                <li><code>-rwxr-xr-x</code></li>
+                <li>Dono: Leitura, Escrita e Execução.</li>
+                <li>Grupo: Leitura e Execução.</li>
+                <li>Outros: Leitura e Execução.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>Comandos:</h4>
+    <ul>
+        <li><pre><code>chmod 644 arquivo.txt</code></pre> Define permissão de leitura para todos, mas apenas o dono pode escrever.</li>
+        <li><pre><code>chmod 777 arquivo.txt</code></pre> Dá acesso total (leitura, escrita e execução) para todos.</li>
+        <li><pre><code>chmod 600 arquivo.txt</code></pre> Permite acesso apenas ao dono (leitura e escrita).</li>
+        <li><pre><code>chmod 755 arquivo.txt</code></pre> Permite acesso total ao dono e somente leitura/execução para outros.</li>
+    </ul>
+
+    <p>Use as permissões com cuidado, especialmente <strong>777</strong>, pois pode expor arquivos a riscos de segurança.</p>
+</article>
+ 
+
+    <article id="chown">
+        <h3>Comando <code>chown</code></h3>
+        <p>O comando <code>chown</code> altera o proprietário ou grupo de arquivos.</p>
+        <p>Exemplo:</p>
+        <pre><code>chown usuario:grupo arquivo.txt</code></pre>
+    </article>
+
+    <article id="explicacao-permissoes">
+        <h3>Entendendo as Permissões</h3>
+        <p>As permissões são representadas como:</p>
+        <pre>
+<code>
+-rwxr-xr--
+Dono: rwx (7)
+Grupo: r-x (5)
+Outros: r-- (4)
+</code>
+        </pre>
+        <p>Significado:</p>
+        <ul>
+            <li><strong>r</strong>: Leitura</li>
+            <li><strong>w</strong>: Escrita</li>
+            <li><strong>x</strong>: Execução</li>
+            <li><strong>-</strong>: Sem permissão</li>
+        </ul>
+    </article>
+</section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 - Guia Termux</p>
+    </footer>
+</body>
+</html>

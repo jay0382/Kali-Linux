@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSINT - Portal Hackers Brasil</title>
+    <link rel="stylesheet" href="style.css"> <!-- Seu CSS -->
+</head>
+<body>
+
+    <header>
+        <h1>OSINT - Inteligência de Código Aberto</h1>
+    </header>
+
+    <div class="container">
+
+        <section>
+            <h2>O que é OSINT?</h2>
+            <p>
+                OSINT (Open Source Intelligence) refere-se ao processo de coleta e análise de informações disponíveis publicamente.
+                Ferramentas e técnicas de OSINT são usadas para reunir dados de redes sociais, bancos de dados públicos, sites, fóruns, dark web e muito mais.
+            </p>
+        </section>
+
+        <section>
+            <h2>Importância do OSINT na Cibersegurança</h2>
+            <p>
+                Profissionais de segurança usam OSINT para identificar ameaças, realizar análises de risco e proteger indivíduos e organizações.
+                Também é uma prática essencial em investigações de fraudes, reconhecimento em pentest e auditorias de segurança.
+            </p>
+        </section>
+
+        <section>
+            <h2>Ferramentas Populares de OSINT</h2>
+            <ul>
+                <li>Maltego</li>
+                <li>theHarvester</li>
+                <li>Spiderfoot</li>
+                <li>Recon-ng</li>
+                <li>Google Dorks</li>
+                <li>Sherlock (busca de usuários em redes sociais)</li>
+            </ul>
+        </section>
+ 
+        <section>
+            <h2>Coleta de Dados com Maltego</h2>
+              <p>
+                 <strong>Maltego</strong> é uma ferramenta de análise de relacionamentos que permite mapear conexões entre pessoas, empresas, domínios, endereços IP e muito mais.
+                 Amplamente utilizada em investigações e inteligência cibernética, facilita a visualização de grandes volumes de dados.
+                 Para saber mais, acesse nossa página dedicada:
+                  <a href="maltego.html">Maltego - Portal Hackers Brasil</a>.
+              </p>
+        </section>
+
+        <section>
+            <h2>Coleta de Dados com theHarvester</h2>
+              <p>
+                 <strong>theHarvester</strong> é uma ferramenta essencial para coletar e-mails, nomes de usuários, subdomínios e outras informações públicas em diversas fontes.
+                 Ideal para reconhecimento inicial em auditorias de segurança.
+                 Saiba mais acessando:
+                  <a href="theHarvester/index.html">theHarvester - Portal Hackers Brasil</a>.
+              </p>
+        </section>
+
+        <section>
+            <h2>Coleta de Dados com Spiderfoot</h2>
+              <p>
+                 <strong>Spiderfoot</strong> automatiza a coleta de dados OSINT a partir de centenas de fontes, identificando riscos potenciais e criando relatórios detalhados.
+                 Para um guia completo, acesse:
+                  <a href="spiderfoot.html">Spiderfoot - Portal Hackers Brasil</a>.
+              </p>
+        </section>
+
+        <section>
+            <h2>Coleta de Dados com Recon-ng</h2>
+              <p>
+                <strong>Recon-ng</strong> é um framework robusto para reconhecimento e coleta de dados, oferecendo módulos que integram diversas fontes OSINT em um ambiente de fácil utilização.
+                Confira mais informações em:
+                 <a href="recon-ng.html">Recon-ng - Portal Hackers Brasil</a>.
+             </p>
+        </section>
+
+        <section>
+            <h2>Coleta de Dados com Google Dorks</h2>
+              <p>
+                 Uma das técnicas mais utilizadas em OSINT é o uso de <strong>Google Dorks</strong>, que permite realizar buscas avançadas no Google para encontrar informações específicas na surface web.
+                 Essa técnica pode revelar arquivos públicos, diretórios abertos e outros dados expostos inadvertidamente.
+                 Para saber mais e aprender como usar essa poderosa técnica com responsabilidade, acesse nossa página dedicada: 
+                 <a href="Google_Hacking/index.html">Google Dorks - Portal Hackers Brasil</a>.
+              </p>
+        </section>
+
+        <section>
+            <h2>Coleta de Dados com Sherlock</h2>
+              <p>
+                 <strong>Sherlock</strong> é uma ferramenta que permite buscar nomes de usuários em múltiplas redes sociais e plataformas online, facilitando a identificação de perfis públicos em investigações OSINT.
+                 Saiba como usar acessando:
+                  <a href="sherlock.html">Sherlock - Portal Hackers Brasil</a>.
+              </p>
+        </section>
+
+        <section>
+            <h2>Responsabilidade e Ética</h2>
+            <p>
+                Embora o OSINT use informações públicas, é essencial respeitar a privacidade e as leis locais.
+                O uso de dados coletados deve seguir princípios éticos e, quando possível, buscar consentimento ou trabalhar com dados anonimizados.
+            </p>
+        </section>
+
+        <section id="dicas-anonimato">
+  <h2>Dicas de Anonimato em OSINT</h2>
+
+  <p>Sim, você pode e deve usar o navegador <strong>Tor</strong> para navegação comum se o seu foco é <strong>anonimato, privacidade e investigação</strong>.</p>
+  <p>Mas há vantagens e limitações importantes que você precisa conhecer — principalmente para uso em investigações, OSINT e cibersegurança.</p>
+
+  <h3>🧠 📌 Tor Browser: É ideal para investigações?</h3>
+  <table border="1" cellspacing="0" cellpadding="10">
+    <thead>
+      <tr style="background-color:#00ffff; color:#000;">
+        <th>✅ Vantagens do Tor Browser</th>
+        <th>⚠️ Limitações que você deve saber</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Seu IP nunca é revelado (tráfego passa por 3 camadas criptografadas)</td>
+        <td>Velocidade é bem menor do que no Chrome/Firefox comum</td>
+      </tr>
+      <tr>
+        <td>Navegação anônima por padrão</td>
+        <td>Sites como Google, YouTube, etc., podem pedir captchas o tempo todo</td>
+      </tr>
+      <tr>
+        <td>Bloqueia scripts, rastreadores e fingerprinting</td>
+        <td>Algumas páginas não funcionam corretamente (por causa do NoScript)</td>
+      </tr>
+      <tr>
+        <td>Ideal para pesquisa anônima, investigação e OSINT</td>
+        <td>Downloads grandes ou streaming não funcionam bem</td>
+      </tr>
+      <tr>
+        <td>Redireciona tudo via rede Tor (inclusive .onion)</td>
+        <td>Alguns sites bloqueiam ou limitam IPs da rede Tor</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>🔍 Quando usar Tor para investigações?</h3>
+  <ul>
+    <li>Você quer pesquisar algo sensível sem deixar rastros (ex: buscas sobre leaks, fóruns underground, fontes suspeitas).</li>
+    <li>Precisa acessar sites que monitoram IPs, como redes sociais, fóruns, bancos de dados etc.</li>
+    <li>Vai visitar sites <code>.onion</code> na dark web (requer Tor).</li>
+    <li>Está treinando técnicas de OSINT e quer evitar ser rastreado pela fonte da investigação.</li>
+  </ul>
+
+  <h3>🖥️ Quando <u>NÃO</u> é ideal usar Tor?</h3>
+  <ul>
+    <li>Navegação comum como assistir YouTube, Netflix, baixar arquivos grandes.</li>
+    <li>Acessar suas contas pessoais (Gmail, Instagram, etc.) — isso quebra o anonimato.</li>
+    <li>Fazer login em serviços com autenticação de dois fatores ou que enviam alertas de "acesso suspeito".</li>
+  </ul>
+
+  <h3>🛡️ Alternativa avançada (para quem estuda cibersegurança)</h3>
+  <ul>
+    <li>🔁 Use <strong>dois navegadores separados</strong>:
+      <ul>
+        <li><strong>Chrome ou Firefox</strong> para atividades comuns</li>
+        <li><strong>Tor Browser</strong> para investigações, consultas e navegação anônima</li>
+      </ul>
+    </li>
+    <li>🧠 E se quiser ir além:
+      <ul>
+        <li>Combine <strong>ProxyChains + navegador comum</strong> (ex: Firefox via proxychains)</li>
+        <li>Use uma <strong>máquina virtual ou sistema como Whonix</strong></li>
+        <li>Configure <strong>VPN + Tor</strong> para camadas extras de anonimato</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>✅ Conclusão</h3>
+  <p>Sim, você pode usar o Tor para navegação comum, mas o foco dele é <strong>anonimato</strong>, não performance.</p>
+  <p>Para estudos de investigação, OSINT e cibersegurança, o Tor é uma <strong>ferramenta fundamental</strong>.</p>
+  <p>Use com consciência: <strong>não logue em contas pessoais dentro do Tor</strong> e mantenha <strong>disciplina operacional</strong> se estiver aprendendo a investigar como um profissional.</p>
+</section>
+
+<section id="anonimato-avancado">
+  <h2>Tutoriais de Anonimato Avançado</h2>
+
+  <div class="tutorial">
+    <h3>🔁 Navegar com ProxyChains + Firefox</h3>
+    <p>Essa técnica permite que você use o navegador Firefox passando todo o tráfego pela rede Tor de forma sigilosa.</p>
+
+    <ol>
+      <li>Instale o Tor e o ProxyChains se ainda não tiver:
+        <pre><code>sudo apt install tor proxychains</code></pre>
+      </li>
+      <li>Inicie o serviço Tor:
+        <pre><code>sudo service tor start</code></pre>
+      </li>
+      <li>Edite o arquivo de configuração:
+        <pre><code>sudo nano /etc/proxychains.conf</code></pre>
+        <p>Altere a linha:</p>
+        <code>#dynamic_chain</code> para <code>strict_chain</code><br>
+        <p>Verifique se esta linha está no final do arquivo:</p>
+        <code>socks4 127.0.0.1 9050</code>
+      </li>
+      <li>Execute o Firefox com:
+        <pre><code>proxychains firefox</code></pre>
+      </li>
+    </ol>
+
+    <p><strong>Resultado:</strong> O Firefox estará roteando todo o tráfego pela rede Tor via ProxyChains.</p>
+  </div>
+
+  <hr style="border: 1px dashed #0ff; margin: 30px 0;">
+
+  <div class="tutorial">
+    <h3>🛡️ Navegar com VPN + Tor</h3>
+    <p>Essa configuração cria duas camadas de anonimato: o seu tráfego sai do seu computador criptografado pela VPN, e depois passa pela rede Tor.</p>
+
+    <ol>
+      <li>Conecte-se à sua VPN normalmente (ex: ProtonVPN, Mullvad, NordVPN...)</li>
+      <li>Depois de conectado, inicie o Tor:
+        <pre><code>sudo service tor start</code></pre>
+      </li>
+      <li>Agora, abra o navegador Tor ou use ProxyChains:
+        <pre><code>proxychains firefox</code></pre>
+        ou  
+        <pre><code>torbrowser-launcher</code></pre>
+      </li>
+    </ol>
+
+    <p><strong>💡 Observação:</strong> <code>VPN → Tor</code> é o modelo mais comum e seguro. Protege seu IP mesmo que a rede Tor falhe.</p>
+
+    <blockquote style="color: #0ff;">
+      O modelo inverso (Tor → VPN) exige suporte específico da VPN e não é recomendado para usuários iniciantes.
+    </blockquote>
+  </div>
+</section>
+
+<section id="sites_osint">
+    <h2>Sites para uso OSINT</h2>
+
+    <p>Aqui está disponível alguns links de sites para auxiliar em investigações OSINT.<strong>Obs:</strong> São sites que precisa criar conta e assinar planos mensais.</p>
+  <ul>
+    <li><a href="https://epieos.com/" target="_blank">Epios</a></li>
+    <li><a href="https://app.osint.industries/" target="_blank">OSINT</a></li>
+</section>
+
+</div>
+
+    <footer>
+        <p>&copy; 2025 - Portal Hackers Brasil | Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

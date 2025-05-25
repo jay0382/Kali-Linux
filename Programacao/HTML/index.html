@@ -1,82 +1,134 @@
-s<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Guia Completo de HTML</title>
 </head>
 <body>
-    <div class="container">
+    
     <!-- Cabeçalho principal da página -->
     <header>
-        <h1>Guia Completo de HTML</h1>
-        <p>Aprenda tudo o que você precisa para criar páginas web!</p>
+        <h1>HTML</h1>
     </header>
-
+    
+    <div class="container">
     <!-- Introdução ao HTML -->
     <section>
         <h2>Introdução ao HTML</h2>
         <p>HTML (HyperText Markup Language) é a base da construção de páginas web. Aqui você encontrará exemplos detalhados e explicações para cada elemento.</p>
+        <br> 
+        <p>Aprenda tudo o que você precisa para criar páginas web!</p>
     </section>
 
-   <section>
-        <h2>O que são Tags em HTML?</h2>
-        <p>
-            Em HTML, <strong>tags</strong> são elementos usados para estruturar e organizar o conteúdo de uma página da web.
-            Elas definem desde títulos, parágrafos e imagens até tabelas, formulários e interatividade com scripts.
-            Cada tag tem uma função específica e pode conter atributos que modificam seu comportamento.
-        </p>
+    <section id="referencia-html">
+  <h2>O que são Tags em HTML?</h2>
+  <p>
+    Em HTML, <strong>tags</strong> são elementos usados para estruturar e organizar o conteúdo de uma página da web.
+    Elas definem desde títulos, parágrafos e imagens até tabelas, formulários e interatividade com scripts.
+    Cada tag tem uma função específica e pode conter atributos que modificam seu comportamento.
+  </p>
 
-        <h3>Principais Tags do HTML</h3>
-        <p>Abaixo está uma lista das principais tags usadas no HTML, incluindo as que foram mencionadas.</p>
+  <h3>Principais Tags do HTML</h3>
+  <p>Abaixo está uma lista das principais tags usadas no HTML, incluindo as que foram mencionadas.</p>
 
-        <ul>
-            <li><strong>&lt;html&gt;&lt;/html&gt;</strong> → Define o documento HTML.</li>
-            <li><strong>&lt;head&gt;&lt;/head&gt;</strong> → Contém metadados, título e links para CSS e scripts.</li>
-            <li><strong>&lt;title&gt;&lt;/title&gt;</strong> → Define o título da página (aparece na aba do navegador).</li>
-            <li><strong>&lt;body&gt;&lt;/body&gt;</strong> → Contém todo o conteúdo visível da página.</li>
-            <li><strong>&lt;h1&gt; a &lt;h6&gt;</strong> → São cabeçalhos (títulos), onde <code>&lt;h1&gt;</code> é o maior e <code>&lt;h6&gt;</code> o menor.</li>
-            <li><strong>&lt;p&gt;&lt;/p&gt;</strong> → Define um parágrafo de texto.</li>
-            <li><strong>&lt;a href="URL"&gt;&lt;/a&gt;</strong> → Cria links para outras páginas.</li>
-            <li><strong>&lt;img src="imagem.jpg" alt="descrição"&gt;</strong> → Insere imagens.</li>
-            <li><strong>&lt;ul&gt;&lt;/ul&gt;</strong> → Lista não ordenada (com marcadores).</li>
-            <li><strong>&lt;ol&gt;&lt;/ol&gt;</strong> → Lista ordenada (com números).</li>
-            <li><strong>&lt;li&gt;&lt;/li&gt;</strong> → Itens de listas.</li>
-            <li><strong>&lt;div&gt;&lt;/div&gt;</strong> → Container genérico para agrupar elementos.</li>
-            <li><strong>&lt;span&gt;&lt;/span&gt;</strong> → Elemento inline usado para estilizar partes do texto.</li>
-            <li><strong>&lt;form&gt;&lt;/form&gt;</strong> → Define um formulário.</li>
-            <li><strong>&lt;input&gt;</strong> → Campo de entrada em formulários.</li>
-            <li><strong>&lt;button&gt;&lt;/button&gt;</strong> → Botão clicável.</li>
-            <li><strong>&lt;script&gt;&lt;/script&gt;</strong> → Adiciona código JavaScript na página.</li>
-            <li><strong>&lt;link&gt;</strong> → Conecta a página a um arquivo externo, como CSS.</li>
-            <li><strong>&lt;meta&gt;</strong> → Define metadados, como charset e descrição da página.</li>
-        </ul>
+  <div class="code-block">
+    <code><span class="tag">&lt;html&gt;&lt;/html&gt;</span> <span class="comentario">→ Define o documento HTML.</span></code>
+  </div>
 
-        <h3>Tags de Tabela em HTML</h3>
-        <p>As tabelas são usadas para exibir dados de forma organizada. Aqui estão as principais tags:</p>
+  <div class="code-block">
+    <code><span class="tag">&lt;head&gt;&lt;/head&gt;</span> <span class="comentario">→ Contém metadados, título e links para CSS e scripts.</span></code>
+  </div>
 
-        <ul>
-            <li><strong>&lt;table&gt;&lt;/table&gt;</strong> → Define uma tabela.</li>
-            <li><strong>&lt;thead&gt;&lt;/thead&gt;</strong> → Cabeçalho da tabela (contém as colunas de título).</li>
-            <li><strong>&lt;tbody&gt;&lt;/tbody&gt;</strong> → Corpo da tabela (contém os dados principais).</li>
-            <li><strong>&lt;tr&gt;&lt;/tr&gt;</strong> → Define uma linha na tabela.</li>
-            <li><strong>&lt;th&gt;&lt;/th&gt;</strong> → Define um título de coluna (cabeçalho de uma tabela).</li>
-            <li><strong>&lt;td&gt;&lt;/td&gt;</strong> → Define uma célula (conteúdo dentro da tabela).</li>
-        </ul>
+  <div class="code-block">
+    <code><span class="tag">&lt;title&gt;&lt;/title&gt;</span> <span class="comentario">→ Define o título da página (aparece na aba do navegador).</span></code>
+  </div>
 
-    </section>
+  <div class="code-block">
+    <code><span class="tag">&lt;body&gt;&lt;/body&gt;</span> <span class="comentario">→ Contém todo o conteúdo visível da página.</span></code>
+  </div>
 
-    <!-- Seção: Tags de Estrutura -->
-    <section>
-        <h2>Tags de Estrutura</h2>
-        <ul>
-            <li><strong>&lt;html&gt;:</strong> Elemento raiz de qualquer documento HTML.</li>
-            <li><strong>&lt;head&gt;:</strong> Contém informações sobre o documento.</li>
-            <li><strong>&lt;body&gt;:</strong> Contém o conteúdo visível da página.</li>
-            <li><strong>&lt;main&gt;:</strong> Representa o conteúdo principal da página.</li>
-            <li><strong>&lt;section&gt;:</strong> Divide o conteúdo em seções temáticas.</li>
-        </ul>
+  <div class="code-block">
+    <code><span class="tag">&lt;header&gt;&lt;/header&gt;</span> <span class="comentario">→ Representa o cabeçalho da página ou de uma seção.</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;nav&gt;&lt;/nav&gt;</span> <span class="comentario">→ Define uma área de navegação com links internos ou externos.</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;main&gt;&lt;/main&gt;</span> <span class="comentario">→ Representa o conteúdo principal da página.</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;section&gt;&lt;/section&gt;</span> <span class="comentario">→ Divide o conteúdo em seções temáticas.</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;h1&gt; a &lt;h6&gt;</span> <span class="comentario">→ São cabeçalhos, onde &lt;h1&gt; é o maior e &lt;h6&gt; o menor.</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;p&gt;&lt;/p&gt;</span> <span class="comentario">→ Define um parágrafo de texto.</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;a href="URL"&gt;&lt;/a&gt;</span> <span class="comentario">→ Cria links para outras páginas.</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;img src="imagem.jpg" alt="descrição"&gt;</span> <span class="comentario">→ Insere imagens.</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;ul&gt;&lt;/ul&gt;</span> <span class="comentario">→ Lista não ordenada (com marcadores).</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;ol&gt;&lt;/ol&gt;</span> <span class="comentario">→ Lista ordenada (com números).</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;li&gt;&lt;/li&gt;</span> <span class="comentario">→ Itens de listas.</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;div&gt;&lt;/div&gt;</span> <span class="comentario">→ Container genérico para agrupar elementos.</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;span&gt;&lt;/span&gt;</span> <span class="comentario">→ Elemento inline usado para estilizar partes do texto.</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;form&gt;&lt;/form&gt;</span> <span class="comentario">→ Define um formulário.</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;input&gt;</span> <span class="comentario">→ Campo de entrada em formulários.</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;button&gt;&lt;/button&gt;</span> <span class="comentario">→ Botão clicável.</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;script&gt;&lt;/script&gt;</span> <span class="comentario">→ Adiciona código JavaScript na página.</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;link&gt;</span> <span class="comentario">→ Conecta a página a um arquivo externo, como CSS.</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;meta&gt;</span> <span class="comentario">→ Define metadados, como charset e descrição da página.</span></code>
+  </div>
+
         <p>Exemplo básico de estrutura HTML:</p>
     
         <pre>
@@ -113,17 +165,61 @@ s<!DOCTYPE html>
 </body>
 </html>
 </pre> 
-      
 </section>
+
+<section>
+  <h2>Diferença entre <code>class</code> e <code>id</code> no HTML</h2>
+  <p>Em HTML, usamos o atributo <strong>class</strong> quando queremos aplicar o mesmo estilo a vários elementos. Já o <strong>id</strong> é usado para identificar <strong>um único elemento</strong> na página.</p>
+
+  <h3>Exemplo de uso do <code>class</code>:</h3>
+  <pre><code>&lt;p class="destaque"&gt;Esse parágrafo está destacado&lt;/p&gt;</code></pre>
+
+  <h3>Exemplo de uso do <code>id</code>:</h3>
+  <pre><code>&lt;p id="mensagem-unica"&gt;Esse parágrafo tem um ID único&lt;/p&gt;</code></pre>
+
+  <h3>Como referenciar no CSS:</h3>
+  <ul>
+    <li><code>.destaque</code> → o ponto (<strong>.</strong>) é usado para classes</li>
+    <li><code>#mensagem-unica</code> → a cerquilha (<strong>#</strong>) é usada para IDs</li>
+  </ul>
+
+  <h3>Exemplo de CSS:</h3>
+  <pre><code>&lt;style&gt;
+  .destaque {
+    color: cyan;
+    font-weight: bold;
+  }
+
+  #mensagem-unica {
+    color: yellow;
+    background-color: black;
+    padding: 5px;
+  }
+&lt;/style&gt;</code></pre>
+
+  <h3>Visual na página:</h3>
+  <p class="destaque">Esse parágrafo está destacado com <code>class="destaque"</code></p>
+  <p id="mensagem-unica">Esse parágrafo tem um <code>id="mensagem-unica"</code></p>
+
+  <p style="font-size: 14px; margin-top: 20px;"><em>Observação:</em> Você pode usar várias <strong>classes</strong> em elementos diferentes, mas o <strong>id</strong> deve ser único por página.</p>
+</section>
+
     <!-- Seção: Listas -->
-    <section>
-        <h2>Listas</h2>
-        <p>HTML suporta dois tipos principais de listas:</p>
-        <ul>
-            <li><strong>&lt;ul&gt;:</strong> Lista não ordenada (bullets).</li>
-            <li><strong>&lt;ol&gt;:</strong> Lista ordenada (numerada).</li>
-            <li><strong>&lt;li&gt;:</strong> Item de lista.</li>
-        </ul>
+    <section id="listas">
+  <h2>Listas</h2>
+  <p>HTML suporta dois tipos principais de listas:</p>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;ul&gt;</span> <span class="comentario">→ Lista não ordenada (com marcadores).</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;ol&gt;</span> <span class="comentario">→ Lista ordenada (com números).</span></code>
+  </div>
+
+  <div class="code-block">
+    <code><span class="tag">&lt;li&gt;</span> <span class="comentario">→ Item de lista.</span></code>
+  </div>>
         <p>Exemplo:</p>
         <pre>
  &lt;ul&gt;
@@ -195,23 +291,6 @@ s<!DOCTYPE html>
     </code></pre>
 </section>
 
-    <!-- Seção: Links e Navegação -->
-    <section>
-        <h2>Links e Navegação</h2>
-        <p>Use a tag <code>&lt;a&gt;</code> para criar links:</p>
-        <pre>
-&lt;&lt;a href="https://www.google.com" target="_blank"&gt;Visite o Google&lt;/a&gt;&gt;
-        </pre>
-        <pre>
-<a href="https://www.google.com" target="_blank">Visite o Google</a>
-        </pre>
-        <p>Atributos importantes:</p>
-        <ul>
-            <li><strong>href:</strong> Define o destino do link.</li>
-            <li><strong>target:</strong> Controle de abertura (<code>_self</code>, <code>_blank</code>).</li>
-        </ul>
-    </section>
-
     <!-- Seção: Div e ID -->
     <section>
         <h2>Divs e IDs</h2>
@@ -257,21 +336,101 @@ s<!DOCTYPE html>
         </pre>
     </section>
 
-    <!-- Seção: Links Externos -->
+  <!-- Seção: Links e Navegação -->
     <section>
-        <h2>Links Externos</h2>
-        <p>Para incluir CSS ou JavaScript, use:</p>
-        
-<!-- Links CSS e JavaScript -->
+        <h2>Links de Navegação Externa</h2>
+        <p>Use a tag <code>&lt;a&gt;</code> para criar links:</p>
         <pre>
-&lt;!-- Link CSS --&gt;
+&lt;a href="https://www.google.com" target="_blank"&gt;Visite o Google&lt;/a&gt;
+        </pre>
+        <pre>
+<a href="https://www.google.com" target="_blank">Visite o Google</a>
+        </pre>
+        <p>Link que redireciona para uma página de outro site.</p>
+        <br>
+        <p>Atributos importantes:</p>
+        <ul>
+            <li><strong>href:</strong> Define o destino do link.</li>
+            <li><strong>target:</strong> Controle de abertura (<code>_self</code>, <code>_blank</code>).</li>
+        </ul>
+        <br>
+        <pre>
+&lt;a href="Criando_Bot_TikTok">&gt;Tutorial: Criando Bot TikTok&lt;/a&gt;
+        </pre>
+        <pre>
+<a href="/Portal_Hackers_Brasil/Programacao/bin_bash/Criando_Bot_TikTok">Tutorial: Criando Bot TikTok</a>
+        </pre>
+        <p>Link que redireciona para outra página de um mesmo site</p> 
+    </section>
+
+<!-- Seção: Links Externos -->
+<section>
+  <h2>Links Externos</h2>
+  <p>Links externos permitem incluir arquivos de estilos (CSS) e scripts (JavaScript) de fontes externas, como bibliotecas e frameworks. Eles são inseridos <strong>dentro da tag &lt;head&gt;</strong> do HTML.</p>
+
+  <h3>Exemplos básicos:</h3>
+  <pre>
+&lt;!-- Link CSS local --&gt;
 &lt;link rel="stylesheet" href="style.css"&gt;
 
-&lt;!-- Link JavaScript --&gt;
+&lt;!-- Link JavaScript local --&gt;
 &lt;script src="script.js"&gt;&lt;/script&gt;
-        </pre>
+  </pre>
 
-    </section>
+  <h3>Exemplos com bibliotecas externas:</h3>
+  <pre>
+&lt;!-- Bootstrap CSS --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+
+&lt;!-- Bootstrap JavaScript --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- Font Awesome (ícones) --&gt;
+&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"&gt;
+
+&lt;!-- Google Fonts (Exemplo: Roboto) --&gt;
+&lt;link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"&gt;
+
+&lt;!-- jQuery (para facilitar scripts) --&gt;
+&lt;script src="https://code.jquery.com/jquery-3.6.0.min.js"&gt;&lt;/script&gt;
+
+&lt;!-- Normalize.css (normaliza estilos entre navegadores) --&gt;
+&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet"&gt;
+
+&lt;!-- Animate.css (animações CSS prontas) --&gt;
+&lt;link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet"&gt;
+
+&lt;!-- Chart.js (gráficos JavaScript) --&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt;
+  </pre>
+
+  <p><strong>Dica:</strong><br>
+Ao construir uma página HTML, os arquivos externos devem ser organizados corretamente para garantir que tudo funcione como esperado.<br><br>
+
+Links de estilo (CSS , Bibliotecas Externas), devem ser colocados dentro da tag <code>&lt;head&gt;</code>, pois eles são carregados antes do conteúdo da página. Isso garante que, quando a página aparecer para o usuário, ela já esteja estilizada.<br><br>
+
+Scripts JavaScript geralmente são colocados antes do fechamento da tag <code>&lt;/body&gt;</code>, ou seja, no final da página. Isso acontece porque o JavaScript pode depender de elementos HTML já carregados. Se o script for executado antes da página ser carregada, pode haver erros porque os elementos ainda não existem no momento da execução.
+</p>
+
+  <p><strong>Onde colocar no HTML:</strong> Dentro do <code>&lt;head&gt;</code>:</p>
+  <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;!-- Links CSS aqui --&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+    &lt;!-- Outras bibliotecas... --&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;!-- Conteúdo da página --&gt;
+
+    &lt;!-- Scripts JavaScript aqui --&gt;
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+  </pre>
+</section>
 
     <!-- Seção: Código e Formatação -->
     <section>
@@ -418,7 +577,1337 @@ Texto pré-formatado:
       <h2>Inserindo Imagem com Link e Imagem com Caminho Absoluto</h2>
 
         <img src="images/inseriroutras.png" alt="status-mysql" width="800" height="500" class="image-style">
-     </section> 
+     </section>
+
+     <section>
+    <h2>🔹 Como destacar uma palavra com CSS</h2>
+
+    <p>Você pode usar uma tag <code>&lt;span&gt;</code> com uma classe CSS para destacar uma palavra específica dentro de um texto. Veja o exemplo:</p>
+
+    <pre><code>
+&lt;span class="destaque"&gt;conteúdo&lt;/span&gt;
+</code></pre>
+
+    <p>CSS usado:</p>
+
+    <pre><code>
+.destaque {
+  background-color: #00FFFF; /* Cor de fundo (ciano) */
+  color: #000;               /* Cor do texto */
+  padding: 2px 6px;          /* Espaçamento interno */
+  border-radius: 4px;        /* Cantos arredondados */
+  font-weight: bold;         /* Texto em negrito */
+}
+</code></pre>
+
+    <p>Exemplo:</p>
+
+    <pre><code>Este é um &lt;span class="destaque"&gt;conteúdo&lt;/span&gt;
+    </code></pre>
+
+    <p>Resulatdo:</p>
+    <p>Este é um <span class="destaque">conteúdo</span> destacado com estilo CSS.</p>
+    
+    <p>OBS: Você pode usar o mesmo estilo para todas as palavras em destaques na página.</p> 
+</section> 
+
+     <section>
+  <h2>Inserindo Ícones no HTML</h2>
+  <p>
+    Existem diversas formas de inserir ícones em páginas HTML. Abaixo estão os métodos mais comuns, com explicação,
+    visualização e código.
+  </p>
+
+  <h3>🔗 Links obrigatórios no &lt;head&gt; para funcionar:</h3>
+  <p>Para usar <strong>Font Awesome</strong> e <strong>Material Icons</strong>, adicione os seguintes links dentro da tag <code>&lt;head&gt;</code> do seu HTML:</p>
+
+  <pre><code>&lt;!-- Font Awesome --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"&gt;
+
+&lt;!-- Material Icons (Google) --&gt;
+&lt;link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"&gt;
+</code></pre>
+
+  <hr>
+
+  <ul>
+    <!-- SVG Inline -->
+    <li>
+      <strong>1. SVG Inline (Ícone de Lupa)</strong>
+      <p>SVGs são ícones vetoriais colocados diretamente no HTML. São leves, escaláveis e personalizáveis via CSS.</p>
+      <p>🔍 Ícone:</p>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+        viewBox="0 0 24 24">
+        <path
+          d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z" />
+      </svg>
+      <pre><code>&lt;svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"&gt;
+  &lt;path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 
+      1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 
+      110 12A6 6 0 0110 4z"/&gt;
+&lt;/svg&gt;
+</code></pre>
+    </li>
+
+    <!-- Font Awesome -->
+    <li>
+      <strong>2. Font Awesome (Ícone de Lupa)</strong>
+      <p>Font Awesome é uma biblioteca de ícones baseada em fontes. É necessário importar o link no &lt;head&gt;.</p>
+      <p>🔍 Ícone:</p>
+      <i class="fas fa-search"></i>
+      <pre><code>&lt;i class="fas fa-search"&gt;&lt;/i&gt;</code></pre>
+    </li>
+
+    <!-- Material Icons -->
+    <li>
+      <strong>3. Material Icons (Ícone de Lupa)</strong>
+      <p>Material Icons é a biblioteca oficial do Google com milhares de ícones. Também requer link no &lt;head&gt;.</p>
+      <p>🔍 Ícone:</p>
+      <span class="material-icons">search</span>
+      <pre><code>&lt;span class="material-icons"&gt;search&lt;/span&gt;</code></pre>
+    </li>
+
+    <!-- Emoji -->
+    <li>
+      <strong>4. Emoji (Lupa)</strong>
+      <p>Uma forma simples e sem dependências externas é usar emojis como ícones.</p>
+      <p>🔍 Ícone:</p>
+      🔍
+      <pre><code>🔍</code></pre>
+    </li>
+  </ul>
+
+  <hr>
+
+  <h3>💻 Ícones de Sistemas</h3>
+
+  <ul>
+  <!-- Linux -->
+  <li>
+    <strong>Font Awesome - Linux:</strong><br>
+    <i class="fab fa-linux"></i>
+    <pre><code>&lt;i class="fab fa-linux"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Windows -->
+  <li>
+    <strong>Font Awesome - Windows:</strong><br>
+    <i class="fab fa-windows"></i>
+    <pre><code>&lt;i class="fab fa-windows"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Android -->
+  <li>
+    <strong>Font Awesome - Android:</strong><br>
+    <i class="fab fa-android"></i>
+    <pre><code>&lt;i class="fab fa-android"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- MacOS -->
+  <li>
+    <strong>Font Awesome - MacOS (Apple):</strong><br>
+    <i class="fab fa-apple"></i>
+    <pre><code>&lt;i class="fab fa-apple"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Termux / Terminal -->
+  <li>
+    <strong>Font Awesome - Terminal / Termux:</strong><br>
+    <i class="fas fa-terminal"></i>
+    <pre><code>&lt;i class="fas fa-terminal"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Cibersegurança -->
+  <li>
+    <strong>Font Awesome - Cibersegurança / Segurança:</strong><br>
+    <i class="fas fa-shield-alt"></i>
+    <pre><code>&lt;i class="fas fa-shield-alt"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Web -->
+  <li>
+    <strong>Font Awesome - Web / Internet:</strong><br>
+    <i class="fas fa-globe"></i>
+    <pre><code>&lt;i class="fas fa-globe"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Deep/Dark Web -->
+  <li>
+    <strong>Font Awesome - Deep/Dark Web:</strong><br>
+    <i class="fas fa-user-secret"></i>
+    <pre><code>&lt;i class="fas fa-user-secret"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Programação -->
+  <li>
+    <strong>Font Awesome - Programação / Código:</strong><br>
+    <i class="fas fa-code"></i>
+    <pre><code>&lt;i class="fas fa-code"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Servidores -->
+  <li>
+    <strong>Font Awesome - Servidores:</strong><br>
+    <i class="fas fa-server"></i>
+    <pre><code>&lt;i class="fas fa-server"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Sistemas Embarcados / IoT -->
+  <li>
+    <strong>Font Awesome - IoT / Sistemas Embarcados:</strong><br>
+    <i class="fas fa-microchip"></i>
+    <pre><code>&lt;i class="fas fa-microchip"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+  <h3>🎯 Exemplos com outros ícones:</h3>
+
+  <ul>
+    <li>
+      <strong>Font Awesome - Casa:</strong><br>
+      <i class="fas fa-home"></i>
+      <pre><code>&lt;i class="fas fa-home"&gt;&lt;/i&gt;</code></pre>
+    </li>
+
+    <li>
+      <strong>Material Icons - Casa:</strong><br>
+      <span class="material-icons">home</span>
+      <pre><code>&lt;span class="material-icons"&gt;home&lt;/span&gt;</code></pre>
+    </li>
+
+    <li>
+      <strong>Font Awesome - Usuário:</strong><br>
+      <i class="fas fa-user"></i>
+      <pre><code>&lt;i class="fas fa-user"&gt;&lt;/i&gt;</code></pre>
+    </li>
+
+    <li>
+      <strong>Material Icons - Usuário:</strong><br>
+      <span class="material-icons">person</span>
+      <pre><code>&lt;span class="material-icons"&gt;person&lt;/span&gt;</code></pre>
+    </li>
+
+    <li>
+      <strong>Font Awesome - Configurações (engrenagem):</strong><br>
+      <i class="fas fa-cog"></i>
+      <pre><code>&lt;i class="fas fa-cog"&gt;&lt;/i&gt;</code></pre>
+    </li>
+
+    <li>
+      <strong>Material Icons - Configurações:</strong><br>
+      <span class="material-icons">settings</span>
+      <pre><code>&lt;span class="material-icons"&gt;settings&lt;/span&gt;</code></pre>
+    </li>
+  </ul>
+
+    <h3>🔐 Ícones Temáticos para Projetos Web</h3>
+<p>Abaixo estão ícones frequentemente usados em páginas de login, redes sociais, segurança, alertas, redes e dispositivos.</p>
+
+<ul>
+  <!-- Segurança / Cadeado -->
+  <li>
+    <strong>Font Awesome - Cadeado:</strong><br>
+    <i class="fas fa-lock"></i>
+    <pre><code>&lt;i class="fas fa-lock"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <li>
+    <strong>Material Icons - Cadeado:</strong><br>
+    <span class="material-icons">lock</span>
+    <pre><code>&lt;span class="material-icons"&gt;lock&lt;/span&gt;</code></pre>
+  </li>
+
+  <!-- Alerta -->
+  <li>
+    <strong>Font Awesome - Alerta:</strong><br>
+    <i class="fas fa-exclamation-triangle"></i>
+    <pre><code>&lt;i class="fas fa-exclamation-triangle"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <li>
+    <strong>Material Icons - Alerta:</strong><br>
+    <span class="material-icons">warning</span>
+    <pre><code>&lt;span class="material-icons"&gt;warning&lt;/span&gt;</code></pre>
+  </li>
+
+  <!-- Verificado -->
+  <li>
+    <strong>Font Awesome - Verificado:</strong><br>
+    <i class="fas fa-check-circle"></i>
+    <pre><code>&lt;i class="fas fa-check-circle"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <li>
+    <strong>Material Icons - Verificado:</strong><br>
+    <span class="material-icons">check_circle</span>
+    <pre><code>&lt;span class="material-icons"&gt;check_circle&lt;/span&gt;</code></pre>
+  </li>
+
+  <!-- Rede Wi-Fi -->
+  <li>
+    <strong>Font Awesome - Wi-Fi:</strong><br>
+    <i class="fas fa-wifi"></i>
+    <pre><code>&lt;i class="fas fa-wifi"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <li>
+    <strong>Material Icons - Wi-Fi:</strong><br>
+    <span class="material-icons">wifi</span>
+    <pre><code>&lt;span class="material-icons"&gt;wifi&lt;/span&gt;</code></pre>
+  </li>
+
+  <!-- Celular / Smartphone -->
+  <li>
+    <strong>Font Awesome - Smartphone:</strong><br>
+    <i class="fas fa-mobile-alt"></i>
+    <pre><code>&lt;i class="fas fa-mobile-alt"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <li>
+    <strong>Material Icons - Celular:</strong><br>
+    <span class="material-icons">smartphone</span>
+    <pre><code>&lt;span class="material-icons"&gt;smartphone&lt;/span&gt;</code></pre>
+  </li>
+
+  <!-- Facebook -->
+  <li>
+    <strong>Font Awesome - Facebook:</strong><br>
+    <i class="fab fa-facebook-f"></i>
+    <pre><code>&lt;i class="fab fa-facebook-f"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Instagram -->
+  <li>
+    <strong>Font Awesome - Instagram:</strong><br>
+    <i class="fab fa-instagram"></i>
+    <pre><code>&lt;i class="fab fa-instagram"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- YouTube -->
+  <li>
+    <strong>Font Awesome - YouTube:</strong><br>
+    <i class="fab fa-youtube"></i>
+    <pre><code>&lt;i class="fab fa-youtube"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- GitHub -->
+  <li>
+    <strong>Font Awesome - GitHub:</strong><br>
+    <i class="fab fa-github"></i>
+    <pre><code>&lt;i class="fab fa-github"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Terminal -->
+  <li>
+    <strong>Font Awesome - Terminal:</strong><br>
+    <i class="fas fa-terminal"></i>
+    <pre><code>&lt;i class="fas fa-terminal"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <li>
+    <strong>Material Icons - Terminal (Shell):</strong><br>
+    <span class="material-icons">code</span>
+    <pre><code>&lt;span class="material-icons"&gt;code&lt;/span&gt;</code></pre>
+  </li>
+
+  <!-- Link -->
+  <li>
+    <strong>Font Awesome - Link:</strong><br>
+    <i class="fas fa-link"></i>
+    <pre><code>&lt;i class="fas fa-link"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Download -->
+  <li>
+    <strong>Font Awesome - Download:</strong><br>
+    <i class="fas fa-download"></i>
+    <pre><code>&lt;i class="fas fa-download"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Upload -->
+  <li>
+    <strong>Font Awesome - Upload:</strong><br>
+    <i class="fas fa-upload"></i>
+    <pre><code>&lt;i class="fas fa-upload"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Calendário -->
+  <li>
+    <strong>Font Awesome - Calendário:</strong><br>
+    <i class="fas fa-calendar-alt"></i>
+    <pre><code>&lt;i class="fas fa-calendar-alt"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+ <ul>
+  <!-- Carrinho de compras -->
+  <li>
+    <strong>Font Awesome - Carrinho de Compras:</strong><br>
+    <i class="fas fa-shopping-cart"></i>
+    <pre><code>&lt;i class="fas fa-shopping-cart"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Material Icons - Carrinho -->
+  <li>
+    <strong>Material Icons - Carrinho:</strong><br>
+    <span class="material-icons">shopping_cart</span>
+    <pre><code>&lt;span class="material-icons"&gt;shopping_cart&lt;/span&gt;</code></pre>
+  </li>
+
+  <!-- Dinheiro -->
+  <li>
+    <strong>Font Awesome - Dinheiro:</strong><br>
+    <i class="fas fa-dollar-sign"></i>
+    <pre><code>&lt;i class="fas fa-dollar-sign"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Cartão de Crédito -->
+  <li>
+    <strong>Font Awesome - Cartão de Crédito:</strong><br>
+    <i class="fas fa-credit-card"></i>
+    <pre><code>&lt;i class="fas fa-credit-card"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Pagamento -->
+  <li>
+    <strong>Material Icons - Pagamento:</strong><br>
+    <span class="material-icons">payments</span>
+    <pre><code>&lt;span class="material-icons"&gt;payments&lt;/span&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Localização -->
+  <li>
+    <strong>Font Awesome - Localização:</strong><br>
+    <i class="fas fa-map-marker-alt"></i>
+    <pre><code>&lt;i class="fas fa-map-marker-alt"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Material Icons - Localização -->
+  <li>
+    <strong>Material Icons - Location On:</strong><br>
+    <span class="material-icons">location_on</span>
+    <pre><code>&lt;span class="material-icons"&gt;location_on&lt;/span&gt;</code></pre>
+  </li>
+
+  <!-- Mapa -->
+  <li>
+    <strong>Font Awesome - Mapa:</strong><br>
+    <i class="fas fa-map"></i>
+    <pre><code>&lt;i class="fas fa-map"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Bússola -->
+  <li>
+    <strong>Font Awesome - Bússola:</strong><br>
+    <i class="fas fa-compass"></i>
+    <pre><code>&lt;i class="fas fa-compass"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Mensagem -->
+  <li>
+    <strong>Font Awesome - Mensagem:</strong><br>
+    <i class="fas fa-comment-alt"></i>
+    <pre><code>&lt;i class="fas fa-comment-alt"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Material Icons - Chat -->
+  <li>
+    <strong>Material Icons - Chat:</strong><br>
+    <span class="material-icons">chat</span>
+    <pre><code>&lt;span class="material-icons"&gt;chat&lt;/span&gt;</code></pre>
+  </li>
+
+  <!-- Notificação -->
+  <li>
+    <strong>Font Awesome - Sino (Notificação):</strong><br>
+    <i class="fas fa-bell"></i>
+    <pre><code>&lt;i class="fas fa-bell"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Telefone -->
+  <li>
+    <strong>Font Awesome - Telefone:</strong><br>
+    <i class="fas fa-phone"></i>
+    <pre><code>&lt;i class="fas fa-phone"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- WhatsApp -->
+  <li>
+    <strong>Font Awesome - WhatsApp:</strong><br>
+    <i class="fab fa-whatsapp"></i>
+    <pre><code>&lt;i class="fab fa-whatsapp"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Configurações -->
+  <li>
+    <strong>Material Icons - Settings:</strong><br>
+    <span class="material-icons">settings</span>
+    <pre><code>&lt;span class="material-icons"&gt;settings&lt;/span&gt;</code></pre>
+  </li>
+
+  <!-- Menu Hambúrguer -->
+  <li>
+    <strong>Material Icons - Menu:</strong><br>
+    <span class="material-icons">menu</span>
+    <pre><code>&lt;span class="material-icons"&gt;menu&lt;/span&gt;</code></pre>
+  </li>
+
+  <!-- Seta Voltar -->
+  <li>
+    <strong>Font Awesome - Voltar:</strong><br>
+    <i class="fas fa-arrow-left"></i>
+    <pre><code>&lt;i class="fas fa-arrow-left"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Atualizar -->
+  <li>
+    <strong>Font Awesome - Atualizar:</strong><br>
+    <i class="fas fa-sync-alt"></i>
+    <pre><code>&lt;i class="fas fa-sync-alt"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Carregando (spinner) -->
+  <li>
+    <strong>Font Awesome - Spinner:</strong><br>
+    <i class="fas fa-spinner fa-spin"></i>
+    <pre><code>&lt;i class="fas fa-spinner fa-spin"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Livro -->
+  <li>
+    <strong>Font Awesome - Livro:</strong><br>
+    <i class="fas fa-book"></i>
+    <pre><code>&lt;i class="fas fa-book"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Material Icons - Livro -->
+  <li>
+    <strong>Material Icons - Menu Book:</strong><br>
+    <span class="material-icons">menu_book</span>
+    <pre><code>&lt;span class="material-icons"&gt;menu_book&lt;/span&gt;</code></pre>
+  </li>
+
+  <!-- Lápis / Edição -->
+  <li>
+    <strong>Font Awesome - Lápis:</strong><br>
+    <i class="fas fa-pencil-alt"></i>
+    <pre><code>&lt;i class="fas fa-pencil-alt"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Material Icons - Editar -->
+  <li>
+    <strong>Material Icons - Edit:</strong><br>
+    <span class="material-icons">edit</span>
+    <pre><code>&lt;span class="material-icons"&gt;edit&lt;/span&gt;</code></pre>
+  </li>
+
+  <!-- Chapéu de formatura -->
+  <li>
+    <strong>Font Awesome - Graduação:</strong><br>
+    <i class="fas fa-graduation-cap"></i>
+    <pre><code>&lt;i class="fas fa-graduation-cap"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Estetoscópio -->
+  <li>
+    <strong>Font Awesome - Estetoscópio:</strong><br>
+    <i class="fas fa-stethoscope"></i>
+    <pre><code>&lt;i class="fas fa-stethoscope"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Coração -->
+  <li>
+    <strong>Font Awesome - Coração:</strong><br>
+    <i class="fas fa-heartbeat"></i>
+    <pre><code>&lt;i class="fas fa-heartbeat"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Cruz (hospital) -->
+  <li>
+    <strong>Font Awesome - Cruz (Hospital):</strong><br>
+    <i class="fas fa-hospital"></i>
+    <pre><code>&lt;i class="fas fa-hospital"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Material Icons - Local de hospital -->
+  <li>
+    <strong>Material Icons - Local Hospital:</strong><br>
+    <span class="material-icons">local_hospital</span>
+    <pre><code>&lt;span class="material-icons"&gt;local_hospital&lt;/span&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Sol -->
+  <li>
+    <strong>Font Awesome - Sol:</strong><br>
+    <i class="fas fa-sun"></i>
+    <pre><code>&lt;i class="fas fa-sun"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Nuvem -->
+  <li>
+    <strong>Font Awesome - Nuvem:</strong><br>
+    <i class="fas fa-cloud"></i>
+    <pre><code>&lt;i class="fas fa-cloud"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Nuvem com chuva -->
+  <li>
+    <strong>Font Awesome - Chuva:</strong><br>
+    <i class="fas fa-cloud-showers-heavy"></i>
+    <pre><code>&lt;i class="fas fa-cloud-showers-heavy"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Raio -->
+  <li>
+    <strong>Font Awesome - Raio:</strong><br>
+    <i class="fas fa-bolt"></i>
+    <pre><code>&lt;i class="fas fa-bolt"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Termômetro -->
+  <li>
+    <strong>Font Awesome - Temperatura:</strong><br>
+    <i class="fas fa-thermometer-half"></i>
+    <pre><code>&lt;i class="fas fa-thermometer-half"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Código -->
+  <li>
+    <strong>Font Awesome - Código:</strong><br>
+    <i class="fas fa-code"></i>
+    <pre><code>&lt;i class="fas fa-code"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Bug -->
+  <li>
+    <strong>Font Awesome - Bug:</strong><br>
+    <i class="fas fa-bug"></i>
+    <pre><code>&lt;i class="fas fa-bug"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Chip -->
+  <li>
+    <strong>Font Awesome - Chip:</strong><br>
+    <i class="fas fa-microchip"></i>
+    <pre><code>&lt;i class="fas fa-microchip"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Hacking / Terminal -->
+  <li>
+    <strong>Font Awesome - Terminal:</strong><br>
+    <i class="fas fa-terminal"></i>
+    <pre><code>&lt;i class="fas fa-terminal"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Rede / Nuvem -->
+  <li>
+    <strong>Font Awesome - Rede:</strong><br>
+    <i class="fas fa-network-wired"></i>
+    <pre><code>&lt;i class="fas fa-network-wired"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Avião -->
+  <li>
+    <strong>Font Awesome - Avião:</strong><br>
+    <i class="fas fa-plane"></i>
+    <pre><code>&lt;i class="fas fa-plane"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Carro -->
+  <li>
+    <strong>Font Awesome - Carro:</strong><br>
+    <i class="fas fa-car"></i>
+    <pre><code>&lt;i class="fas fa-car"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Ônibus -->
+  <li>
+    <strong>Font Awesome - Ônibus:</strong><br>
+    <i class="fas fa-bus"></i>
+    <pre><code>&lt;i class="fas fa-bus"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Mapa / Local -->
+  <li>
+    <strong>Material Icons - Itinerário:</strong><br>
+    <span class="material-icons">directions</span>
+    <pre><code>&lt;span class="material-icons"&gt;directions&lt;/span&gt;</code></pre>
+  </li>
+
+  <!-- Bagagem -->
+  <li>
+    <strong>Font Awesome - Bagagem:</strong><br>
+    <i class="fas fa-suitcase-rolling"></i>
+    <pre><code>&lt;i class="fas fa-suitcase-rolling"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Vídeo -->
+  <li>
+    <strong>Font Awesome - Vídeo:</strong><br>
+    <i class="fas fa-video"></i>
+    <pre><code>&lt;i class="fas fa-video"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Música -->
+  <li>
+    <strong>Font Awesome - Música:</strong><br>
+    <i class="fas fa-music"></i>
+    <pre><code>&lt;i class="fas fa-music"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Play -->
+  <li>
+    <strong>Font Awesome - Play:</strong><br>
+    <i class="fas fa-play"></i>
+    <pre><code>&lt;i class="fas fa-play"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Pausar -->
+  <li>
+    <strong>Font Awesome - Pause:</strong><br>
+    <i class="fas fa-pause"></i>
+    <pre><code>&lt;i class="fas fa-pause"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Fone de ouvido -->
+  <li>
+    <strong>Font Awesome - Fone:</strong><br>
+    <i class="fas fa-headphones"></i>
+    <pre><code>&lt;i class="fas fa-headphones"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Futebol -->
+  <li>
+    <strong>Font Awesome - Bola de Futebol:</strong><br>
+    <i class="fas fa-futbol"></i>
+    <pre><code>&lt;i class="fas fa-futbol"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Ciclismo -->
+  <li>
+    <strong>Font Awesome - Bicicleta:</strong><br>
+    <i class="fas fa-biking"></i>
+    <pre><code>&lt;i class="fas fa-biking"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Corrida -->
+  <li>
+    <strong>Font Awesome - Corrida:</strong><br>
+    <i class="fas fa-running"></i>
+    <pre><code>&lt;i class="fas fa-running"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Academia -->
+  <li>
+    <strong>Font Awesome - Halteres:</strong><br>
+    <i class="fas fa-dumbbell"></i>
+    <pre><code>&lt;i class="fas fa-dumbbell"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Portfólio / Maleta -->
+  <li>
+    <strong>Font Awesome - Maleta:</strong><br>
+    <i class="fas fa-briefcase"></i>
+    <pre><code>&lt;i class="fas fa-briefcase"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Engenheiro -->
+  <li>
+    <strong>Font Awesome - Capacete:</strong><br>
+    <i class="fas fa-hard-hat"></i>
+    <pre><code>&lt;i class="fas fa-hard-hat"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Médico -->
+  <li>
+    <strong>Font Awesome - Médico (com jaleco):</strong><br>
+    <i class="fas fa-user-md"></i>
+    <pre><code>&lt;i class="fas fa-user-md"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Professor / Educação -->
+  <li>
+    <strong>Font Awesome - Quadro:</strong><br>
+    <i class="fas fa-chalkboard-teacher"></i>
+    <pre><code>&lt;i class="fas fa-chalkboard-teacher"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Martelo -->
+  <li>
+    <strong>Font Awesome - Martelo:</strong><br>
+    <i class="fas fa-hammer"></i>
+    <pre><code>&lt;i class="fas fa-hammer"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Chave inglesa -->
+  <li>
+    <strong>Font Awesome - Chave inglesa:</strong><br>
+    <i class="fas fa-wrench"></i>
+    <pre><code>&lt;i class="fas fa-wrench"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Ferramentas cruzadas -->
+  <li>
+    <strong>Font Awesome - Ferramentas:</strong><br>
+    <i class="fas fa-tools"></i>
+    <pre><code>&lt;i class="fas fa-tools"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Engrenagem -->
+  <li>
+    <strong>Font Awesome - Engrenagem:</strong><br>
+    <i class="fas fa-cogs"></i>
+    <pre><code>&lt;i class="fas fa-cogs"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Cérebro -->
+  <li>
+    <strong>Font Awesome - Cérebro:</strong><br>
+    <i class="fas fa-brain"></i>
+    <pre><code>&lt;i class="fas fa-brain"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Usuário com pensamento -->
+  <li>
+    <strong>Font Awesome - Usuário Pensando:</strong><br>
+    <i class="fas fa-user-astronaut"></i> <!-- Usado como símbolo criativo -->
+    <pre><code>&lt;i class="fas fa-user-astronaut"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Círculo de ajuda -->
+  <li>
+    <strong>Font Awesome - Ajuda / Dúvida:</strong><br>
+    <i class="fas fa-question-circle"></i>
+    <pre><code>&lt;i class="fas fa-question-circle"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Emoções -->
+  <li>
+    <strong>Font Awesome - Rosto feliz:</strong><br>
+    <i class="fas fa-smile"></i>
+    <pre><code>&lt;i class="fas fa-smile"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <li>
+    <strong>Font Awesome - Rosto triste:</strong><br>
+    <i class="fas fa-frown"></i>
+    <pre><code>&lt;i class="fas fa-frown"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Troféu -->
+  <li>
+    <strong>Font Awesome - Troféu:</strong><br>
+    <i class="fas fa-trophy"></i>
+    <pre><code>&lt;i class="fas fa-trophy"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Medalha -->
+  <li>
+    <strong>Font Awesome - Medalha:</strong><br>
+    <i class="fas fa-medal"></i>
+    <pre><code>&lt;i class="fas fa-medal"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Estrela -->
+  <li>
+    <strong>Font Awesome - Estrela:</strong><br>
+    <i class="fas fa-star"></i>
+    <pre><code>&lt;i class="fas fa-star"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Coroa -->
+  <li>
+    <strong>Font Awesome - Coroa:</strong><br>
+    <i class="fas fa-crown"></i>
+    <pre><code>&lt;i class="fas fa-crown"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Robô -->
+  <li>
+    <strong>Font Awesome - Robô:</strong><br>
+    <i class="fas fa-robot"></i>
+    <pre><code>&lt;i class="fas fa-robot"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Circuito -->
+  <li>
+    <strong>Font Awesome - Circuito Eletrônico:</strong><br>
+    <i class="fas fa-project-diagram"></i>
+    <pre><code>&lt;i class="fas fa-project-diagram"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- API -->
+  <li>
+    <strong>Font Awesome - API:</strong><br>
+    <i class="fas fa-plug"></i>
+    <pre><code>&lt;i class="fas fa-plug"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Código / IA -->
+  <li>
+    <strong>Font Awesome - Cérebro e Chip (representa IA):</strong><br>
+    <i class="fas fa-brain"></i> + <i class="fas fa-microchip"></i>
+    <pre><code>&lt;i class="fas fa-brain"&gt;&lt;/i&gt;
+&lt;i class="fas fa-microchip"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Paleta de cores -->
+  <li>
+    <strong>Font Awesome - Paleta:</strong><br>
+    <i class="fas fa-palette"></i>
+    <pre><code>&lt;i class="fas fa-palette"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Pincel -->
+  <li>
+    <strong>Font Awesome - Pincel:</strong><br>
+    <i class="fas fa-paint-brush"></i>
+    <pre><code>&lt;i class="fas fa-paint-brush"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Imagem -->
+  <li>
+    <strong>Font Awesome - Imagem:</strong><br>
+    <i class="fas fa-image"></i>
+    <pre><code>&lt;i class="fas fa-image"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Caneta -->
+  <li>
+    <strong>Font Awesome - Caneta Designer:</strong><br>
+    <i class="fas fa-pen-nib"></i>
+    <pre><code>&lt;i class="fas fa-pen-nib"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Frasco de laboratório -->
+  <li>
+    <strong>Font Awesome - Frasco:</strong><br>
+    <i class="fas fa-vial"></i>
+    <pre><code>&lt;i class="fas fa-vial"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Tubos de ensaio -->
+  <li>
+    <strong>Font Awesome - Tubos:</strong><br>
+    <i class="fas fa-vials"></i>
+    <pre><code>&lt;i class="fas fa-vials"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Átomo -->
+  <li>
+    <strong>Font Awesome - Átomo:</strong><br>
+    <i class="fas fa-atom"></i>
+    <pre><code>&lt;i class="fas fa-atom"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Microscópio -->
+  <li>
+    <strong>Font Awesome - Microscópio:</strong><br>
+    <i class="fas fa-microscope"></i>
+    <pre><code>&lt;i class="fas fa-microscope"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Cadeado -->
+  <li>
+    <strong>Font Awesome - Cadeado:</strong><br>
+    <i class="fas fa-lock"></i>
+    <pre><code>&lt;i class="fas fa-lock"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Chave -->
+  <li>
+    <strong>Font Awesome - Chave:</strong><br>
+    <i class="fas fa-key"></i>
+    <pre><code>&lt;i class="fas fa-key"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Firewall -->
+  <li>
+    <strong>Font Awesome - Muro (Firewall):</strong><br>
+    <i class="fas fa-fire"></i>
+    <pre><code>&lt;i class="fas fa-fire"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Escudo -->
+  <li>
+    <strong>Font Awesome - Escudo:</strong><br>
+    <i class="fas fa-shield-alt"></i>
+    <pre><code>&lt;i class="fas fa-shield-alt"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Hacker (terminal) -->
+  <li>
+    <strong>Font Awesome - Terminal:</strong><br>
+    <i class="fas fa-terminal"></i>
+    <pre><code>&lt;i class="fas fa-terminal"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Caixa -->
+  <li>
+    <strong>Font Awesome - Caixa:</strong><br>
+    <i class="fas fa-box"></i>
+    <pre><code>&lt;i class="fas fa-box"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Caminhão -->
+  <li>
+    <strong>Font Awesome - Caminhão:</strong><br>
+    <i class="fas fa-truck"></i>
+    <pre><code>&lt;i class="fas fa-truck"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Rota / Caminho -->
+  <li>
+    <strong>Font Awesome - Localização com Trajeto:</strong><br>
+    <i class="fas fa-route"></i>
+    <pre><code>&lt;i class="fas fa-route"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Etiqueta -->
+  <li>
+    <strong>Font Awesome - Tag (etiqueta):</strong><br>
+    <i class="fas fa-tag"></i>
+    <pre><code>&lt;i class="fas fa-tag"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Cruz -->
+  <li>
+    <strong>Font Awesome - Cruz Cristã:</strong><br>
+    <i class="fas fa-cross"></i>
+    <pre><code>&lt;i class="fas fa-cross"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Islã -->
+  <li>
+    <strong>Font Awesome - Lua Crescente com Estrela (Islã):</strong><br>
+    <i class="fas fa-star-and-crescent"></i>
+    <pre><code>&lt;i class="fas fa-star-and-crescent"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Judaísmo -->
+  <li>
+    <strong>Font Awesome - Estrela de Davi (Judaísmo):</strong><br>
+    <i class="fas fa-star-of-david"></i>
+    <pre><code>&lt;i class="fas fa-star-of-david"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Om (Hinduísmo) -->
+  <li>
+    <strong>Font Awesome - Om:</strong><br>
+    <i class="fas fa-om"></i>
+    <pre><code>&lt;i class="fas fa-om"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Yin Yang (Espiritualidade Oriental) -->
+  <li>
+    <strong>Font Awesome - Yin Yang:</strong><br>
+    <i class="fas fa-yin-yang"></i>
+    <pre><code>&lt;i class="fas fa-yin-yang"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Gato -->
+  <li>
+    <strong>Font Awesome - Gato:</strong><br>
+    <i class="fas fa-cat"></i>
+    <pre><code>&lt;i class="fas fa-cat"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Cão -->
+  <li>
+    <strong>Font Awesome - Cão:</strong><br>
+    <i class="fas fa-dog"></i>
+    <pre><code>&lt;i class="fas fa-dog"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Pata -->
+  <li>
+    <strong>Font Awesome - Pegada:</strong><br>
+    <i class="fas fa-paw"></i>
+    <pre><code>&lt;i class="fas fa-paw"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Cavalo -->
+  <li>
+    <strong>Font Awesome - Cavalo:</strong><br>
+    <i class="fas fa-horse"></i>
+    <pre><code>&lt;i class="fas fa-horse"&gt;&lt;/i&gt;</code></pre>
+  </li>
+
+  <!-- Corvo -->
+  <li>
+    <strong>Font Awesome - Corvo:</strong><br>
+    <i class="fas fa-crow"></i>
+    <pre><code>&lt;i class="fas fa-crow"&gt;&lt;/i&gt;</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Emoji Feliz -->
+  <li>
+    <strong>Emoji Feliz:</strong><br>
+    😀
+    <pre><code>😀</code></pre>
+  </li>
+
+  <!-- Emoji Triste -->
+  <li>
+    <strong>Emoji Triste:</strong><br>
+    😢
+    <pre><code>😢</code></pre>
+  </li>
+
+  <!-- Emoji Raiva -->
+  <li>
+    <strong>Emoji Bravo:</strong><br>
+    😠
+    <pre><code>😠</code></pre>
+  </li>
+
+  <!-- Emoji Apaixonado -->
+  <li>
+    <strong>Emoji Coração nos Olhos:</strong><br>
+    😍
+    <pre><code>😍</code></pre>
+  </li>
+
+  <!-- Emoji Risada -->
+  <li>
+    <strong>Emoji Chorando de Rir:</strong><br>
+    😂
+    <pre><code>😂</code></pre>
+  </li>
+</ul>
+
+<ul>
+  <!-- Brasil -->
+  <li>
+    <strong>Emoji Bandeira - Brasil:</strong><br>
+    🇧🇷
+    <pre><code>🇧🇷</code></pre>
+  </li>
+
+  <!-- Estados Unidos -->
+  <li>
+    <strong>Emoji Bandeira - EUA:</strong><br>
+    🇺🇸
+    <pre><code>🇺🇸</code></pre>
+  </li>
+
+  <!-- França -->
+  <li>
+    <strong>Emoji Bandeira - França:</strong><br>
+    🇫🇷
+    <pre><code>🇫🇷</code></pre>
+  </li>
+
+  <!-- Japão -->
+  <li>
+    <strong>Emoji Bandeira - Japão:</strong><br>
+    🇯🇵
+    <pre><code>🇯🇵</code></pre>
+  </li>
+
+  <!-- Alemanha -->
+  <li>
+    <strong>Emoji Bandeira - Alemanha:</strong><br>
+    🇩🇪
+    <pre><code>🇩🇪</code></pre>
+  </li>
+</ul>
+</section> 
+
+<section id="emojis-html">
+  
+    <h2>🎨 Emojis Úteis para HTML</h2>
+
+    <h3>📂 Diretórios e Arquivos</h3>
+    <p>📁 <code>&lt;p&gt;📁 Pasta&lt;/p&gt;</code></p>
+    <p>📂 <code>&lt;p&gt;📂 Subpasta&lt;/p&gt;</code></p>
+    <p>🗂️ <code>&lt;p&gt;🗂️ Organização de arquivos&lt;/p&gt;</code></p>
+
+    <h3>🌐 Rede e Conexões</h3>
+    <p>🌐 <code>&lt;p&gt;🌐 Internet&lt;/p&gt;</code></p>
+    <p>📶 <code>&lt;p&gt;📶 Wi-Fi&lt;/p&gt;</code></p>
+    <p>📡 <code>&lt;p&gt;📡 Sinal de rádio&lt;/p&gt;</code></p>
+    <p>🔌 <code>&lt;p&gt;🔌 Conexão física&lt;/p&gt;</code></p>
+    <p>🖧 <code>&lt;p&gt;🖧 Rede local&lt;/p&gt;</code></p>
+
+    <h3>🖥️ Terminal e Computação</h3>
+    <p>💻 <code>&lt;p&gt;💻 Computador&lt;/p&gt;</code></p>
+    <p>🖥️ <code>&lt;p&gt;🖥️ Terminal CLI&lt;/p&gt;</code></p>
+    <p>⌨️ <code>&lt;p&gt;⌨️ Teclado&lt;/p&gt;</code></p>
+    <p>🧠 <code>&lt;p&gt;🧠 Inteligência/Conhecimento&lt;/p&gt;</code></p>
+
+    <h3>🛠️ Ferramentas e Configuração</h3>
+    <p>🛠️ <code>&lt;p&gt;🛠️ Ferramentas&lt;/p&gt;</code></p>
+    <p>⚙️ <code>&lt;p&gt;⚙️ Configurações&lt;/p&gt;</code></p>
+    <p>🧰 <code>&lt;p&gt;🧰 Caixa de ferramentas&lt;/p&gt;</code></p>
+
+    <h3>⏰ Tempo e Agendamento</h3>
+    <p>🕒 <code>&lt;p&gt;🕒 Horário&lt;/p&gt;</code></p>
+    <p>⏳ <code>&lt;p&gt;⏳ Contagem regressiva&lt;/p&gt;</code></p>
+    <p>🗓️ <code>&lt;p&gt;🗓️ Agenda/Calendário&lt;/p&gt;</code></p>
+
+    <h3>⚠️ Avisos e Segurança</h3>
+    <p>⚠️ <code>&lt;p&gt;⚠️ Atenção&lt;/p&gt;</code></p>
+    <p>🔒 <code>&lt;p&gt;🔒 Protegido&lt;/p&gt;</code></p>
+    <p>🛡️ <code>&lt;p&gt;🛡️ Segurança&lt;/p&gt;</code></p>
+    <p>🚨 <code>&lt;p&gt;🚨 Alerta máximo&lt;/p&gt;</code></p>
+
+    <h3>📦 Outros úteis</h3>
+    <p>🧪 <code>&lt;p&gt;🧪 Testes&lt;/p&gt;</code></p>
+    <p>📝 <code>&lt;p&gt;📝 Notas&lt;/p&gt;</code></p>
+    <p>🔎 <code>&lt;p&gt;🔎 Busca&lt;/p&gt;</code></p>
+    <p>📌 <code>&lt;p&gt;📌 Fixar/Tópico importante&lt;/p&gt;</code></p>
+  
+    <h3>🔧 Terminal e Comandos</h3>
+    <p>🧱 <code>&lt;p&gt;🧱 Firewall/Segurança de rede&lt;/p&gt;</code></p>
+    <p>📟 <code>&lt;p&gt;📟 Terminal/Shell&lt;/p&gt;</code></p>
+    <p>🖲️ <code>&lt;p&gt;🖲️ Entrada de comando&lt;/p&gt;</code></p>
+    <p>⚙️ <code>&lt;p&gt;⚙️ Configuração avançada&lt;/p&gt;</code></p>
+
+    <h3>🔐 Segurança e Criptografia</h3>
+    <p>🔑 <code>&lt;p&gt;🔑 Chave de acesso&lt;/p&gt;</code></p>
+    <p>🔒 <code>&lt;p&gt;🔒 Proteção&lt;/p&gt;</code></p>
+    <p>🔓 <code>&lt;p&gt;🔓 Acesso liberado&lt;/p&gt;</code></p>
+    <p>🛡️ <code>&lt;p&gt;🛡️ Defesa e segurança&lt;/p&gt;</code></p>
+    <p>📛 <code>&lt;p&gt;📛 Alerta de risco&lt;/p&gt;</code></p>
+
+    <h3>📊 Monitoramento e Logs</h3>
+    <p>📈 <code>&lt;p&gt;📈 Gráfico de desempenho&lt;/p&gt;</code></p>
+    <p>📉 <code>&lt;p&gt;📉 Queda de conexão&lt;/p&gt;</code></p>
+    <p>📝 <code>&lt;p&gt;📝 Registro de logs&lt;/p&gt;</code></p>
+    <p>📋 <code>&lt;p&gt;📋 Relatórios&lt;/p&gt;</code></p>
+
+    <h3>🧪 Testes e Experimentações</h3>
+    <p>🧪 <code>&lt;p&gt;🧪 Pentest/Teste de segurança&lt;/p&gt;</code></p>
+    <p>🧬 <code>&lt;p&gt;🧬 Análise técnica&lt;/p&gt;</code></p>
+    <p>🚧 <code>&lt;p&gt;🚧 Ambiente de testes&lt;/p&gt;</code></p>
+
+    <h3>📦 Sistema e Instalação</h3>
+    <p>📦 <code>&lt;p&gt;📦 Pacotes/instalação&lt;/p&gt;</code></p>
+    <p>🔄 <code>&lt;p&gt;🔄 Atualização&lt;/p&gt;</code></p>
+    <p>📂 <code>&lt;p&gt;📂 Arquivos do sistema&lt;/p&gt;</code></p>
+    <p>🧩 <code>&lt;p&gt;🧩 Dependências&lt;/p&gt;</code></p>
+
+    <h3>💻 Sistemas Operacionais</h3>
+    <p>🐧 <code>&lt;p&gt;🐧 Linux / Kali / Debian / Ubuntu&lt;/p&gt;</code></p>
+    <p>🪟 <code>&lt;p&gt;🪟 Windows&lt;/p&gt;</code></p>
+    <p>🍏 <code>&lt;p&gt;🍏 MacOS (Apple)&lt;/p&gt;</code></p>
+    <p>📱 <code>&lt;p&gt;📱 Android&lt;/p&gt;</code></p>
+    <p>📟 <code>&lt;p&gt;📟 Sistemas embarcados / IoT&lt;/p&gt;</code></p>
+    <p>💻 <code>&lt;p&gt;💻 Sistema operacional genérico&lt;/p&gt;</code></p>
+
+    <h3>📝 Escrita, Documentação e Estudos</h3>
+    <p>📚 <code>&lt;p&gt;📚 Estudo / Leitura&lt;/p&gt;</code></p>
+    <p>📖 <code>&lt;p&gt;📖 Leitura técnica&lt;/p&gt;</code></p>
+    <p>🧠 <code>&lt;p&gt;🧠 Memorização / Conhecimento&lt;/p&gt;</code></p>
+    <p>🖊️ <code>&lt;p&gt;🖊️ Escrita manual&lt;/p&gt;</code></p>
+    <p>✍️ <code>&lt;p&gt;✍️ Redação / Produção de texto&lt;/p&gt;</code></p>
+    <p>📋 <code>&lt;p&gt;📋 Tarefa ou checklist&lt;/p&gt;</code></p>
+    <p>🗒️ <code>&lt;p&gt;🗒️ Bloco de notas&lt;/p&gt;</code></p>
+   
+    <h3>🎨 Design, Criatividade e Conteúdo</h3>
+    <p>🖌️ <code>&lt;p&gt;🖌️ Pintura / Arte&lt;/p&gt;</code></p>
+    <p>🧵 <code>&lt;p&gt;🧵 Personalização&lt;/p&gt;</code></p>
+    <p>🖼️ <code>&lt;p&gt;🖼️ Imagem / Banner&lt;/p&gt;</code></p>
+    <p>🎬 <code>&lt;p&gt;🎬 Vídeo / Edição&lt;/p&gt;</code></p>
+    <p>🎧 <code>&lt;p&gt;🎧 Áudio / Podcast&lt;/p&gt;</code></p>
+    <p>📷 <code>&lt;p&gt;📷 Fotografia&lt;/p&gt;</code></p>
+    <p>📽️ <code>&lt;p&gt;📽️ Produção visual&lt;/p&gt;</code></p>
+
+    <h3>💼 Produtividade e Negócios</h3>
+    <p>📅 <code>&lt;p&gt;📅 Calendário / Agendamento&lt;/p&gt;</code></p>
+    <p>⏰ <code>&lt;p&gt;⏰ Alarme / Horário&lt;/p&gt;</code></p>
+    <p>🔖 <code>&lt;p&gt;🔖 Marcador / Favorito&lt;/p&gt;</code></p>
+    <p>📊 <code>&lt;p&gt;📊 Indicadores / Dashboard&lt;/p&gt;</code></p>
+    <p>📈 <code>&lt;p&gt;📈 Crescimento&lt;/p&gt;</code></p>
+    <p>🧾 <code>&lt;p&gt;🧾 Documento / Arquivo&lt;/p&gt;</code></p>
+    <p>💡 <code>&lt;p&gt;💡 Ideia / Inovação&lt;/p&gt;</code></p>
+
+    <h3>🎮 Entretenimento e Diversão</h3>
+    <p>🎲 <code>&lt;p&gt;🎲 Aleatoriedade / Diversão&lt;/p&gt;</code></p>
+    <p>🎤 <code>&lt;p&gt;🎤 Música / Karaokê&lt;/p&gt;</code></p>
+    <p>📺 <code>&lt;p&gt;📺 Streaming / TV&lt;/p&gt;</code></p>
+    <p>🎭 <code>&lt;p&gt;🎭 Cultura / Teatro&lt;/p&gt;</code></p>
+    <p>🎉 <code>&lt;p&gt;🎉 Festa / Evento&lt;/p&gt;</code></p>
+    <p>🎁 <code>&lt;p&gt;🎁 Presente / Brinde&lt;/p&gt;</code></p>
+    <p>🔥 <code>&lt;p&gt;🔥 Hype / Tendência&lt;/p&gt;</code></p>
+
+    <h3>🌍 Viagem e Localização</h3>
+    <p>🧭 <code>&lt;p&gt;🧭 Navegação / Orientação&lt;/p&gt;</code></p>
+    <p>🗺️ <code>&lt;p&gt;🗺️ Mapa / Rota&lt;/p&gt;</code></p>
+    <p>📍 <code>&lt;p&gt;📍 Localização&lt;/p&gt;</code></p>
+    <p>✈️ <code>&lt;p&gt;✈️ Viagem de avião&lt;/p&gt;</code></p>
+    <p>🚗 <code>&lt;p&gt;🚗 Deslocamento / Transporte&lt;/p&gt;</code></p>
+    <p>🏕️ <code>&lt;p&gt;🏕️ Aventura / Natureza&lt;/p&gt;</code></p>
+
+    <h3>🧘 Saúde, Bem-estar e Emoções</h3>
+    <p>😷 <code>&lt;p&gt;😷 Cuidado com a saúde&lt;/p&gt;</code></p>
+    <p>💊 <code>&lt;p&gt;💊 Medicação / Remédio&lt;/p&gt;</code></p>
+    <p>🧘 <code>&lt;p&gt;🧘 Meditação / Equilíbrio&lt;/p&gt;</code></p>
+    <p>😴 <code>&lt;p&gt;😴 Sono / Descanso&lt;/p&gt;</code></p>
+    <p>❤️ <code>&lt;p&gt;❤️ Bem-estar / Coração&lt;/p&gt;</code></p>
+    <p>🧠 <code>&lt;p&gt;🧠 Saúde mental&lt;/p&gt;</code></p>
+
+    <h3>🛒 Comércio, Compras e Dinheiro</h3>
+    <p>🛒 <code>&lt;p&gt;🛒 Carrinho de compras&lt;/p&gt;</code></p>
+    <p>💳 <code>&lt;p&gt;💳 Pagamento com cartão&lt;/p&gt;</code></p>
+    <p>💰 <code>&lt;p&gt;💰 Dinheiro / Orçamento&lt;/p&gt;</code></p>
+    <p>🧾 <code>&lt;p&gt;🧾 Nota fiscal / Recibo&lt;/p&gt;</code></p>
+    <p>🏷️ <code>&lt;p&gt;🏷️ Promoção / Etiqueta&lt;/p&gt;</code></p>
+    <p>📦 <code>&lt;p&gt;📦 Pedido / Entrega&lt;/p&gt;</code></p>
+    
+    <h3>🔔 Notificações, Alertas e Interface</h3>
+    <p>🔔 <code>&lt;p&gt;🔔 Notificação / Alerta&lt;/p&gt;</code></p>
+    <p>📢 <code>&lt;p&gt;📢 Anúncio público&lt;/p&gt;</code></p>
+    <p>❗ <code>&lt;p&gt;❗ Atenção / Importante&lt;/p&gt;</code></p>
+    <p>🚫 <code>&lt;p&gt;🚫 Bloqueio / Acesso negado&lt;/p&gt;</code></p>
+    <p>✅ <code>&lt;p&gt;✅ Ação confirmada&lt;/p&gt;</code></p>
+    <p>🔄 <code>&lt;p&gt;🔄 Atualização / Sincronização&lt;/p&gt;</code></p>
+</section>
 
 </div>
 

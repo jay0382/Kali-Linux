@@ -1,22 +1,27 @@
-                                                                                            
-/* Estilos gerais */
-body {
-    background-color: black;
-    color: white;
-    font-family: Arial, sans-serif;
+                                                                       
+/* Estilos Base */
+  body {
+    background-color: #000;
+    color: #FFF;
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
 /* Cabeçalho */
 header {
-    background-color: #001f3f;
-    padding: 20px;
+    background-color: #00005A;
+    padding: 25px 0;
     text-align: center;
+    border-bottom: 3px solid #00FFFF;
 }
 
-h1 {
-    color: cyan;
+header h1 {
+    color: #00FFFF;
+    margin: 0;
+    font-size: 2.2em;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
 }
 
 /* Container principal */

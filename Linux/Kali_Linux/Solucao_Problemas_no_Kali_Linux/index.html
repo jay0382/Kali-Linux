@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurar Teclas Multimídia no Linux</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Ativando Teclas de Mídia no Linux com xbindkeys</h1>
+    </header>
+
+    <div class="container">
+         <p>Guia completo para configurar volume, play/pause, stop, e mais.</p>
+
+        <section>
+            <h2>1. Verificar se as teclas estão sendo detectadas</h2>
+            <p>Abra o terminal e digite:</p>
+            <pre><code>xev | grep keycode</code></pre>
+            <p>Aparecerá uma janelinha branca. Pressione as teclas desejadas (ex: volume +). Se o sistema mostrar algo como:</p>
+            <pre><code>keycode 123 (XF86AudioRaiseVolume)</code></pre>
+            <p>Significa que a tecla é reconhecida pelo sistema.</p>
+        </section>
+
+        <section>
+            <h2>2. Instalar os pacotes necessários</h2>
+            <p>No terminal, digite:</p>
+            <pre><code>sudo apt update
+sudo apt install xbindkeys amixer playerctl -y</code></pre>
+        </section>
+
+        <section>
+            <h2>3. Criar o arquivo de configuração do xbindkeys</h2>
+            <pre><code>xbindkeys --defaults > ~/.xbindkeysrc</code></pre>
+            <p>Edite com:</p>
+            <pre><code>nano ~/.xbindkeysrc</code></pre>
+            <p>No final do arquivo, adicione:</p>
+            <pre><code># Play/Pause
+"playerctl play-pause"
+  XF86AudioPlay
+
+# Stop
+"playerctl stop"
+  XF86AudioStop
+
+# Próxima faixa
+"playerctl next"
+  XF86AudioNext
+
+# Faixa anterior
+"playerctl previous"
+  XF86AudioPrev
+
+# Aumentar volume
+"amixer -q sset Master 5%+"
+  XF86AudioRaiseVolume
+
+# Diminuir volume
+"amixer -q sset Master 5%-"
+  XF86AudioLowerVolume
+
+# Mudo
+"amixer -q sset Master toggle"
+  XF86AudioMute</code></pre>
+        </section>
+
+        <section>
+            <h2>4. Iniciar o xbindkeys</h2>
+            <p>No terminal, execute:</p>
+            <pre><code>xbindkeys</code></pre>
+            <p>Para reiniciar após edição:</p>
+            <pre><code>killall xbindkeys && xbindkeys</code></pre>
+        </section>
+
+        <section>
+            <h2>5. Fazer iniciar automaticamente com o sistema</h2>
+            <p>Se você usa XFCE:</p>
+            <ul>
+                <li>Vá em <strong>Configurações > Sessão e Inicialização</strong></li>
+                <li>Acesse a aba <strong>"Início automático de aplicativos"</strong></li>
+                <li>Clique em <strong>Adicionar</strong> e preencha:</li>
+            </ul>
+            <br>
+            <p>Ou use o terminal e execute o comando:</p>
+            <pre><code> xfce4-session-settings</code></pre>
+         
+            <img src="images/foto.png" alt="Captura de tela da configuração" class="tutorial-img">
+            <pre><code>Nome: xbindkeys
+Descrição: Atalhos de volume e mídia
+Comando: xbindkeys</code></pre>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 - CyberSecOnline. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

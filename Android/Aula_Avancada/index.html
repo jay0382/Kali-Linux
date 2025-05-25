@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android Avançado - Aula 2</title>
+    <link rel="stylesheet" href="style.css"> <!-- Seu CSS externo -->
+</head>
+<body>
+
+    <header>
+        <h1>Android Avançado -  para Leigos</h1>
+    </header>
+
+    <main>
+        <div class="container">
+
+        <section id="modulo1">
+            <h2>1 — Entendendo os riscos mais sérios</h2>
+            <p>Além dos problemas simples, existem ameaças sérias em Android:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Ameaça</th>
+                        <th>O que é?</th>
+                        <th>Exemplo real</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Malware</td>
+                        <td>Vírus ou programas maliciosos que roubam dados.</td>
+                        <td>App de lanterna falso roubando contatos.</td>
+                    </tr>
+                    <tr>
+                        <td>Phishing</td>
+                        <td>Golpes que tentam roubar suas senhas.</td>
+                        <td>Falso e-mail do banco pedindo login.</td>
+                    </tr>
+                    <tr>
+                        <td>Spyware</td>
+                        <td>Programas que espionam sem você saber.</td>
+                        <td>Apps de espionagem disfarçados.</td>
+                    </tr>
+                    <tr>
+                        <td>Ransomware</td>
+                        <td>Sequestra seus arquivos e pede pagamento.</td>
+                        <td>Vírus que bloqueia o celular e pede resgate.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>Resumo:</strong> Nem todo vírus "explode" o celular — alguns apenas ficam escondidos roubando seus dados.</p>
+        </section>
+
+        <section id="modulo2">
+            <h2>2 — Como identificar vírus e apps suspeitos</h2>
+            <p>Sinais claros de que você pode ter um problema:</p>
+            <ul>
+                <li>Aparelho muito mais lento do que o normal</li>
+                <li>Bateria descarregando rápido sem uso</li>
+                <li>Consumo de dados móveis alto sem explicação</li>
+                <li>Notificações estranhas ou anúncios do nada</li>
+                <li>Bloqueios suspeitos exigindo senha nova ou pagamento</li>
+            </ul>
+            <p><strong>Como investigar:</strong></p>
+            <ul>
+                <li>Vá em Configurações → Aplicativos e revise apps instalados.</li>
+                <li>Desconfie de apps que você não lembra de ter instalado.</li>
+                <li>Pesquise o nome do app no Google.</li>
+                <li>Use antivírus confiáveis como Malwarebytes Mobile ou Bitdefender Mobile.</li>
+            </ul>
+        </section>
+
+        <section id="modulo3">
+            <h2>3 — Boas práticas de segurança avançadas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cuidados</th>
+                        <th>Como fazer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Não instalar APKs desconhecidos</td>
+                        <td>Só usar Play Store ou fontes extremamente confiáveis.</td>
+                    </tr>
+                    <tr>
+                        <td>Atualizar sempre o Android</td>
+                        <td>Configurar para atualizar automaticamente se possível.</td>
+                    </tr>
+                    <tr>
+                        <td>Não dar permissão desnecessária</td>
+                        <td>Exemplo: app de lanterna não precisa acessar contatos.</td>
+                    </tr>
+                    <tr>
+                        <td>Ativar Google Play Protect</td>
+                        <td>Configurações → Segurança → Play Protect.</td>
+                    </tr>
+                    <tr>
+                        <td>Usar senhas fortes e biometria</td>
+                        <td>Ativar biometria (digital, rosto) sempre que disponível.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="modulo4">
+            <h2>4 — O que é Root e desbloqueio de Bootloader?</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Termo</th>
+                        <th>Explicação simples</th>
+                        <th>Risco</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Root</td>
+                        <td>Acesso de administrador total no celular.</td>
+                        <td>Pode tornar o celular vulnerável a vírus e ataques.</td>
+                    </tr>
+                    <tr>
+                        <td>Bootloader desbloqueado</td>
+                        <td>Permite instalar sistemas modificados (ROMs).</td>
+                        <td>Se mal feito, pode inutilizar o aparelho.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>Importante:</strong> Fazer root anula a garantia e pode abrir portas para vírus se não souber usar.</p>
+        </section>
+
+        <section id="modulo5">
+            <h2>5 — Atualizações manuais de Android</h2>
+            <p>Se o fabricante não envia atualizações, você pode:</p>
+            <ul>
+                <li>Buscar Custom ROMs (LineageOS, /e/OS, etc.).</li>
+                <li>Instalar patches de segurança manualmente.</li>
+            </ul>
+            <p><strong>Mas atenção:</strong></p>
+            <ul>
+                <li>Necessário bootloader desbloqueado.</li>
+                <li>Instalar TWRP Recovery.</li>
+                <li>Fazer backup antes de qualquer mudança.</li>
+            </ul>
+        </section>
+
+        <section id="modulo6">
+            <h2>6 — Corrigindo erros complexos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Problema</th>
+                        <th>Solução Avançada</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sistema corrompido após atualização</td>
+                        <td>Reinstalar o sistema usando o computador.</td>
+                    </tr>
+                    <tr>
+                        <td>Bootloop (travado na logo)</td>
+                        <td>Limpar cache via recovery.</td>
+                    </tr>
+                    <tr>
+                        <td>Celular muito lento mesmo após reset</td>
+                        <td>Reinstalar Android limpo.</td>
+                    </tr>
+                    <tr>
+                        <td>Perda de IMEI ou sinal após root</td>
+                        <td>Restaurar backup de NVRAM (se tiver).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="modulo7">
+            <h2>7 — Backups avançados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo de Backup</th>
+                        <th>O que salva</th>
+                        <th>Como fazer</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Backup pelo Google</td>
+                        <td>Fotos, apps, contatos, senhas.</td>
+                        <td>Configurações > Google > Backup.</td>
+                    </tr>
+                    <tr>
+                        <td>Backup nandroid</td>
+                        <td>TODO o sistema do jeito que está.</td>
+                        <td>Via TWRP Recovery.</td>
+                    </tr>
+                    <tr>
+                        <td>Backup por ADB (PC)</td>
+                        <td>Apps e dados importantes.</td>
+                        <td>Usando comandos ADB pelo computador.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="conclusao">
+            <h2>Conclusão</h2>
+            <ul>
+                <li>Vírus podem agir silenciosamente.</li>
+                <li>Você agora sabe reconhecer sinais de problemas sérios.</li>
+                <li>A importância dos backups avançados.</li>
+                <li>Os riscos reais de Root e Bootloader desbloqueado.</li>
+                <li>Como se preparar para falhas graves.</li>
+            </ul>
+        </section>
+
+        <section id="navegacao">
+            <button onclick="location.href='../index.html'">Voltar para Introdução</button>
+            <button onclick="location.href='Aula_Especializada/index.html'">Ir para Aula 3 (Especializada)</button>
+        </section>
+
+     </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Portal Hackers Brasil - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>

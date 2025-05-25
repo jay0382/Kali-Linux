@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android Profissional - Aula 4</title>
+    <link rel="stylesheet" href="style.css"> <!-- Seu CSS externo -->
+</head>
+<body>
+
+    <header>
+        <h1>Android Profissional</h1>
+    </header>
+
+    <main>
+
+      <div class="container">
+        <section id="modulo1">
+            <h2>1 — Introdução ao Pentest em Android</h2>
+            <p>Pentest (teste de intrusão) em Android é o processo de:</p>
+            <ul>
+                <li>Encontrar falhas no sistema ou apps instalados.</li>
+                <li>Simular ataques para entender riscos reais.</li>
+                <li>Fortalecer a segurança com base nas descobertas.</li>
+            </ul>
+            <p><strong>Importante:</strong> Teste apenas dispositivos seus ou autorizados.</p>
+        </section>
+
+        <section id="modulo2">
+            <h2>2 — Principais vulnerabilidades em Android</h2>
+            <p>Algumas falhas graves que atacantes exploram:</p>
+            <ul>
+                <li>Exploração de apps mal programados (ex: falha em validar entrada de usuário).</li>
+                <li>Redes Wi-Fi inseguras ou abertas.</li>
+                <li>Versões antigas do Android com bugs conhecidos.</li>
+                <li>Permissões excessivas concedidas a apps desnecessários.</li>
+            </ul>
+            <p>Manter o sistema e apps atualizados é essencial para fechar essas portas!</p>
+        </section>
+
+        <section id="modulo3">
+            <h2>3 — Ferramentas profissionais para Android</h2>
+            <p>Ferramentas usadas em auditorias de segurança:</p>
+            <ul>
+                <li><strong>MobSF (Mobile Security Framework):</strong> Faz análise estática de APKs.</li>
+                <li><strong>Drozer:</strong> Explora vulnerabilidades em apps Android.</li>
+                <li><strong>ADB (Android Debug Bridge):</strong> Permite acesso ao sistema para auditoria via PC.</li>
+                <li><strong>Wireshark:</strong> Análise de tráfego de rede em conexões Android.</li>
+            </ul>
+        </section>
+
+        <section id="modulo4">
+            <h2>4 — Recuperação de sistemas Android corrompidos</h2>
+            <p>Quando o Android falha completamente:</p>
+            <ul>
+                <li>Usar TWRP Recovery para restaurar backups nandroid.</li>
+                <li>Reinstalar a ROM de fábrica (firmware original).</li>
+                <li>Em caso extremo, usar SP Flash Tool (para MediaTek) ou Odin (para Samsung) para recuperação via PC.</li>
+            </ul>
+            <p>Esses métodos requerem acesso ao modo de download ou fastboot no aparelho.</p>
+        </section>
+
+        <section id="modulo5">
+            <h2>5 — Preparação para incidentes graves</h2>
+            <p>Medidas para estar pronto em caso de ataque ou falha crítica:</p>
+            <ul>
+                <li>Ter backups frequentes e armazenados fora do celular.</li>
+                <li>Manter um recovery customizado (como TWRP) instalado.</li>
+                <li>Conhecer como reinstalar o sistema manualmente (ter os arquivos e drivers prontos).</li>
+                <li>Ter antivírus profissional ativado e atualizado.</li>
+            </ul>
+        </section>
+
+        <section id="modulo6">
+            <h2>6 — Reforçando o ambiente contra ataques avançados</h2>
+            <p>Proteções adicionais que podem ser implementadas:</p>
+            <ul>
+                <li>Instalar ROMs focadas em segurança (como GrapheneOS, CalyxOS, LineageOS Hardened).</li>
+                <li>Usar bloqueadores de rastreamento e DNS seguros (ex: AdGuard DNS).</li>
+                <li>Minimizar o número de apps instalados e revisá-los periodicamente.</li>
+                <li>Ativar criptografia total do armazenamento (configurações de segurança).</li>
+            </ul>
+        </section>
+
+        <section id="conclusao">
+            <h2>Conclusão</h2>
+            <ul>
+                <li>Você agora entende o básico de pentest e segurança avançada em Android.</li>
+                <li>Consegue reconhecer riscos de vulnerabilidades comuns.</li>
+                <li>Está preparado para recuperar sistemas danificados.</li>
+                <li>Conhece práticas para manter seu ambiente o mais seguro possível.</li>
+            </ul>
+        </section>
+
+        <section id="exercicio">
+            <h2>Exercício sugerido</h2>
+            <p>Hoje ainda:</p>
+            <ul>
+                <li>Instale o NetGuard ou AdGuard DNS para proteger sua rede.</li>
+                <li>Faça backup completo do seu sistema (nandroid backup se possível).</li>
+                <li>Pesquise sobre MobSF ou ADB para começar a se familiarizar com auditorias Android.</li>
+            </ul>
+        </section>
+
+        <section id="navegacao">
+            <button onclick="location.href='../index.html'">Voltar para Aula 3</button>
+            <button onclick="location.href='Especialista_Pentest/index.html'">Ir para Especialista em Pentest</button>
+        </section>
+
+  </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Portal Hackers Brasil - Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
